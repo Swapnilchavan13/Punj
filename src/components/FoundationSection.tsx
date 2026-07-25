@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { AssetPlaceholder } from "./AssetPlaceholder";
 
 type Founder = {
   key: string;
   name: string;
   bio: string;
-  asset: string;
+  image: string;
 };
 
 const FOUNDERS: Founder[] = [
@@ -13,25 +12,25 @@ const FOUNDERS: Founder[] = [
     key: "kanahya",
     name: "Late Pt. Kanahya Lal Punj",
     bio: "A man of vision and integrity, he built his legacy on honesty, sincerity, and hard work. His life continues to inspire generations.",
-    asset: "founder-kanahya-lal-punj",
+    image: "/founders/kanahya.jpg", // Maps to kanahya.jpg[cite: 3]
   },
   {
     key: "dayawanti",
     name: "Late Smt. Dayawanti Punj",
     bio: "A noble and idealistic woman, she embodied wisdom, devotion, and grace. Her values remain the guiding light of the Foundation.",
-    asset: "founder-dayawanti-punj",
+    image: "/founders/dayawanti.jpg", // Maps to dayawanti.jpg[cite: 1]
   },
   {
     key: "snp",
     name: "Late Shri S. N. P. Punj",
     bio: "A visionary entrepreneur and educationist, he founded DPMS to bring world-class learning to Sitamarhi. His mission lives on through every student's success.",
-    asset: "founder-snp-punj",
+    image: "/founders/snp.jpg", // Maps to snp.jpg[cite: 4]
   },
   {
     key: "indu",
     name: "Late Smt. Indu Punj",
     bio: "A compassionate and inspiring soul, she worked tirelessly for the upliftment of the poor and underprivileged. Her kindness is woven into every initiative of the Foundation.",
-    asset: "founder-indu-punj",
+    image: "/founders/indu.jpg", // Maps to indu.jpg[cite: 2]
   },
 ];
 
@@ -59,7 +58,11 @@ function FounderTile({
         >
           <div className="aspect-[4/5] w-full overflow-hidden">
             <div className="h-full w-full grayscale transition-[filter,transform] duration-700 ease-out group-hover:scale-[1.02] group-hover:grayscale-0">
-              <AssetPlaceholder name={founder.asset} />
+              <img
+                src={founder.image}
+                alt={founder.name}
+                className="h-full w-full object-cover object-center"
+              />
             </div>
           </div>
         </button>
@@ -112,10 +115,16 @@ function FounderModal({
             aria-label="Close"
             className="absolute right-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/85 text-[color:var(--charcoal)] shadow hover:bg-white"
           >
-            <span aria-hidden="true" className="text-xl leading-none">×</span>
+            <span aria-hidden="true" className="text-xl leading-none">
+              ×
+            </span>
           </button>
           <div className="aspect-[4/5] w-full overflow-hidden sm:aspect-auto sm:min-h-[420px]">
-            <AssetPlaceholder name={founder.asset} />
+            <img
+              src={founder.image}
+              alt={founder.name}
+              className="h-full w-full object-cover object-center"
+            />
           </div>
           <div className="flex flex-col justify-center px-6 py-8 md:px-9 md:py-10">
             <span className="font-sans text-[10.5px] font-semibold uppercase tracking-[0.22em] text-[color:var(--accent-sita)]/85">
@@ -188,21 +197,25 @@ export function FoundationSection() {
             >
               <div className="border-l-2 border-[color:var(--accent-sita)]/70 pl-5">
                 <p className="font-sans text-[15px] leading-[1.85] text-[color:var(--charcoal)]/85 md:text-[16px]">
-                  The Pt. Kanahya Lal Dayawanti Punj Foundation was established with a deep
-                  commitment to community service and institution-building.
+                  The Pt. Kanahya Lal Dayawanti Punj Foundation was established
+                  with a deep commitment to community service and
+                  institution-building.
                 </p>
                 <p className="mt-4 font-sans text-[15px] leading-[1.85] text-[color:var(--charcoal)]/85 md:text-[16px]">
-                  Over the years, the Foundation has worked to create meaningful and enduring
-                  support across education, healthcare, social welfare and cultural stewardship.
+                  Over the years, the Foundation has worked to create meaningful
+                  and enduring support across education, healthcare, social
+                  welfare and cultural stewardship.
                 </p>
                 <p className="mt-4 font-sans text-[15px] leading-[1.85] text-[color:var(--charcoal)]/85 md:text-[16px]">
-                  Its institutions and programmes are closely connected with the lives of
-                  families and communities in and around Sitamarhi.
+                  Its institutions and programmes are closely connected with
+                  the lives of families and communities in and around
+                  Sitamarhi.
                 </p>
                 <p className="mt-4 font-sans text-[15px] leading-[1.85] text-[color:var(--charcoal)]/85 md:text-[16px]">
-                  Today, this legacy of service continues through its educational institutions,
-                  healthcare initiatives, social-welfare programmes, stewardship of Sita Samahit
-                  Sthal and its emerging work in environment and rural regeneration.
+                  Today, this legacy of service continues through its
+                  educational institutions, healthcare initiatives,
+                  social-welfare programmes, stewardship of Sita Samahit Sthal
+                  and its emerging work in environment and rural regeneration.
                 </p>
               </div>
               <a

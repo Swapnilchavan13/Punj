@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { AssetPlaceholder } from "./AssetPlaceholder";
 
 const NAV = [
   { label: "Home", to: "/", num: "01" },
@@ -58,7 +57,12 @@ export function Header() {
                 scrolled ? "h-9 w-9" : "h-11 w-11"
               }`}
             >
-              <AssetPlaceholder name="foundation-logo" />
+              {/* Replace with your exact filename inside public/ folder */}
+              <img
+                src="/foundation-logo.png"
+                alt="Punj Foundation Logo"
+                className="h-full w-full object-contain"
+              />
             </div>
             <span className="hidden font-serif text-[13px] leading-[1.15] tracking-wide text-[color:var(--charcoal)] sm:block md:text-[14px]">
               <span className="block italic text-[color:var(--charcoal)]/60 text-[10px] uppercase tracking-[0.2em] mb-0.5">
