@@ -43,3 +43,8 @@ function Home() {
   );
 }
 
+//  <img
+//                 src="/foundation-logo.png"
+//                 alt="Punj Foundation Logo"
+//                 className="h-full w-full object-contain"
+//               />

@@ -11,6 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutFoundationRouteImport } from './routes/about-foundation'
+import { Route as EducationRouteImport } from './routes/education'
+import { Route as EnvironmentRuralRegenerationRouteImport } from './routes/environment-rural-regeneration'
+import { Route as HealthcareSocialWelfareRouteImport } from './routes/healthcare-social-welfare'
+import { Route as SitaSamahitSthalRouteImport } from './routes/sita-samahit-sthal'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +26,87 @@ const AboutFoundationRoute = AboutFoundationRouteImport.update({
   path: '/about-foundation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EducationRoute = EducationRouteImport.update({
+  id: '/education',
+  path: '/education',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnvironmentRuralRegenerationRoute =
+  EnvironmentRuralRegenerationRouteImport.update({
+    id: '/environment-rural-regeneration',
+    path: '/environment-rural-regeneration',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HealthcareSocialWelfareRoute = HealthcareSocialWelfareRouteImport.update({
+  id: '/healthcare-social-welfare',
+  path: '/healthcare-social-welfare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitaSamahitSthalRoute = SitaSamahitSthalRouteImport.update({
+  id: '/sita-samahit-sthal',
+  path: '/sita-samahit-sthal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-foundation': typeof AboutFoundationRoute
+  '/education': typeof EducationRoute
+  '/environment-rural-regeneration': typeof EnvironmentRuralRegenerationRoute
+  '/healthcare-social-welfare': typeof HealthcareSocialWelfareRoute
+  '/sita-samahit-sthal': typeof SitaSamahitSthalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-foundation': typeof AboutFoundationRoute
+  '/education': typeof EducationRoute
+  '/environment-rural-regeneration': typeof EnvironmentRuralRegenerationRoute
+  '/healthcare-social-welfare': typeof HealthcareSocialWelfareRoute
+  '/sita-samahit-sthal': typeof SitaSamahitSthalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-foundation': typeof AboutFoundationRoute
+  '/education': typeof EducationRoute
+  '/environment-rural-regeneration': typeof EnvironmentRuralRegenerationRoute
+  '/healthcare-social-welfare': typeof HealthcareSocialWelfareRoute
+  '/sita-samahit-sthal': typeof SitaSamahitSthalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-foundation'
+  fullPaths:
+    | '/'
+    | '/about-foundation'
+    | '/education'
+    | '/environment-rural-regeneration'
+    | '/healthcare-social-welfare'
+    | '/sita-samahit-sthal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-foundation'
-  id: '__root__' | '/' | '/about-foundation'
+  to:
+    | '/'
+    | '/about-foundation'
+    | '/education'
+    | '/environment-rural-regeneration'
+    | '/healthcare-social-welfare'
+    | '/sita-samahit-sthal'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-foundation'
+    | '/education'
+    | '/environment-rural-regeneration'
+    | '/healthcare-social-welfare'
+    | '/sita-samahit-sthal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutFoundationRoute: typeof AboutFoundationRoute
+  EducationRoute: typeof EducationRoute
+  EnvironmentRuralRegenerationRoute: typeof EnvironmentRuralRegenerationRoute
+  HealthcareSocialWelfareRoute: typeof HealthcareSocialWelfareRoute
+  SitaSamahitSthalRoute: typeof SitaSamahitSthalRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +125,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutFoundationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/education': {
+      id: '/education'
+      path: '/education'
+      fullPath: '/education'
+      preLoaderRoute: typeof EducationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/environment-rural-regeneration': {
+      id: '/environment-rural-regeneration'
+      path: '/environment-rural-regeneration'
+      fullPath: '/environment-rural-regeneration'
+      preLoaderRoute: typeof EnvironmentRuralRegenerationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/healthcare-social-welfare': {
+      id: '/healthcare-social-welfare'
+      path: '/healthcare-social-welfare'
+      fullPath: '/healthcare-social-welfare'
+      preLoaderRoute: typeof HealthcareSocialWelfareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sita-samahit-sthal': {
+      id: '/sita-samahit-sthal'
+      path: '/sita-samahit-sthal'
+      fullPath: '/sita-samahit-sthal'
+      preLoaderRoute: typeof SitaSamahitSthalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutFoundationRoute: AboutFoundationRoute,
+  EducationRoute: EducationRoute,
+  EnvironmentRuralRegenerationRoute: EnvironmentRuralRegenerationRoute,
+  HealthcareSocialWelfareRoute: HealthcareSocialWelfareRoute,
+  SitaSamahitSthalRoute: SitaSamahitSthalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

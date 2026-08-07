@@ -28,6 +28,11 @@ const ASSETS: Record<string, string> = {
   "foundation-work-social-welfare": workSocialWelfare,
   "foundation-work-sita-samahit-sthal": workSita,
   "foundation-work-environment": workEnvironment,
+  "archive-education-beginnings": workEducation,
+  "archive-healthcare-growth": workHealthcare,
+  "archive-social-welfare": workSocialWelfare,
+  "archive-sita-samahit-sthal": sliderSita,
+  "archive-environment-expansion": workEnvironment,
 };
 
 type Props = {
