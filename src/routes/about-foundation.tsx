@@ -169,7 +169,7 @@ const CHAPTERS: Chapter[] = [
     asset: "archive-foundation-early-years",
     alt: "Archival material representing the Foundation's early years",
     accent: "var(--accent-education)",
-    himg:"-",
+    himg:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQTfv44SVHwdP1FmHlHjWiIqxhhH81lowvee58dXdkhxfDfIxF0mgYiAy&s=10",
     panel: "oklch(0.965 0.026 85 / 0.7)",
     portraits: [
       {
@@ -272,7 +272,7 @@ const CHAPTERS: Chapter[] = [
     alt: "Architectural view of Sita Samahit Sthal",
     accent: "var(--accent-sita)",
     panel: "oklch(0.955 0.026 30 / 0.7)",
-    himg:"-",
+    himg:"https://dpms.in/wp-content/uploads/2025/08/transport-area.jpg",
     link: { label: "Explore Sita Samahit Sthal", href: "/sita-samahit-sthal" },
   },
   {
@@ -289,7 +289,7 @@ const CHAPTERS: Chapter[] = [
     alt: "Farmer participating in a soil-restoration field programme",
     accent: "var(--accent-environment)",
     panel: "oklch(0.96 0.022 150 / 0.7)",
-    himg:"/src/assets/generated/slider-environment.jpg",
+    himg:"https://assets.ramen.101reporters.com/imgs/2025/6/826*532/101RPT2542363/7.webp",
     link: {
       label: "Explore Environment and Rural Regeneration",
       href: "/environment-rural-regeneration",
@@ -308,7 +308,7 @@ const CHAPTERS: Chapter[] = [
     alt: "Current Foundation leadership",
     accent: "var(--charcoal)",
     panel: "oklch(0.96 0.01 80 / 0.7)",
-    himg:"-",
+    himg:"https://dpms.in/wp-content/uploads/2025/08/IMG_0733.jpg",
   },
 ];
 
@@ -511,11 +511,13 @@ function AboutFoundation() {
 
             <figure>
               <div className="overflow-hidden rounded-xl shadow-[0_30px_70px_-40px_rgba(60,40,20,0.75)]">
-                <AssetPlaceholder
-                  name="about-foundation-hero"
-                  aspect="16/10"
-                  label="Institutional image of the Foundation"
-                />
+                <div className="aspect-[16/10] overflow-hidden rounded-[6px]">
+  <img
+    src="https://dpms.in/wp-content/uploads/2025/08/school-building.jpg"
+    alt="Institutional image of the Foundation"
+    className="h-full w-full object-cover"
+  />
+</div>
               </div>
               <Caption>An institutional view of the Foundation's work in Sitamarhi.</Caption>
             </figure>
@@ -551,21 +553,25 @@ function AboutFoundation() {
             <Reveal className="space-y-8">
               <figure>
                 <div className="overflow-hidden rounded-lg shadow-[0_18px_50px_-32px_rgba(60,40,20,0.6)]">
-                  <AssetPlaceholder
-                    name="archive-foundation-early-years"
-                    aspect="4/3"
-                    label="Archival material from the Foundation's early years"
-                  />
+                  <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
+  <img
+    src="https://content3.jdmagicbox.com/comp/bhadohi/g9/9999p5414.5414.110223220140.w9g9/catalogue/dayawanti-punj-model-school-khamaria-srn-bhadohi-cbse-schools-ph7jus1k13.jpg"
+    alt="Archival material from the Foundation's early years"
+    className="h-full w-full object-cover"
+  />
+</div>
                 </div>
                 <Caption>An early chapter in the Foundation's institutional journey.</Caption>
               </figure>
               <figure>
                 <div className="overflow-hidden rounded-lg">
-                  <AssetPlaceholder
-                    name="foundation-document"
-                    aspect="4/3"
-                    label="Historical Foundation document"
-                  />
+                 <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
+  <img
+    src="https://i.ytimg.com/vi/B_SA6LpddW8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDBuW7vKu0ceZi7j8E9MrIybZZc7A"
+    alt="Historical Foundation document"
+    className="h-full w-full object-cover"
+  />
+</div>
                 </div>
                 <Caption>Institutional material held by the Foundation.</Caption>
               </figure>
@@ -681,11 +687,13 @@ function AboutFoundation() {
           <div className="mx-auto w-full max-w-[1360px] px-5 md:px-10">
             <Reveal>
               <div className="relative overflow-hidden rounded-xl">
-                <AssetPlaceholder
-                  name="sitamarhi-landscape"
-                  aspect="16/9"
-                  label="Regional landscape of Sitamarhi"
-                />
+               <div className="aspect-[16/9] overflow-hidden rounded-[6px]">
+  <img
+    src="https://cdn1.tripoto.com/media/filter/tst/img/1414073/SpotDocument/1559199855_1550066409_er.jpg.webp"
+    alt="Regional landscape of Sitamarhi"
+    className="h-full w-full object-cover"
+  />
+</div>
               </div>
               <div className="relative z-10 -mt-10 w-full rounded-lg border border-[color:var(--border)]/60 bg-[oklch(0.98_0.012_85_/_0.92)] p-7 backdrop-blur-md md:-mt-24 md:ml-10 md:max-w-[640px] md:p-10">
                 <Eyebrow tone="var(--accent-environment)">Rooted in Sitamarhi</Eyebrow>
@@ -800,11 +808,13 @@ function AboutFoundation() {
             <Reveal>
               <figure>
                 <div className="overflow-hidden rounded-lg shadow-[0_20px_55px_-38px_rgba(60,40,20,0.7)]">
-                  <AssetPlaceholder
-                    name="leadership-current"
-                    aspect="4/3"
-                    label="Current Foundation leadership"
-                  />
+                 <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
+  <img
+    src="https://dpms.in/wp-content/uploads/2025/08/IMG_0822.jpg"
+    alt="Current Foundation leadership"
+    className="h-full w-full object-cover"
+  />
+</div>
                 </div>
                 <Caption>Foundation leadership photograph to be added.</Caption>
               </figure>

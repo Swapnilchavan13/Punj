@@ -1960,44 +1960,127 @@ function Gallery() {
 }
 
 /* 18. Updates */
-const UPDATE_CATEGORIES = ["School News", "College News", "Admissions", "Student Achievement", "Sports", "Cultural Activity"];
+const EDUCATION_UPDATES = [
+  {
+    category: "School News",
+    title: "Building a Stronger Learning Environment",
+    date: "12 June 2026",
+    image:
+      "https://content.jdmagicbox.com/comp/bhadohi/g9/9999p5414.5414.110223220140.w9g9/catalogue/dayawanti-punj-model-school-khamaria-srn-bhadohi-schools-qy2ch7jclj.jpg",
+    description:
+      "Dayawanti Punj Model School continues to focus on academic learning, student development and a supportive school environment.",
+  },
+  {
+    category: "College News",
+    title: "Supporting Higher Learning and Student Development",
+    date: "05 June 2026",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1QnztuBuHxHGIrdhI-tEfcAkDBjfUSgVkxcwfrJOV9rbz2H98zWDg-idt&s=10",
+    description:
+      "The college provides students with opportunities for higher education, academic guidance and preparation for future careers.",
+  },
+  {
+    category: "Admissions",
+    title: "Admissions and Enrolment Information",
+    date: "28 May 2026",
+    image:
+      "https://skoodos.com/public/uploads/optimized/1682671906.png",
+    description:
+      "Information for students and families exploring educational opportunities at the Foundation's school and college institutions.",
+  },
+  {
+    category: "Student Achievement",
+    title: "Recognising Student Effort and Achievement",
+    date: "18 May 2026",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwejsqg0VR7B1jEZuPtdY_Htqt0Tp49ylnUKzKpt0WJ0A2Be42klRWQBg&s=10",
+    description:
+      "Students are encouraged to pursue academic excellence while developing confidence, creativity and a sense of responsibility.",
+  },
+  {
+    category: "Sports",
+    title: "Learning Through Sports and Teamwork",
+    date: "10 May 2026",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjvbYBp7WXi8H5HL-IdnSon0U2MYvDYx5m545an4HlXqk_Ev71COB1nd4&s=10",
+    description:
+      "Sports activities provide students with opportunities to develop fitness, discipline, teamwork and leadership.",
+  },
+  {
+    category: "Cultural Activity",
+    title: "Encouraging Creativity and Cultural Participation",
+    date: "02 May 2026",
+    image:
+      "https://images.jdmagicbox.com/v2/comp/bhadohi/a9/9999p5414.5414.110123122915.q2a9/catalogue/dayawanti-punj-model-school-bhadohi-ho-bhadohi-cbse-schools-irpypaxou2.jpg",
+    description:
+      "Cultural programmes and creative activities give students a platform to express themselves and participate in the wider school community.",
+  },
+];
 
 function Updates() {
   return (
-    <Section>
+    <Section tint="oklch(0.975 0.014 95 / 0.45)">
       <Reveal className="max-w-3xl">
         <Eyebrow tone={OCHRE}>Latest From Education</Eyebrow>
+
         <h2 className="mt-5 font-serif text-[34px] leading-[1.1] text-[color:var(--charcoal)] md:text-[46px]">
           News From the School and College
         </h2>
+
+        <p className="mt-6 font-sans text-[15px] leading-[1.8] text-muted-foreground">
+          Stay informed about educational activities, student achievements,
+          admissions, sports, cultural programmes and developments across the
+          Foundation's educational institutions.
+        </p>
       </Reveal>
 
       <Reveal className="mt-12">
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {UPDATE_CATEGORIES.map((c, i) => (
+          {EDUCATION_UPDATES.map((update) => (
             <li
-              key={c}
-              className="overflow-hidden rounded-[6px] bg-[color:var(--offwhite)] ring-1 ring-[color:var(--border)]"
+              key={update.category}
+              className="group flex h-full flex-col overflow-hidden rounded-[6px] bg-[color:var(--offwhite)] shadow-sm ring-1 ring-[color:var(--border)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <AssetPlaceholder
-                name={i % 2 === 0 ? "dpms-students" : "degree-college-students"}
-                label={c}
-                aspect="16 / 10"
-              />
-              <div className="p-6">
-                <p className="font-sans text-[10.5px] font-medium uppercase tracking-[0.24em]" style={{ color: OCHRE }}>
-                  {c}
+              {/* Image */}
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={update.image}
+                  alt={update.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="flex flex-1 flex-col p-6">
+                <p
+                  className="font-sans text-[10.5px] font-semibold uppercase tracking-[0.24em]"
+                  style={{ color: OCHRE }}
+                >
+                  {update.category}
                 </p>
-                <p className="mt-2 font-sans text-[12px] text-muted-foreground">Date to be verified</p>
-                <div className="mt-4">
-                  <Pending>Add verified education update</Pending>
+
+                <h3 className="mt-3 font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
+                  {update.title}
+                </h3>
+
+                <p className="mt-3 font-sans text-[13.5px] leading-[1.75] text-muted-foreground">
+                  {update.description}
+                </p>
+
+                <div className="mt-auto border-t border-[color:var(--border)] pt-4">
+                  <p className="font-sans text-[11.5px] text-muted-foreground">
+                    {update.date}
+                  </p>
                 </div>
               </div>
             </li>
           ))}
         </ul>
+
         <div className="mt-10">
-          <GhostBtn href="/stories-updates/education">View All Education Updates</GhostBtn>
+          <GhostBtn href="/stories-updates/education">
+            View All Education Updates
+          </GhostBtn>
         </div>
       </Reveal>
     </Section>
@@ -2036,12 +2119,17 @@ function Closing() {
           </div>
         </Reveal>
         <Reveal>
-          <Figure
-            asset="education-group-photo"
-            alt="Group photograph of students and teachers at the Foundation's institutions"
-            aspect="4 / 3"
-            caption="Institutional group photograph. ADD VERIFIED CAPTION AND DATE."
-          />
+          <div className="overflow-hidden rounded-[6px]">
+  <img
+    src="https://dpms.in/wp-content/uploads/2025/08/IMG_0818.jpg"
+    alt="Group photograph of students and teachers at the Foundation's institutions"
+    className="h-full w-full object-cover"
+    style={{ aspectRatio: "4 / 3" }}
+  />
+  <p className="mt-3 font-sans text-[12px] leading-5 text-muted-foreground">
+    Students and teachers at the Foundation's educational institutions.
+  </p>
+</div>
         </Reveal>
       </div>
     </Section>

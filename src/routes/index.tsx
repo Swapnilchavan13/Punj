@@ -5,6 +5,7 @@ import { FoundationSection } from "@/components/FoundationSection";
 import { ImpactSection } from "@/components/ImpactSection";
 import { PillarsSection } from "@/components/PillarsSection";
 import { OurWorkSection } from "@/components/OurWorkSection";
+import { SiteFooter } from "@/components/SiteFooter";
 
 
 export const Route = createFileRoute("/")({
@@ -39,6 +40,8 @@ function Home() {
         <PillarsSection />
         <div className="h-24" aria-hidden="true" />
       </main>
+            <SiteFooter />
+      
     </div>
   );
 }
