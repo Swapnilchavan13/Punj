@@ -683,45 +683,51 @@ function AboutFoundation() {
         </section>
 
         {/* SITAMARHI */}
-        <section className="relative">
-          <div className="mx-auto w-full max-w-[1360px] px-5 md:px-10">
-            <Reveal>
-              <div className="relative overflow-hidden rounded-xl">
-               <div className="aspect-[16/9] overflow-hidden rounded-[6px]">
-  <img
-    src="https://cdn1.tripoto.com/media/filter/tst/img/1414073/SpotDocument/1559199855_1550066409_er.jpg.webp"
-    alt="Regional landscape of Sitamarhi"
-    className="h-full w-full object-cover"
-  />
-</div>
-              </div>
-              <div className="relative z-10 -mt-10 w-full rounded-lg border border-[color:var(--border)]/60 bg-[oklch(0.98_0.012_85_/_0.92)] p-7 backdrop-blur-md md:-mt-24 md:ml-10 md:max-w-[640px] md:p-10">
-                <Eyebrow tone="var(--accent-environment)">Rooted in Sitamarhi</Eyebrow>
-                <h2 className="mt-3 font-serif text-[28px] leading-[1.15] text-[color:var(--charcoal)] md:text-[38px]">
-                  A Long-Term Relationship With Place and Community
-                </h2>
-                <div className="mt-5 space-y-4">
-                  {[
-                    "The Foundation's identity is closely connected with Sitamarhi and the communities around it.",
-                    "Its institutions, programmes and relationships have developed through sustained presence rather than distant intervention.",
-                    "The school, college, healthcare work, social-welfare initiatives, Sita Samahit Sthal and newer rural-regeneration programmes all form part of this long-term regional commitment.",
-                    "The Foundation's work is shaped by an understanding that lasting development must remain connected with the realities, aspirations and cultural life of the people it serves.",
-                  ].map((p) => (
-                    <p
-                      key={p.slice(0, 20)}
-                      className="font-sans text-[15px] leading-[1.8] text-[color:var(--charcoal)]/85"
-                    >
-                      {p}
-                    </p>
-                  ))}
-                </div>
-                <p className="mt-6 font-sans text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-                  Sitamarhi, Bihar
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </section>
+       <section className="relative">
+  <div className="mx-auto w-full max-w-[1360px] px-5 md:px-10">
+    <Reveal>
+      <div className="relative overflow-hidden rounded-xl">
+        <div className="aspect-[16/9] overflow-hidden rounded-[6px]">
+          <img
+            src="https://d3fphkxyf5o5bm.cloudfront.net/image-resize/format=webp,w=960/QwRY54Li1HMwD7oNfppnX6fmVwarHfwu0r8chvFiKA"
+            alt="Sita Samahit Sthal in Sitamarhi, Bhadohi, Uttar Pradesh"
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+
+      <div className="relative z-10 -mt-10 w-full rounded-lg border border-[color:var(--border)]/60 bg-[oklch(0.98_0.012_85_/_0.92)] p-7 backdrop-blur-md md:-mt-24 md:ml-10 md:max-w-[640px] md:p-10">
+        <Eyebrow tone="var(--accent-environment)">
+          Rooted in Sitamarhi
+        </Eyebrow>
+
+        <h2 className="mt-3 font-serif text-[28px] leading-[1.15] text-[color:var(--charcoal)] md:text-[38px]">
+          A Long-Term Relationship With Place and Community
+        </h2>
+
+        <div className="mt-5 space-y-4">
+          {[
+            "The Foundation's identity is closely connected with Sitamarhi and the communities around it.",
+            "Its institutions, programmes and relationships have developed through sustained presence rather than distant intervention.",
+            "The school, college, healthcare work, social-welfare initiatives, Sita Samahit Sthal and newer rural-regeneration programmes all form part of this long-term regional commitment.",
+            "The Foundation's work is shaped by an understanding that lasting development must remain connected with the realities, aspirations and cultural life of the people it serves.",
+          ].map((p) => (
+            <p
+              key={p.slice(0, 20)}
+              className="font-sans text-[15px] leading-[1.8] text-[color:var(--charcoal)]/85"
+            >
+              {p}
+            </p>
+          ))}
+        </div>
+
+        <p className="mt-6 font-sans text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+          Sitamarhi, Bhadohi, Uttar Pradesh
+        </p>
+      </div>
+    </Reveal>
+  </div>
+</section>
 
         {/* VISION MISSION VALUES */}
         <section className="mt-20 border-y border-[color:var(--border)]/60 bg-[oklch(0.96_0.016_220_/_0.5)] md:mt-28">
