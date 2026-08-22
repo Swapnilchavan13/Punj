@@ -121,7 +121,7 @@ function HealthcareWelfarePage() {
         <HealthcareIntro />
         <HospitalFeature />
         <Outreach />
-        <MedicalCamps />
+        {/* <MedicalCamps /> */}
         <EyeCare />
         <Ambulance />
         <PatientSupport />
@@ -129,7 +129,6 @@ function HealthcareWelfarePage() {
         <WelfareIntro />
         <GroupWeddings />
         <FamilySupport />
-        <EssentialSupport />
         <Vulnerable />
         <CommunityResponse />
         <JourneyOfCare />
@@ -186,18 +185,22 @@ function Hero() {
 
         <Reveal>
           <div className="relative">
-            <Figure
-              asset="healthcare-welfare-hero"
-              alt="Community members being attended to during a Foundation healthcare programme"
-              aspect="16 / 11"
-            />
+        <div className="aspect-[16/11] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/MxxJQ4Q0/Whats-App-Image-2026-08-12-at-3-42-12-PM-2.jpg"
+    className="w-full h-full border-0"
+    title="Community members being attended to during a Foundation healthcare programme"
+  />
+</div>
             <div className="absolute -bottom-8 -left-6 hidden w-[190px] md:block">
               <div className="overflow-hidden rounded-[4px] ring-1 ring-[color:var(--border)] shadow-[0_18px_50px_-24px_rgba(0,0,0,0.4)]">
-                <AssetPlaceholder
-                  name="family-support"
-                  label="Practical support being provided to a family by the Foundation"
-                  aspect="4 / 3"
-                />
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+  src="https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg"
+  alt="Practical support being provided to a family by the Foundation"
+  className="w-full h-full object-cover"
+/>
+</div>
               </div>
             </div>
           </div>
@@ -245,12 +248,13 @@ function Approach() {
                 "linear-gradient(160deg, oklch(0.97 0.018 220 / 0.7), oklch(0.972 0.016 90 / 0.55))",
             }}
           >
-            <Figure
-              asset="healthcare-welfare-archive"
-              alt="Early photograph from the Foundation's healthcare and social-welfare work"
-              aspect="5 / 4"
-              caption="Archival image from the Foundation’s healthcare and welfare work. ADD VERIFIED CAPTION AND DATE."
-            />
+          <div className="aspect-[5/4] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/LXWLLtg9/Whats-App-Image-2026-08-12-at-3-42-16-PM-5.jpg"
+    alt="Early photograph from the Foundation's healthcare and social-welfare work"
+    className="w-full h-full object-cover"
+  />
+</div>
             <p
               className="mt-6 border-l-2 pl-5 font-serif text-[20px] italic leading-[1.45] text-[color:var(--charcoal)]"
               style={{ borderColor: HC }}
@@ -269,7 +273,8 @@ const PILLAR_PANELS = [
   {
     title: "Healthcare",
     accent: HC,
-    asset: "hospital-consultation",
+    image:
+      "https://i.ibb.co/6RMT09vV/Whats-App-Image-2026-08-12-at-3-42-19-PM-2.jpg",
     alt: "Doctor consulting a patient at a Foundation healthcare facility",
     description:
       "Bringing institutional care, medical outreach, eye care, ambulance access, medicines and preventive-health support closer to rural families.",
@@ -287,7 +292,8 @@ const PILLAR_PANELS = [
   {
     title: "Social Welfare",
     accent: SW,
-    asset: "group-wedding-main",
+    image:
+      "https://i.ibb.co/Lz6BvFq2/Screenshot-2026-08-17-163616.png",
     alt: "Couples participating in a Foundation-supported group-wedding ceremony",
     description:
       "Supporting individuals and families through group weddings, household assistance, essential-material distribution and practical help during times of need.",
@@ -319,7 +325,14 @@ function TwoPillars() {
               className="flex h-full flex-col overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)]"
               style={{ background: p.tint }}
             >
-              <AssetPlaceholder name={p.asset} label={p.alt} aspect="16 / 9" />
+              <div className="aspect-[16/9] w-full overflow-hidden">
+                <img
+                  src={p.image}
+                  alt={p.alt}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
               <div className="flex flex-1 flex-col p-7 md:p-9">
                 <span
                   className="font-sans text-[11px] font-medium uppercase tracking-[0.24em]"
@@ -327,12 +340,15 @@ function TwoPillars() {
                 >
                   {p.title}
                 </span>
+
                 <h3 className="mt-3 font-serif text-[30px] leading-tight text-[color:var(--charcoal)]">
                   {p.title}
                 </h3>
+
                 <p className="mt-4 font-sans text-[15px] leading-[1.75] text-muted-foreground">
                   {p.description}
                 </p>
+
                 <ul className="mt-6 grid gap-2 sm:grid-cols-2">
                   {p.areas.map((a) => (
                     <li
@@ -348,8 +364,11 @@ function TwoPillars() {
                     </li>
                   ))}
                 </ul>
+
                 <div className="mt-8 pt-2">
-                  <PrimaryBtn href={p.cta.href}>{p.cta.label}</PrimaryBtn>
+                  <PrimaryBtn href={p.cta.href}>
+                    {p.cta.label}
+                  </PrimaryBtn>
                 </div>
               </div>
             </article>
@@ -386,11 +405,13 @@ function HealthcareIntro() {
           </Body>
         </Reveal>
         <Reveal>
-          <Figure
-            asset="medical-camp-doctor"
-            alt="Doctor consulting a patient at a rural medical camp"
-            aspect="4 / 3"
-          />
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/7trVPqz6/Whats-App-Image-2026-08-12-at-3-42-25-PM-1.jpg"
+    alt="Doctor consulting a patient at a rural medical camp"
+    className="h-full w-full object-cover"
+  />
+</div>
         </Reveal>
       </div>
     </Section>
@@ -451,29 +472,35 @@ function HospitalFeature() {
 
         <Reveal>
           <div className="grid gap-5 sm:grid-cols-2">
-            <Figure
-              className="sm:col-span-2"
-              asset="hospital-exterior"
-              alt="Exterior of Pt. Kanahya Lal Punj Hospital"
-              aspect="16 / 9"
-            />
-            <Figure
-              asset="hospital-interior"
-              alt="Interior of Pt. Kanahya Lal Punj Hospital"
-              aspect="4 / 3"
-            />
-            <Figure
-              asset="hospital-team"
-              alt="Doctors and nursing staff at Pt. Kanahya Lal Punj Hospital"
-              aspect="4 / 3"
-            />
-            <Figure
-              className="sm:col-span-2"
-              asset="hospital-consultation"
-              alt="Doctor consulting a patient at the hospital"
-              aspect="16 / 9"
-              caption="Photographs are published only with appropriate institutional and patient permissions."
-            />
+            <div className="sm:col-span-2 aspect-[16/9] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/35mpZjmT/Whats-App-Image-2026-08-12-at-3-42-35-PM.jpg"
+    alt="Exterior of Pt. Kanahya Lal Punj Hospital"
+    className="h-full w-full object-cover"
+  />
+</div>
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/BHd1YGDn/Whats-App-Image-2026-08-12-at-3-42-29-PM-2.jpg"
+    alt="Interior of Pt. Kanahya Lal Punj Hospital"
+    className="h-full w-full object-cover"
+  />
+</div>
+           <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/FqzgbWqK/Whats-App-Image-2026-08-12-at-3-42-20-PM.jpg"
+    alt="Doctors and nursing staff at Pt. Kanahya Lal Punj Hospital"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+<div className="sm:col-span-2 aspect-[16/9] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg"
+    alt="Doctor consulting a patient at the hospital"
+    className="h-full w-full object-cover"
+  />
+</div>
           </div>
         </Reveal>
       </div>
@@ -506,22 +533,28 @@ function Outreach() {
     <Section>
       <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
         <Reveal>
-          <Figure
-            asset="medical-camp-community"
-            alt="Community members attending a Foundation health camp"
-            aspect="4 / 3"
-          />
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/qM7XcHgD/Whats-App-Image-2026-08-12-at-3-42-21-PM-3.jpg"
+    alt="Community members attending a Foundation health camp"
+    className="h-full w-full object-cover"
+  />
+</div>
           <div className="mt-5 grid grid-cols-2 gap-5">
-            <Figure
-              asset="medical-camp-general"
-              alt="A general medical camp in progress"
-              aspect="4 / 3"
-            />
-            <Figure
-              asset="medical-screening"
-              alt="Basic health screening being conducted at an outreach programme"
-              aspect="4 / 3"
-            />
+           <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/V0dBT4BM/Whats-App-Image-2026-08-12-at-3-42-21-PM.jpg"
+    alt="A general medical camp in progress"
+    className="h-full w-full object-cover"
+  />
+</div>
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/nMfmnn7c/Whats-App-Image-2026-08-12-at-3-42-17-PM-1.jpg"
+    alt="Basic health screening being conducted at an outreach programme"
+    className="h-full w-full object-cover"
+  />
+</div>
           </div>
         </Reveal>
         <Reveal>
@@ -551,99 +584,7 @@ function Outreach() {
   );
 }
 
-/* 7. Medical camps */
-const CAMP_TYPES = [
-  {
-    title: "General health camps",
-    asset: "medical-camp-general",
-    alt: "A general health camp organised in a village",
-  },
-  {
-    title: "Specialist camps",
-    asset: "medical-camp-doctor",
-    alt: "A specialist consulting patients at an outreach camp",
-  },
-  {
-    title: "Screening programmes",
-    asset: "medical-screening",
-    alt: "Health screening being conducted at a camp",
-  },
-  {
-    title: "Preventive-health sessions",
-    asset: "preventive-health-session",
-    alt: "Community health-awareness session in progress",
-  },
-  {
-    title: "Village outreach",
-    asset: "medical-camp-community",
-    alt: "Community members gathered at a village outreach programme",
-  },
-  {
-    title: "Referral support",
-    asset: "hospital-patient-support",
-    alt: "A patient receiving practical guidance and assistance",
-  },
-];
 
-const CAMP_FIELDS = [
-  "Camp date",
-  "Location",
-  "Doctors or institution involved",
-  "Services offered",
-  "Eligibility",
-  "Participants",
-  "Report",
-  "Contact",
-];
-
-function MedicalCamps() {
-  return (
-    <Section tint="oklch(0.974 0.012 95 / 0.45)">
-      <Reveal className="max-w-3xl">
-        <Eyebrow tone={HC}>Medical Camps</Eyebrow>
-        <H2>Practical Healthcare, Closer to Home</H2>
-        <p className="mt-6 font-sans text-[15.5px] leading-[1.8] text-muted-foreground">
-          Medical camps provide an opportunity for rural families to access consultations, basic
-          screening, health information and referral guidance within or near their communities.
-        </p>
-      </Reveal>
-
-      <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {CAMP_TYPES.map((c) => (
-          <li key={c.title}>
-            <article className="flex h-full flex-col overflow-hidden rounded-[6px] bg-[color:var(--card)]/70 ring-1 ring-[color:var(--border)]">
-              <AssetPlaceholder name={c.asset} label={c.alt} aspect="16 / 10" />
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
-                  {c.title}
-                </h3>
-                <dl className="mt-4 space-y-2 font-sans text-[12.5px] text-muted-foreground">
-                  {CAMP_FIELDS.map((f) => (
-                    <div key={f} className="flex flex-wrap items-baseline gap-2">
-                      <dt className="text-[color:var(--charcoal)]/55">{f}:</dt>
-                      <dd>
-                        <Pending>Add verified {f.toLowerCase()}</Pending>
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </article>
-          </li>
-        ))}
-      </ul>
-
-      <div className="mt-10 flex flex-wrap gap-3">
-        <PrimaryBtn href="/healthcare-social-welfare/medical-camps">
-          View Upcoming Medical Camps
-        </PrimaryBtn>
-        <GhostBtn href="/healthcare-social-welfare/medical-camps/reports">
-          View Past Camp Reports
-        </GhostBtn>
-      </div>
-    </Section>
-  );
-}
 
 /* 8. Eye care */
 const EYE_STEPS = [
@@ -693,18 +634,29 @@ function EyeCare() {
         </Reveal>
         <Reveal>
           <div className="grid gap-5 sm:grid-cols-2">
-            <Figure
-              className="sm:col-span-2"
-              asset="eye-care-screening"
-              alt="Eye screening being conducted during an outreach programme"
-              aspect="16 / 9"
-            />
-            <Figure asset="eye-care-camp" alt="An eye-care camp in progress" aspect="4 / 3" />
-            <Figure
-              asset="eye-care-support"
-              alt="A patient receiving vision-related support"
-              aspect="4 / 3"
-            />
+            <div className="sm:col-span-2 aspect-[16/9] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/hJGWHwgS/Whats-App-Image-2026-08-12-at-3-42-25-PM-2.jpg"
+    alt="Eye screening being conducted during an outreach programme"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+<div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/FL0SNNsr/Whats-App-Image-2026-08-12-at-3-42-27-PM-2.jpg"
+    alt="An eye-care camp in progress"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+<div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/4gFgGBH3/Whats-App-Image-2026-08-12-at-3-42-27-PM.jpg"
+    alt="A patient receiving vision-related support"
+    className="h-full w-full object-cover"
+  />
+</div>
           </div>
         </Reveal>
       </div>
@@ -721,17 +673,21 @@ function Ambulance() {
     <Section tint="oklch(0.972 0.016 225 / 0.45)">
       <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
         <Reveal>
-          <Figure
-            asset="ambulance-vehicle"
-            alt="Foundation-supported ambulance"
-            aspect="4 / 3"
-          />
-          <Figure
-            className="mt-5"
-            asset="ambulance-service"
-            alt="Ambulance-related assistance being provided to a patient"
-            aspect="16 / 9"
-          />
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/vCkHBc6C/Whats-App-Image-2026-08-12-at-3-42-14-PM-2.jpg"
+    alt="Foundation-supported ambulance"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+<div className="mt-5 aspect-[16/9] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/5gtn76Th/Whats-App-Image-2026-08-12-at-3-42-13-PM-1.jpg"
+    alt="Ambulance-related assistance being provided to a patient"
+    className="h-full w-full object-cover"
+  />
+</div>
         </Reveal>
         <Reveal>
           <Eyebrow tone={HC}>Ambulance and Access Support</Eyebrow>
@@ -832,18 +788,21 @@ function PatientSupport() {
           </ul>
         </Reveal>
         <Reveal>
-          <Figure
-            asset="medicine-support"
-            alt="Medicines being provided as part of a Foundation patient-support activity"
-            aspect="4 / 3"
-          />
-          <Figure
-            className="mt-5"
-            asset="hospital-patient-support"
-            alt="Practical assistance being offered to a patient at the hospital"
-            aspect="16 / 9"
-            caption="No claim is made that medicines or diagnostics are provided free of charge."
-          />
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/70fw7wM/Whats-App-Image-2026-08-12-at-3-42-24-PM-2.jpg"
+    alt="Medicines being provided as part of a Foundation patient-support activity"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+<div className="mt-5 aspect-[16/9] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/Kzqp3J3z/Whats-App-Image-2026-08-12-at-3-42-26-PM.jpg"
+    alt="Practical assistance being offered to a patient at the hospital"
+    className="h-full w-full object-cover"
+  />
+</div>
         </Reveal>
       </div>
     </Section>
@@ -865,17 +824,21 @@ function Preventive() {
     <Section tint="oklch(0.974 0.012 95 / 0.45)">
       <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
         <Reveal>
-          <Figure
-            asset="preventive-health-session"
-            alt="Community health-awareness session"
-            aspect="4 / 3"
-          />
-          <Figure
-            className="mt-5"
-            asset="women-health-session"
-            alt="Women's health and wellbeing session in progress"
-            aspect="16 / 9"
-          />
+         <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/7Njbjf1y/Whats-App-Image-2026-08-12-at-3-42-28-PM.jpg"
+    alt="Community health-awareness session"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+<div className="mt-5 aspect-[16/9] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/rfsMBWfX/Whats-App-Image-2026-08-12-at-3-42-31-PM-2.jpg"
+    alt="Women's health and wellbeing session in progress"
+    className="h-full w-full object-cover"
+  />
+</div>
         </Reveal>
         <Reveal>
           <Eyebrow tone={HC}>Health Awareness</Eyebrow>
@@ -938,11 +901,13 @@ function WelfareIntro() {
           </Body>
         </Reveal>
         <Reveal>
-          <Figure
-            asset="family-support"
-            alt="Practical support being provided to a family by the Foundation"
-            aspect="4 / 3"
-          />
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/YFhGGqmy/Whats-App-Image-2026-08-12-at-3-42-18-PM-2.jpg"
+    alt="Practical support being provided to a family by the Foundation"
+    className="h-full w-full object-cover"
+  />
+</div>
         </Reveal>
       </div>
     </Section>
@@ -968,23 +933,31 @@ function GroupWeddings() {
       <div className="grid gap-12 lg:grid-cols-[0.98fr_1.02fr] lg:gap-16">
         <Reveal>
           <div className="grid gap-5">
-            <Figure
-              asset="group-wedding-main"
-              alt="Couples participating in a Foundation-supported group-wedding ceremony"
-              aspect="16 / 10"
-            />
-            <div className="grid grid-cols-2 gap-5">
-              <Figure
-                asset="group-wedding-couples"
-                alt="Participating couples at a Foundation group wedding"
-                aspect="4 / 3"
-              />
-              <Figure
-                asset="group-wedding-ceremony"
-                alt="Wider view of a community group-wedding ceremony"
-                aspect="4 / 3"
-              />
-            </div>
+            <div className="aspect-[16/10] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/5xt2Z2GG/Screenshot-2026-08-20-183214.png"
+    alt="Couples participating in a Foundation-supported group-wedding ceremony"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+<div className="grid grid-cols-2 gap-5">
+  <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+    <img
+      src="https://i.ibb.co/wZkZ5L8G/Screenshot-2026-08-20-183323.png"
+      alt="Participating couples at a Foundation group wedding"
+      className="h-full w-full object-cover"
+    />
+  </div>
+
+  <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+    <img
+      src="https://i.ibb.co/VYZ8btph/Screenshot-2026-08-20-183442.png"
+      alt="Wider view of a community group-wedding ceremony"
+      className="h-full w-full object-cover"
+    />
+  </div>
+</div>
           </div>
         </Reveal>
         <Reveal>
@@ -1054,29 +1027,37 @@ function FamilySupport() {
       <div className="mt-12 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
         <Reveal>
           <div className="grid grid-cols-2 gap-5">
-            <Figure
-              className="col-span-2"
-              asset="family-support"
-              alt="A household receiving practical assistance from the Foundation"
-              aspect="16 / 9"
-            />
-            <Figure
-              asset="ration-support"
-              alt="Ration support being organised for families"
-              aspect="1 / 1"
-            />
-            <Figure
-              asset="blanket-distribution"
-              alt="Blankets being provided during a seasonal support programme"
-              aspect="1 / 1"
-            />
-            <Figure
-              className="col-span-2"
-              asset="clothing-support"
-              alt="Clothing and essential-material support activity"
-              aspect="16 / 9"
-              caption="Images are selected to represent programmes respectfully, without identifying families unnecessarily."
-            />
+            <div className="col-span-2 aspect-[16/9] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg"
+    alt="A household receiving practical assistance from the Foundation"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+<div className="aspect-square w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/5gqVhRmq/Whats-App-Image-2026-08-12-at-3-42-26-PM.jpg"
+    alt="Ration support being organised for families"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+<div className="aspect-square w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/4RZcGrz1/Whats-App-Image-2026-08-12-at-3-42-44-PM-2.jpg"
+    alt="Blankets being provided during a seasonal support programme"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+<div className="col-span-2 aspect-[16/9] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/PvSwsfkv/Whats-App-Image-2026-08-12-at-3-42-49-PM-1.jpg"
+    alt="Clothing and essential-material support activity"
+    className="h-full w-full object-cover"
+  />
+</div>
           </div>
         </Reveal>
         <Reveal>
@@ -1099,100 +1080,34 @@ function FamilySupport() {
   );
 }
 
-/* 15. Ration, clothing, blankets */
-const ESSENTIALS = [
-  {
-    title: "Food and Ration Assistance",
-    text: "Supporting verified household food needs during periods of hardship.",
-    asset: "ration-support",
-    alt: "Ration support being provided to families",
-  },
-  {
-    title: "Clothing Assistance",
-    text: "Providing clothing support where a programme has been verified.",
-    asset: "clothing-support",
-    alt: "Clothing support activity organised by the Foundation",
-  },
-  {
-    title: "Blanket and Seasonal Assistance",
-    text: "Supporting vulnerable families, elderly people or individuals during colder months or difficult seasonal conditions.",
-    asset: "blanket-distribution",
-    alt: "Blankets being distributed during colder months",
-  },
-];
 
-const ESSENTIAL_FIELDS = [
-  "Eligibility",
-  "Geography",
-  "Frequency",
-  "Families reached",
-  "Partner information",
-  "Programme report",
-];
-
-function EssentialSupport() {
-  return (
-    <Section accent={SW}>
-      <Reveal className="max-w-3xl">
-        <Eyebrow tone={SW}>Essential Support</Eyebrow>
-        <H2>Responding to Immediate Household Needs</H2>
-      </Reveal>
-      <ul className="mt-12 grid gap-6 lg:grid-cols-3">
-        {ESSENTIALS.map((e) => (
-          <li key={e.title}>
-            <article className="flex h-full flex-col overflow-hidden rounded-[6px] bg-[color:var(--card)]/70 ring-1 ring-[color:var(--border)]">
-              <AssetPlaceholder name={e.asset} label={e.alt} aspect="16 / 10" />
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-serif text-[24px] leading-tight text-[color:var(--charcoal)]">
-                  {e.title}
-                </h3>
-                <p className="mt-3 font-sans text-[14.5px] leading-[1.7] text-muted-foreground">
-                  {e.text}
-                </p>
-                <dl className="mt-5 space-y-2 font-sans text-[12.5px] text-muted-foreground">
-                  {ESSENTIAL_FIELDS.map((f) => (
-                    <div key={f} className="flex flex-wrap items-baseline gap-2">
-                      <dt className="text-[color:var(--charcoal)]/55">{f}:</dt>
-                      <dd>
-                        <Pending>Awaiting verified data</Pending>
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </article>
-          </li>
-        ))}
-      </ul>
-    </Section>
-  );
-}
 
 /* 16. Women, elderly, vulnerable families */
 const VULNERABLE = [
   {
     title: "Women and family wellbeing",
-    asset: "women-community-support",
+    image: "https://i.ibb.co/0ywKn6Zd/Whats-App-Image-2026-08-12-at-3-42-42-PM-3.jpg",
     alt: "Women taking part in a Foundation community-support programme",
   },
   {
     title: "Elderly community members",
-    asset: "elderly-support",
+    image: "https://i.ibb.co/rK7D19mc/Whats-App-Image-2026-08-12-at-3-42-31-PM-2.jpg",
     alt: "An elderly community member being assisted by the Foundation",
   },
   {
     title: "People with health-related needs",
-    asset: "hospital-patient-support",
+    image: "https://i.ibb.co/B0vQ6Nf/Whats-App-Image-2026-08-12-at-3-42-27-PM-1.jpg",
     alt: "A patient receiving practical assistance",
   },
   {
     title: "Vulnerable households",
-    asset: "family-support",
+    image:
+      "https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg",
     alt: "A household receiving practical support",
   },
   {
     title: "Emergency family assistance",
-    asset: "seasonal-support",
+    image: "https://i.ibb.co/sdDkLrJM/Whats-App-Image-2026-08-12-at-3-42-44-PM-1.jpg",
     alt: "Community response activity during a period of seasonal need",
   },
 ];
@@ -1204,18 +1119,23 @@ function Vulnerable() {
         <Reveal>
           <Eyebrow tone={SW}>Community Wellbeing</Eyebrow>
           <H2>Supporting People Who May Face Greater Vulnerability</H2>
+
           <Body className="mt-7 max-w-xl">
-            <p>Different individuals and families experience vulnerability in different ways.</p>
             <p>
-              Age, health, household circumstances, income pressure and social conditions may
-              influence the type of support required.
+              Different individuals and families experience vulnerability in
+              different ways.
             </p>
             <p>
-              Programmes respond to these realities without reducing people to labels or portraying
-              them without dignity.
+              Age, health, household circumstances, income pressure and social
+              conditions may influence the type of support required.
+            </p>
+            <p>
+              Programmes respond to these realities without reducing people to
+              labels or portraying them without dignity.
             </p>
           </Body>
         </Reveal>
+
         <Reveal>
           <ul className="grid gap-4 sm:grid-cols-2">
             {VULNERABLE.map((v) => (
@@ -1223,11 +1143,19 @@ function Vulnerable() {
                 key={v.title}
                 className="overflow-hidden rounded-[6px] bg-[color:var(--card)]/70 ring-1 ring-[color:var(--border)]"
               >
-                <AssetPlaceholder name={v.asset} label={v.alt} aspect="4 / 3" />
+                <div className="aspect-[4/3] w-full overflow-hidden">
+                  <img
+                    src={v.image}
+                    alt={v.alt}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+
                 <div className="p-5">
                   <h3 className="font-sans text-[14px] font-medium text-[color:var(--charcoal)]">
                     {v.title}
                   </h3>
+
                   <p className="mt-2">
                     <Pending>Programme awaiting verification</Pending>
                   </p>
@@ -1240,7 +1168,6 @@ function Vulnerable() {
     </Section>
   );
 }
-
 /* 17. Seasonal and emergency response */
 const RESPONSE_FIELDS = [
   "Situation or need",
@@ -1258,11 +1185,13 @@ function CommunityResponse() {
     <Section accent={SW}>
       <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
         <Reveal>
-          <Figure
-            asset="seasonal-support"
-            alt="Families receiving seasonal support from the Foundation"
-            aspect="4 / 3"
-          />
+         <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/JwCG0Q6S/Screenshot-2026-08-22-113237.png"
+    alt="Families receiving seasonal support from the Foundation"
+    className="h-full w-full object-cover"
+  />
+</div>
         </Reveal>
         <Reveal>
           <Eyebrow tone={SW}>Community Response</Eyebrow>
@@ -1478,28 +1407,30 @@ function Impact() {
 /* 20. Stories */
 const STORIES = [
   {
-    asset: "healthcare-story-01",
+    image: "https://i.ibb.co/x815wXvN/Screenshot-2026-08-22-113747.png",
     alt: "Photograph accompanying a healthcare story from a Foundation programme",
     kind: "Healthcare",
     accent: HC,
     programme: "Hospital and patient support",
   },
   {
-    asset: "healthcare-story-02",
+    image: "https://i.ibb.co/n8b6LRYB/Screenshot-2026-08-22-113614.png",
     alt: "Photograph accompanying a medical-outreach story",
     kind: "Healthcare",
     accent: HC,
     programme: "Medical outreach and eye care",
   },
   {
-    asset: "welfare-story-01",
+    image: "https://i.ibb.co/3mpg56XD/DSC-0014.jpg",
     alt: "Photograph accompanying a community welfare story",
     kind: "Social Welfare",
     accent: SW,
     programme: "Group-wedding programme",
   },
+  
+
   {
-    asset: "welfare-story-02",
+    image: "https://i.ibb.co/DfD4Sd7R/DSC-0174.jpg",
     alt: "Photograph accompanying a family-support story",
     kind: "Social Welfare",
     accent: SW,
@@ -1513,6 +1444,7 @@ function Stories() {
       <Reveal className="max-w-3xl">
         <Eyebrow>Stories of Care and Community</Eyebrow>
         <H2>The People Behind the Programmes</H2>
+
         <p className="mt-6 font-sans text-[15.5px] leading-[1.8] text-muted-foreground">
           The meaning of healthcare and social support is best understood through the experiences of
           individuals, families, programme teams and communities.
@@ -1521,9 +1453,17 @@ function Stories() {
 
       <ul className="mt-12 grid gap-6 sm:grid-cols-2">
         {STORIES.map((s) => (
-          <li key={s.asset}>
+          <li key={s.image}>
             <article className="flex h-full flex-col overflow-hidden rounded-[6px] bg-[color:var(--offwhite)] ring-1 ring-[color:var(--border)]">
-              <AssetPlaceholder name={s.asset} label={s.alt} aspect="16 / 10" />
+              
+              <div className="aspect-[16/10] w-full overflow-hidden">
+                <img
+                  src={s.image}
+                  alt={s.alt}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
               <div className="flex flex-1 flex-col p-6">
                 <span
                   className="font-sans text-[10.5px] font-medium uppercase tracking-[0.24em]"
@@ -1531,14 +1471,17 @@ function Stories() {
                 >
                   {s.kind}
                 </span>
+
                 <h3 className="mt-3 font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
                   Story awaiting approval
                 </h3>
+
                 <p className="mt-3 font-sans text-[14px] leading-[1.7] text-muted-foreground">
                   Related programme: {s.programme}. Stories are published only with the consent of
                   the people involved. Where a name or face cannot be published, the account is
                   anonymised and identifying details are withheld.
                 </p>
+
                 <dl className="mt-5 space-y-2 font-sans text-[12.5px] text-muted-foreground">
                   {["Location", "Context", "Assistance provided", "Outcome", "Date"].map((f) => (
                     <div key={f} className="flex flex-wrap items-baseline gap-2">
@@ -1549,6 +1492,7 @@ function Stories() {
                     </div>
                   ))}
                 </dl>
+
                 <div className="mt-6">
                   <GhostBtn href="/stories-updates/healthcare-social-welfare">
                     Read Full Story
@@ -1870,8 +1814,10 @@ function Enquiries() {
 }
 
 /* 23. Gallery */
+
 type GalleryItem = {
   asset: string;
+  image: string;
   alt: string;
   caption: string;
   programme: string;
@@ -1879,22 +1825,135 @@ type GalleryItem = {
 };
 
 const GALLERY: GalleryItem[] = [
-  { asset: "hospital-exterior", alt: "Exterior of Pt. Kanahya Lal Punj Hospital", caption: "Hospital campus", programme: "Pt. Kanahya Lal Punj Hospital", filters: ["Hospital"] },
-  { asset: "hospital-interior", alt: "Interior of Pt. Kanahya Lal Punj Hospital", caption: "Inside the hospital", programme: "Pt. Kanahya Lal Punj Hospital", filters: ["Hospital"] },
-  { asset: "hospital-consultation", alt: "Doctor consulting a patient at the hospital", caption: "Consultation", programme: "Pt. Kanahya Lal Punj Hospital", filters: ["Hospital"] },
-  { asset: "hospital-team", alt: "Doctors and nursing staff at the hospital", caption: "Hospital team", programme: "Pt. Kanahya Lal Punj Hospital", filters: ["Hospital"] },
-  { asset: "medical-camp-general", alt: "A general medical camp in progress", caption: "Medical camp", programme: "Medical outreach", filters: ["Medical Camps"] },
-  { asset: "medical-camp-doctor", alt: "Doctor consulting a patient at a rural medical camp", caption: "Camp consultation", programme: "Medical outreach", filters: ["Medical Camps"] },
-  { asset: "medical-camp-community", alt: "Community members attending a Foundation health camp", caption: "Community participation", programme: "Medical outreach", filters: ["Medical Camps", "Community Programmes"] },
-  { asset: "eye-care-screening", alt: "Eye screening being conducted during an outreach programme", caption: "Eye screening", programme: "Eye-care initiatives", filters: ["Eye Care"] },
-  { asset: "eye-care-camp", alt: "An eye-care camp in progress", caption: "Eye-care camp", programme: "Eye-care initiatives", filters: ["Eye Care"] },
-  { asset: "ambulance-vehicle", alt: "Foundation-supported ambulance", caption: "Ambulance support", programme: "Ambulance and access", filters: ["Ambulance"] },
-  { asset: "group-wedding-main", alt: "Couples participating in a Foundation-supported group-wedding ceremony", caption: "Group wedding", programme: "Group-wedding programme", filters: ["Group Weddings"] },
-  { asset: "group-wedding-ceremony", alt: "Wider view of a community group-wedding ceremony", caption: "Ceremony", programme: "Group-wedding programme", filters: ["Group Weddings", "Community Programmes"] },
-  { asset: "family-support", alt: "Practical support being provided to a family", caption: "Family support", programme: "Family and household support", filters: ["Family Support"] },
-  { asset: "blanket-distribution", alt: "Blankets being provided during a seasonal support programme", caption: "Seasonal support", programme: "Seasonal assistance", filters: ["Family Support"] },
-  { asset: "preventive-health-session", alt: "Community health-awareness session", caption: "Health awareness", programme: "Preventive healthcare", filters: ["Community Programmes"] },
-  { asset: "healthcare-welfare-group-photo", alt: "Programme teams and community participants together", caption: "Programme team and community", programme: "Healthcare and social welfare", filters: ["Community Programmes"] },
+  {
+    asset: "hospital-exterior",
+    image: "https://i.ibb.co/FL0SNNsr/Whats-App-Image-2026-08-12-at-3-42-27-PM-2.jpg",
+    alt: "Exterior of Pt. Kanahya Lal Punj Hospital",
+    caption: "Hospital campus",
+    programme: "Pt. Kanahya Lal Punj Hospital",
+    filters: ["Hospital"],
+  },
+  {
+    asset: "hospital-interior",
+    image: "https://i.ibb.co/hJGWHwgS/Whats-App-Image-2026-08-12-at-3-42-25-PM-2.jpg",
+    alt: "Interior of Pt. Kanahya Lal Punj Hospital",
+    caption: "Inside the hospital",
+    programme: "Pt. Kanahya Lal Punj Hospital",
+    filters: ["Hospital"],
+  },
+  {
+    asset: "hospital-consultation",
+    image: "https://i.ibb.co/rfsMBWfX/Whats-App-Image-2026-08-12-at-3-42-31-PM-2.jpg",
+    alt: "Doctor consulting a patient at the hospital",
+    caption: "Consultation",
+    programme: "Pt. Kanahya Lal Punj Hospital",
+    filters: ["Hospital"],
+  },
+  {
+    asset: "hospital-team",
+    image: "https://i.ibb.co/B0vQ6Nf/Whats-App-Image-2026-08-12-at-3-42-27-PM-1.jpg",
+    alt: "Doctors and nursing staff at the hospital",
+    caption: "Hospital team",
+    programme: "Pt. Kanahya Lal Punj Hospital",
+    filters: ["Hospital"],
+  },
+  {
+    asset: "medical-camp-general",
+    image: "https://i.ibb.co/FqzgbWqK/Whats-App-Image-2026-08-12-at-3-42-20-PM.jpg",
+    alt: "A general medical camp in progress",
+    caption: "Medical camp",
+    programme: "Medical outreach",
+    filters: ["Medical Camps"],
+  },
+  {
+    asset: "medical-camp-doctor",
+    image: "https://i.ibb.co/BHd1YGDn/Whats-App-Image-2026-08-12-at-3-42-29-PM-2.jpg",
+    alt: "Doctor consulting a patient at a rural medical camp",
+    caption: "Camp consultation",
+    programme: "Medical outreach",
+    filters: ["Medical Camps"],
+  },
+  {
+    asset: "medical-camp-community",
+    image: "https://i.ibb.co/MxxJQ4Q0/Whats-App-Image-2026-08-12-at-3-42-12-PM-2.jpg",
+    alt: "Community members attending a Foundation health camp",
+    caption: "Community participation",
+    programme: "Medical outreach",
+    filters: ["Medical Camps", "Community Programmes"],
+  },
+  {
+    asset: "eye-care-screening",
+    image: "https://i.ibb.co/MDC83b62/Screenshot-2026-08-22-123751.png",
+    alt: "Eye screening being conducted during an outreach programme",
+    caption: "Eye screening",
+    programme: "Eye-care initiatives",
+    filters: ["Eye Care"],
+  },
+  {
+    asset: "eye-care-camp",
+    image: "https://i.ibb.co/B0vQ6Nf/Whats-App-Image-2026-08-12-at-3-42-27-PM-1.jpg",
+    alt: "An eye-care camp in progress",
+    caption: "Eye-care camp",
+    programme: "Eye-care initiatives",
+    filters: ["Eye Care"],
+  },
+  {
+    asset: "ambulance-vehicle",
+    image: "https://i.ibb.co/7Hg0JRy/Whats-App-Image-2026-08-12-at-3-42-28-PM.jpg",
+    alt: "Foundation-supported ambulance",
+    caption: "Ambulance support",
+    programme: "Ambulance and access",
+    filters: ["Ambulance"],
+  },
+  {
+    asset: "group-wedding-main",
+    image: "https://i.ibb.co/VYZ8btph/Screenshot-2026-08-20-183442.png",
+    alt: "Couples participating in a Foundation-supported group-wedding ceremony",
+    caption: "Group wedding",
+    programme: "Group-wedding programme",
+    filters: ["Group Weddings"],
+  },
+  {
+    asset: "group-wedding-ceremony",
+    image: "https://i.ibb.co/DfD4Sd7R/DSC-0174.jpg",
+    alt: "Wider view of a community group-wedding ceremony",
+    caption: "Ceremony",
+    programme: "Group-wedding programme",
+    filters: ["Group Weddings", "Community Programmes"],
+  },
+  {
+    asset: "family-support",
+    image:
+      "https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg",
+    alt: "Practical support being provided to a family",
+    caption: "Family support",
+    programme: "Family and household support",
+    filters: ["Family Support"],
+  },
+  {
+    asset: "blanket-distribution",
+    image: "https://i.ibb.co/NdXPKFFh/New-Picture-6.png",
+    alt: "Blankets being provided during a seasonal support programme",
+    caption: "Seasonal support",
+    programme: "Seasonal assistance",
+    filters: ["Family Support"],
+  },
+  {
+    asset: "preventive-health-session",
+    image: "https://i.ibb.co/6RMT09vV/Whats-App-Image-2026-08-12-at-3-42-19-PM-2.jpg",
+    alt: "Community health-awareness session",
+    caption: "Health awareness",
+    programme: "Preventive healthcare",
+    filters: ["Community Programmes"],
+  },
+  {
+    asset: "healthcare-welfare-group-photo",
+    image: "https://i.ibb.co/qM7XcHgD/Whats-App-Image-2026-08-12-at-3-42-21-PM-3.jpg",
+    alt: "Programme teams and community participants together",
+    caption: "Programme team and community",
+    programme: "Healthcare and social welfare",
+    filters: ["Community Programmes"],
+  },
 ];
 
 const GALLERY_FILTERS = [
@@ -1911,35 +1970,54 @@ const GALLERY_FILTERS = [
 function Gallery() {
   const [filter, setFilter] = useState("All");
   const [active, setActive] = useState<GalleryItem | null>(null);
+
   const closeRef = useRef<HTMLButtonElement>(null);
 
   const items = useMemo(
-    () => (filter === "All" ? GALLERY : GALLERY.filter((g) => g.filters.includes(filter))),
+    () =>
+      filter === "All"
+        ? GALLERY
+        : GALLERY.filter((g) => g.filters.includes(filter)),
     [filter],
   );
 
   useEffect(() => {
     if (!active) return;
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActive(null);
+      if (e.key === "Escape") {
+        setActive(null);
+      }
     };
+
     document.addEventListener("keydown", onKey);
+
     closeRef.current?.focus();
-    return () => document.removeEventListener("keydown", onKey);
+
+    return () => {
+      document.removeEventListener("keydown", onKey);
+    };
   }, [active]);
 
   return (
     <Section tint="oklch(0.974 0.012 95 / 0.45)">
       <Reveal className="max-w-3xl">
         <Eyebrow>Care and Community in Action</Eyebrow>
+
         <H2>Photographs From Our Programmes</H2>
+
         <p className="mt-6 font-sans text-[15.5px] leading-[1.8] text-muted-foreground">
-          Images are published only with appropriate permissions and with respect for the privacy of
-          everyone shown.
+          Images are published only with appropriate permissions and with
+          respect for the privacy of everyone shown.
         </p>
       </Reveal>
 
-      <FilterBar options={GALLERY_FILTERS} value={filter} onChange={setFilter} label="Filter gallery" />
+      <FilterBar
+        options={GALLERY_FILTERS}
+        value={filter}
+        onChange={setFilter}
+        label="Filter gallery"
+      />
 
       <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((g) => (
@@ -1949,11 +2027,22 @@ function Gallery() {
               onClick={() => setActive(g)}
               className="group block w-full overflow-hidden rounded-[5px] text-left ring-1 ring-[color:var(--border)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent-healthcare)]"
             >
-              <AssetPlaceholder name={g.asset} label={g.alt} aspect="4 / 3" />
+              {/* Gallery Image */}
+              <div className="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src={g.image}
+                  alt={g.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Caption */}
               <span className="block bg-[color:var(--offwhite)] p-4">
                 <span className="block font-sans text-[13px] text-[color:var(--charcoal)]">
                   {g.caption}
                 </span>
+
                 <span className="mt-1 block font-sans text-[12px] text-muted-foreground">
                   {g.programme} · Location and date to be verified
                 </span>
@@ -1963,6 +2052,7 @@ function Gallery() {
         ))}
       </ul>
 
+      {/* Image Popup */}
       {active ? (
         <div
           role="dialog"
@@ -1970,21 +2060,36 @@ function Gallery() {
           aria-label={active.alt}
           className="fixed inset-0 z-[80] flex items-center justify-center p-5"
         >
+          {/* Background Overlay */}
           <div
             className="absolute inset-0 bg-[color:var(--charcoal)]/70 backdrop-blur-sm"
             onClick={() => setActive(null)}
           />
+
+          {/* Popup */}
           <div className="relative w-full max-w-3xl overflow-hidden rounded-[6px] bg-[color:var(--ivory)]">
-            <AssetPlaceholder name={active.asset} label={active.alt} aspect="16 / 10" />
+            {/* Full Image */}
+            <div className="aspect-[16/10] w-full overflow-hidden">
+              <img
+                src={active.image}
+                alt={active.alt}
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            {/* Popup Information */}
             <div className="flex items-start justify-between gap-6 p-6">
               <div>
                 <p className="font-serif text-[20px] text-[color:var(--charcoal)]">
                   {active.caption}
                 </p>
+
                 <p className="mt-1 font-sans text-[13px] text-muted-foreground">
                   {active.programme} · Location and date to be verified
                 </p>
               </div>
+
+              {/* Close Button */}
               <button
                 ref={closeRef}
                 type="button"
@@ -2000,15 +2105,39 @@ function Gallery() {
     </Section>
   );
 }
-
 /* 24. Latest updates */
 const UPDATE_CATEGORIES = [
-  { label: "Hospital Update", asset: "hospital-exterior", accent: HC },
-  { label: "Medical Camp", asset: "medical-camp-general", accent: HC },
-  { label: "Eye Care", asset: "eye-care-camp", accent: HC },
-  { label: "Ambulance", asset: "ambulance-vehicle", accent: HC },
-  { label: "Group Wedding", asset: "group-wedding-couples", accent: SW },
-  { label: "Family Support", asset: "ration-support", accent: SW },
+  {
+    label: "Hospital Update",
+    image: "https://i.ibb.co/nMfmnn7c/Whats-App-Image-2026-08-12-at-3-42-17-PM-1.jpg",
+    accent: HC,
+  },
+  {
+    label: "Medical Camp",
+    image: "https://i.ibb.co/x815wXvN/Screenshot-2026-08-22-113747.png",
+    accent: HC,
+  },
+  {
+    label: "Eye Care",
+    image: "https://i.ibb.co/MDC83b62/Screenshot-2026-08-22-123751.png",
+    accent: HC,
+  },
+  {
+    label: "Ambulance",
+    image: "https://i.ibb.co/vCkHBc6C/Whats-App-Image-2026-08-12-at-3-42-14-PM-2.jpg",
+    accent: HC,
+  },
+  {
+    label: "Group Wedding",
+    image: "https://i.ibb.co/3mpg56XD/DSC-0014.jpg",
+    accent: SW,
+  },
+  {
+    label: "Family Support",
+    image:
+      "https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg",
+    accent: SW,
+  },
 ];
 
 function Updates() {
@@ -2026,7 +2155,16 @@ function Updates() {
               key={c.label}
               className="overflow-hidden rounded-[6px] bg-[color:var(--offwhite)] ring-1 ring-[color:var(--border)]"
             >
-              <AssetPlaceholder name={c.asset} label={c.label} aspect="16 / 10" />
+              {/* Image */}
+              <div className="aspect-[16/10] w-full overflow-hidden">
+                <img
+                  src={c.image}
+                  alt={c.label}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
               <div className="p-6">
                 <p
                   className="font-sans text-[10.5px] font-medium uppercase tracking-[0.24em]"
@@ -2034,16 +2172,21 @@ function Updates() {
                 >
                   {c.label}
                 </p>
+
                 <p className="mt-2 font-sans text-[12px] text-muted-foreground">
                   Date to be verified
                 </p>
+
                 <div className="mt-4">
-                  <Pending>Add verified healthcare or welfare update</Pending>
+                  <Pending>
+                    Add verified healthcare or welfare update
+                  </Pending>
                 </div>
               </div>
             </li>
           ))}
         </ul>
+
         <div className="mt-10">
           <GhostBtn href="/stories-updates/healthcare-social-welfare">
             View All Healthcare &amp; Social Welfare Updates
@@ -2080,12 +2223,13 @@ function Closing() {
           </div>
         </Reveal>
         <Reveal>
-          <Figure
-            asset="healthcare-welfare-group-photo"
-            alt="Programme teams and community participants photographed together"
-            aspect="4 / 3"
-            caption="Group photograph published with the consent of those shown."
-          />
+         <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+  <img
+    src="https://i.ibb.co/x815wXvN/Screenshot-2026-08-22-113747.png"
+    alt="Programme teams and community participants photographed together"
+    className="h-full w-full object-cover"
+  />
+</div>
         </Reveal>
       </div>
     </Section>
