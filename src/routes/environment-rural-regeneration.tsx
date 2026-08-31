@@ -272,83 +272,103 @@ function EnvironmentPage() {
 function Hero() {
   return (
     <section
-      aria-labelledby="env-hero-heading"
-      className="relative overflow-hidden border-b border-[color:var(--border)]"
-    >
-      <div className="absolute inset-0">
-        <AssetPlaceholder name="environment-hero" label="Environment hero" />
-      </div>
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, oklch(0.22 0.02 90 / 0.72) 0%, oklch(0.24 0.03 120 / 0.55) 45%, oklch(0.2 0.02 90 / 0.82) 100%)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-[0.18]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, transparent 0 26px, oklch(0.95 0.02 120 / 0.35) 26px 27px)",
-        }}
-      />
-      <div className="relative mx-auto w-full max-w-[1360px] px-5 pb-24 pt-36 md:px-10 md:pb-32 md:pt-48">
-        <p className="font-sans text-[11px] font-medium uppercase tracking-[0.3em] text-[color:var(--ivory)]/80">
-          Environment and Rural Regeneration
-        </p>
-        <h1
-          id="env-hero-heading"
-          className="mt-6 max-w-4xl font-serif text-[42px] leading-[1.03] text-[color:var(--ivory)] md:text-[72px]"
-        >
-          Restoring the Natural Foundations of Rural Life
-        </h1>
-        <div className="mt-8 max-w-2xl space-y-5 font-sans text-[15.5px] leading-[1.85] text-[color:var(--ivory)]/85">
-          <p>
-            The Pt. Kanahya Lal Dayawanti Punj Foundation is committed to restoring India's
-            natural capital through large-scale interventions in soil health, water
-            stewardship, carbon sequestration and sustainable biomass management.
-          </p>
-          <p>
-            Through regenerative agricultural practices and biochar-based soil-restoration
-            models, the Foundation seeks to create measurable outcomes across air, water and
-            soil while improving farmer livelihoods and building climate-resilient rural
-            economies.
-          </p>
-        </div>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <a
-            href="#programme"
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--ivory)] px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-[color:var(--charcoal)] transition-colors hover:bg-[color:var(--ivory)]/85"
-          >
-            Explore the Programme
-          </a>
-          <a
-            href="#b3"
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--ivory)]/50 px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-[color:var(--ivory)] transition-colors hover:border-[color:var(--ivory)]"
-          >
-            Understand B3
-          </a>
-          <a
-            href="#register"
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--ivory)]/50 px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-[color:var(--ivory)] transition-colors hover:border-[color:var(--ivory)]"
-          >
-            Farmer Registration
-          </a>
-        </div>
+  aria-labelledby="env-hero-heading"
+  className="relative overflow-hidden border-b border-[color:var(--border)]"
+>
+  {/* Hero Image */}
+  <div className="absolute inset-0">
+    <img
+      src="https://i.ibb.co/mC4nNmf8/Image-6-3.jpg"
+      alt="Environment and rural regeneration landscape"
+      className="h-full w-full object-cover"
+    />
+  </div>
 
-        <ul className="mt-14 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-4 border-t border-[color:var(--ivory)]/25 pt-6 md:grid-cols-4">
-          {["Soil", "Water", "Biomass", "Carbon"].map((s) => (
-            <li
-              key={s}
-              className="font-sans text-[11px] uppercase tracking-[0.22em] text-[color:var(--ivory)]/75"
-            >
-              {s}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+  {/* Dark Overlay */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(180deg, oklch(0.22 0.02 90 / 0.72) 0%, oklch(0.24 0.03 120 / 0.55) 45%, oklch(0.2 0.02 90 / 0.82) 100%)",
+    }}
+  />
+
+  {/* Texture/Grid Overlay */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 opacity-[0.18]"
+    style={{
+      backgroundImage:
+        "repeating-linear-gradient(0deg, transparent 0 26px, oklch(0.95 0.02 120 / 0.35) 26px 27px)",
+    }}
+  />
+
+  {/* Hero Content */}
+  <div className="relative mx-auto w-full max-w-[1360px] px-5 pb-24 pt-36 md:px-10 md:pb-32 md:pt-48">
+    <p className="font-sans text-[11px] font-medium uppercase tracking-[0.3em] text-[color:var(--ivory)]/80">
+      Environment and Rural Regeneration
+    </p>
+
+    <h1
+      id="env-hero-heading"
+      className="mt-6 max-w-4xl font-serif text-[42px] leading-[1.03] text-[color:var(--ivory)] md:text-[72px]"
+    >
+      Restoring the Natural Foundations of Rural Life
+    </h1>
+
+    <div className="mt-8 max-w-2xl space-y-5 font-sans text-[15.5px] leading-[1.85] text-[color:var(--ivory)]/85">
+      <p>
+        The Pt. Kanahya Lal Dayawanti Punj Foundation is committed to restoring
+        India's natural capital through large-scale interventions in soil
+        health, water stewardship, carbon sequestration and sustainable
+        biomass management.
+      </p>
+
+      <p>
+        Through regenerative agricultural practices and biochar-based
+        soil-restoration models, the Foundation seeks to create measurable
+        outcomes across air, water and soil while improving farmer livelihoods
+        and building climate-resilient rural economies.
+      </p>
+    </div>
+
+    {/* Buttons */}
+    <div className="mt-10 flex flex-wrap gap-3">
+      <a
+        href="#programme"
+        className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--ivory)] px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-[color:var(--charcoal)] transition-colors hover:bg-[color:var(--ivory)]/85"
+      >
+        Explore the Programme
+      </a>
+
+      <a
+        href="#b3"
+        className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--ivory)]/50 px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-[color:var(--ivory)] transition-colors hover:border-[color:var(--ivory)]"
+      >
+        Understand B3
+      </a>
+
+      <a
+        href="#register"
+        className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--ivory)]/50 px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-[color:var(--ivory)] transition-colors hover:border-[color:var(--ivory)]"
+      >
+        Farmer Registration
+      </a>
+    </div>
+
+    {/* Focus Areas */}
+    <ul className="mt-14 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-4 border-t border-[color:var(--ivory)]/25 pt-6 md:grid-cols-4">
+      {["Soil", "Water", "Biomass", "Carbon"].map((s) => (
+        <li
+          key={s}
+          className="font-sans text-[11px] uppercase tracking-[0.22em] text-[color:var(--ivory)]/75"
+        >
+          {s}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
   );
 }
 
@@ -395,12 +415,17 @@ function Vision() {
         </Reveal>
       </div>
       <Reveal className="mt-14">
-        <Figure
-          asset="environment-hero-secondary"
-          alt="Field implementation"
-          aspect="21 / 9"
-          caption="Soil sampling, irrigation and field implementation across programme geographies."
-        />
+       <figure className="overflow-hidden rounded-[8px]">
+  <img
+    src="https://i.ibb.co/cSWn33dB/IMG-20260811-WA0035.jpg"
+    alt="Field implementation"
+    className="w-full aspect-[21/9] object-cover"
+  />
+
+  <figcaption className="mt-3 font-sans text-[12px] leading-relaxed text-muted-foreground">
+    Soil sampling, irrigation and field implementation across programme geographies.
+  </figcaption>
+</figure>
       </Reveal>
     </Section>
   );
@@ -412,29 +437,30 @@ function Challenge() {
     {
       t: "Depleted Soil Organic Carbon",
       d: "Many agricultural soils are losing the organic carbon that supports structure, biological activity, nutrient cycling and water retention.",
-      asset: "soil-degraded",
+      image: "https://i.ibb.co/wFThPmTN/IMG-20260811-WA0070.jpg",
     },
     {
       t: "Declining Water Resilience",
       d: "Compacted or carbon-depleted soils may absorb and retain less water, increasing dependence on irrigation and reducing resilience during dry periods.",
-      asset: "water-field-retention",
+      image: "https://i.ibb.co/cSWn33dB/IMG-20260811-WA0035.jpg",
     },
     {
       t: "Crop-Residue Burning",
       d: "When agricultural biomass has no viable local use, open burning may become the quickest disposal method, affecting air quality, soil and carbon emissions.",
-      asset: "residue-burning",
+      image: "https://i.ibb.co/xt0xJPXN/IMG-20260812-WA0028.jpg",
     },
     {
       t: "Rising Farm Vulnerability",
       d: "Increasing input dependence, uncertain weather and declining soil function can place additional pressure on farm economics.",
-      asset: "farmer-landscape",
+      image: "https://i.ibb.co/fV8n0hJf/IMG-20260811-WA0075.jpg",
     },
     {
       t: "Disconnected Environmental Interventions",
       d: "Soil, water, carbon and biomass are often treated as separate issues even though they function as one connected natural system.",
-      asset: null,
+      image: null,
     },
   ];
+
   return (
     <Section
       labelledBy="challenge-heading"
@@ -442,15 +468,18 @@ function Challenge() {
     >
       <Reveal className="max-w-3xl">
         <Eyebrow tone={SOIL}>The Challenge</Eyebrow>
+
         <H2 id="challenge-heading">
           When Soil, Water and Biomass Systems Begin to Break Down
         </H2>
+
         <Rule />
+
         <Body className="mt-7">
           <p>
-            These pressures are interconnected. Each is described here as observed field
-            context, not as a national statistic — programme figures appear only where they
-            have been measured and verified.
+            These pressures are interconnected. Each is described here as
+            observed field context, not as a national statistic — programme
+            figures appear only where they have been measured and verified.
           </p>
         </Body>
       </Reveal>
@@ -459,28 +488,47 @@ function Challenge() {
         {items.map((it, i) => (
           <Reveal key={it.t}>
             <div className="grid items-center gap-6 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-              <div className={it.asset ? (i % 2 ? "md:order-2" : "") : "md:col-span-2"}>
-                {it.asset ? (
-                  <Figure asset={it.asset} alt={it.t} aspect="16 / 10" />
+
+              {/* Image / Panel */}
+              <div
+                className={
+                  it.image
+                    ? i % 2
+                      ? "md:order-2"
+                      : ""
+                    : "md:col-span-2"
+                }
+              >
+                {it.image ? (
+                  <img
+                    src={it.image}
+                    alt={it.t}
+                    className="w-full aspect-[16/10] object-cover rounded-[8px]"
+                  />
                 ) : (
                   <Panel tone="char">
                     <h3 className="font-serif text-[24px] text-[color:var(--charcoal)]">
                       {it.t}
                     </h3>
+
                     <p className="mt-3 font-sans text-[14.5px] leading-[1.8] text-muted-foreground">
                       {it.d}
                     </p>
                   </Panel>
                 )}
               </div>
-              {it.asset ? (
+
+              {/* Text */}
+              {it.image ? (
                 <div>
                   <span className="font-sans text-[11px] font-semibold tracking-[0.22em] text-muted-foreground">
                     {String(i + 1).padStart(2, "0")}
                   </span>
+
                   <h3 className="mt-2 font-serif text-[26px] leading-tight text-[color:var(--charcoal)] md:text-[30px]">
                     {it.t}
                   </h3>
+
                   <p className="mt-3 max-w-xl font-sans text-[15px] leading-[1.8] text-muted-foreground">
                     {it.d}
                   </p>
