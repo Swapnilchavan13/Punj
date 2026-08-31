@@ -133,9 +133,7 @@ function SitaPage() {
         <SiteExploration />
         <VisitorInformation />
         <EventsCalendar />
-        <Stories />
-        <Gallery />
-        <Numbers />
+        {/* <Numbers /> */}
         <Documentation />
         <DedicatedWebsite />
         <Closing />
@@ -158,12 +156,12 @@ function Hero() {
       <div className="mx-auto w-full max-w-[1360px]">
         <Reveal>
           <div className="relative overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)]">
-            <AssetPlaceholder
-              name="sita-hero-main"
-              label="Wide architectural view of Sita Samahit Sthal"
-              aspect="21 / 9"
-            />
-          </div>
+  <img
+    src="https://d3fphkxyf5o5bm.cloudfront.net/image-resize/format=webp,w=1200/QwRY54Li1HMwD7oNfppnX6fmVwarHfwu0r8chvFiKA"
+    alt="Wide architectural view of Sita Samahit Sthal"
+    className="w-full h-auto object-cover"
+  />
+</div>
         </Reveal>
 
         <div className="mt-10 grid gap-10 md:mt-12 md:grid-cols-[1.15fr_0.85fr] md:gap-16">
@@ -194,18 +192,19 @@ function Hero() {
           </Reveal>
 
           <Reveal>
-            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
-              <Figure
-                asset="sita-hero-community"
-                alt="Visitors entering Sita Samahit Sthal"
-                aspect="16 / 10"
-              />
-              <Figure
-                asset="sita-hero-detail"
-                alt="Architectural detail at Sita Samahit Sthal"
-                aspect="16 / 10"
-              />
-            </div>
+           <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
+  <img
+    src="https://images.bhaskarassets.com/web2images/521/2026/02/16/aab13e49-21d4-4892-8705-2e8f9b60a3f3_1771218456037.jpg"
+    alt="Visitors entering Sita Samahit Sthal"
+    className="w-full aspect-[16/10] object-cover rounded-[8px]"
+  />
+
+  <img
+    src="https://www.omastrology.com/indian-temples/images/sita-samahit-sthal-uttar-pradesh.jpg"
+    alt="Architectural detail at Sita Samahit Sthal"
+    className="w-full aspect-[16/10] object-cover rounded-[8px]"
+  />
+</div>
           </Reveal>
         </div>
 
@@ -267,15 +266,26 @@ function Introduction() {
                 "linear-gradient(160deg, oklch(0.965 0.024 62 / 0.7), oklch(0.978 0.012 88 / 0.55))",
             }}
           >
-            <Figure
-              asset="sita-site-wide"
-              alt="Wide establishing view of Sita Samahit Sthal and its setting"
-              aspect="5 / 4"
-              caption="Sita Samahit Sthal and its wider cultural setting."
-            />
-            <p className="mt-6 font-sans text-[12px] uppercase tracking-[0.18em] text-muted-foreground">
-              <Pending>Add verified site history</Pending>
-            </p>
+           <div className="relative overflow-hidden rounded-[8px]">
+  <img
+    src="https://static2.tripoto.com/media/filter/tst/img/2173352/SpotDocument/1632644945_1632645139486.jpg.webp"
+    alt="Wide establishing view of Sita Samahit Sthal and its setting"
+    className="w-full aspect-[5/4] object-cover"
+  />
+  <p className="mt-2 text-sm text-muted-foreground">
+    Sita Samahit Sthal and its wider cultural setting.
+  </p>
+</div>
+           <p className="mt-6 font-sans text-[12px] uppercase tracking-[0.18em] text-muted-foreground">
+  <a
+    href="https://en.wikipedia.org/wiki/Sita_Samahit_Sthal"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline"
+  >
+    Site history
+  </a>
+</p>
           </div>
         </Reveal>
       </div>
@@ -287,19 +297,19 @@ function Introduction() {
 const DIMENSIONS = [
   {
     title: "Sacred Significance",
-    asset: "sita-sacred-space-main",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5LXGlQ3gu1EADPl3ai3I54EKcSkIL6HDV8GuDNzazk-G_eMBiINP0XA86&s=10",
     alt: "Sacred area within Sita Samahit Sthal",
     text: "A place of devotion, prayer and spiritual connection associated with the enduring cultural memory of Mata Sita.",
   },
   {
     title: "Cultural Heritage",
-    asset: "sita-architecture-main",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVCGIuDg1DwmPrBPn3tTefgQoYvX3-m-3mogrOrqlRbdjjrCfgmSURwiY&s=10",
     alt: "Architectural view of Sita Samahit Sthal",
     text: "A site through which stories, rituals, architecture, festivals and regional traditions are carried across generations.",
   },
   {
     title: "Community Belonging",
-    asset: "sita-community-gathering",
+    image: "https://images.bhaskarassets.com/web2images/521/2022/07/08/b997bb58-be81-442b-94c3-bed698d0429c_1657265624351.jpg",
     alt: "Community gathering at Sita Samahit Sthal",
     text: "A living gathering place connected with local families, pilgrims, visitors and the cultural life of the region.",
   },
@@ -311,6 +321,7 @@ function Significance() {
       <Reveal className="max-w-3xl">
         <Eyebrow tone={SITA}>The Significance of the Sthal</Eyebrow>
         <H2>More Than a Sacred Destination</H2>
+
         <p className="mt-6 font-sans text-[15.5px] leading-[1.8] text-muted-foreground">
           Three dimensions hold equal weight at the Sthal, and each one depends on the others.
         </p>
@@ -320,23 +331,38 @@ function Significance() {
         <div
           aria-hidden="true"
           className="absolute left-0 right-0 top-[10px] hidden h-px lg:block"
-          style={{ background: "color-mix(in oklab, var(--accent-sita) 30%, transparent)" }}
+          style={{
+            background:
+              "color-mix(in oklab, var(--accent-sita) 30%, transparent)",
+          }}
         />
+
         <ul className="grid gap-8 lg:grid-cols-3">
           {DIMENSIONS.map((d) => (
             <li key={d.title}>
               <Reveal>
                 <article className="flex h-full flex-col overflow-hidden rounded-[8px] bg-[color:var(--card)]/65 ring-1 ring-[color:var(--border)] backdrop-blur-sm">
+                  
                   <span
                     aria-hidden="true"
                     className="block h-[3px] w-full"
-                    style={{ background: "color-mix(in oklab, var(--accent-sita) 45%, transparent)" }}
+                    style={{
+                      background:
+                        "color-mix(in oklab, var(--accent-sita) 45%, transparent)",
+                    }}
                   />
-                  <AssetPlaceholder name={d.asset} label={d.alt} aspect="4 / 3" />
+
+                  <img
+                    src={d.image}
+                    alt={d.alt}
+                    className="w-full aspect-[4/3] object-cover"
+                  />
+
                   <div className="flex flex-1 flex-col p-7">
                     <h3 className="font-serif text-[26px] leading-tight text-[color:var(--charcoal)]">
                       {d.title}
                     </h3>
+
                     <p className="mt-4 font-sans text-[15px] leading-[1.75] text-muted-foreground">
                       {d.text}
                     </p>
@@ -350,24 +376,24 @@ function Significance() {
     </Section>
   );
 }
-
 /* 5. Foundation stewardship */
+
 const RESPONSIBILITIES_MAJOR = [
   {
     title: "Preservation",
-    asset: "sita-preservation",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSBlFlbdrTFn4HE_nvZeOXJ8ehLvf6x_bUAMKOwv7qKlelKIhRbFuWYVg&s=10",
     alt: "Preservation work under way at Sita Samahit Sthal",
     text: "Protecting the architectural, cultural and sacred character of the site.",
   },
   {
     title: "Maintenance",
-    asset: "sita-maintenance",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO9Ia1rLKKROUEuxbZz7QIHxDwOIQpU_JROJKnvhVqahriGwnJRjik-LAZ&s=10",
     alt: "Foundation team supporting site maintenance at Sita Samahit Sthal",
     text: "Supporting the upkeep, cleanliness and functioning of the Sthal and its facilities.",
   },
   {
     title: "Visitor and Pilgrim Support",
-    asset: "sita-visitor-support",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3-Azgp0QkwJyaC1QFyr9to2aU3S2JBqESRY1wl18KpPidE16iT8__f2s&s=10",
     alt: "Visitor assistance being provided at Sita Samahit Sthal",
     text: "Helping visitors experience the site with dignity, clarity and comfort.",
   },
@@ -376,24 +402,23 @@ const RESPONSIBILITIES_MAJOR = [
 const RESPONSIBILITIES_MINOR = [
   {
     title: "Festival Coordination",
-    asset: "sita-community-service",
+    image: "https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nL2I3ODliMDBkNzY2MzRkZTlhZTdhODJlYmFkMmJjZjU0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2NDAsImhlaWdodCI6NjQwLCJmaXQiOiJpbnNpZGUifSwicm90YXRlIjpudWxsLCJ0b0Zvcm1hdCI6ICJ3ZWJwIn19",
     alt: "Volunteers supporting a gathering at Sita Samahit Sthal",
     text: "Supporting the organisation and responsible management of major gatherings.",
   },
   {
     title: "Community Connection",
-    asset: "sita-community-gathering",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ70OPSF5A4EfIGyOAp7RLKySk_qgFY2JRnAko_RjfBWNoBxwRD7vISmQY&s=10",
     alt: "Community members gathered at Sita Samahit Sthal",
     text: "Maintaining the Sthal’s relationship with the surrounding region and its people.",
   },
   {
     title: "Documentation",
-    asset: "sita-archive-01",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGL4uT-9if5Q1i2jHYKfe19qSM1suyeLR7EnFxR5oMT8U-LTippssR8VY&s=10",
     alt: "Archival photograph of Sita Samahit Sthal",
     text: "Preserving photographs, records, stories and institutional memory for future generations.",
   },
 ];
-
 function FoundationRole() {
   return (
     <Section id="foundation-stewardship">
@@ -415,52 +440,63 @@ function FoundationRole() {
           </Body>
         </Reveal>
         <Reveal>
-          <Figure
-            asset="sita-foundation-team"
-            alt="Foundation and site-management team at Sita Samahit Sthal"
-            aspect="4 / 3"
-            caption="Foundation and site-management team. ADD VERIFIED CAPTION AND DATE."
-          />
+          <img
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvSOzwN1ZG3Ktnky1cFWm_Br9_1kJwvcd7w5KM0LcvhaU2Ro7HQXjiOny6&s=10"
+  alt="Foundation and site-management team at Sita Samahit Sthal"
+  className="w-full aspect-[4/3] object-cover rounded-[8px]"
+/>
         </Reveal>
       </div>
 
-      <div className="mt-14 grid gap-7 lg:grid-cols-3">
-        {RESPONSIBILITIES_MAJOR.map((r) => (
-          <Reveal key={r.title}>
-            <article className="flex h-full flex-col overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)] bg-[color:var(--offwhite)]/70">
-              <AssetPlaceholder name={r.asset} label={r.alt} aspect="16 / 10" />
-              <div className="flex flex-1 flex-col p-7">
-                <h3 className="font-serif text-[24px] leading-tight text-[color:var(--charcoal)]">
-                  {r.title}
-                </h3>
-                <p className="mt-3 font-sans text-[14.5px] leading-[1.75] text-muted-foreground">
-                  {r.text}
-                </p>
-              </div>
-            </article>
-          </Reveal>
-        ))}
-      </div>
+     <div className="mt-14 grid gap-7 lg:grid-cols-3">
+  {RESPONSIBILITIES_MAJOR.map((r) => (
+    <Reveal key={r.title}>
+      <article className="flex h-full flex-col overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)] bg-[color:var(--offwhite)]/70">
+        <img
+          src={r.image}
+          alt={r.alt}
+          className="w-full aspect-[16/10] object-cover"
+        />
 
-      <div className="mt-7 grid gap-7 lg:grid-cols-3">
-        {RESPONSIBILITIES_MINOR.map((r) => (
-          <Reveal key={r.title}>
-            <article className="flex h-full gap-5 rounded-[8px] p-5 ring-1 ring-[color:var(--border)]">
-              <div className="w-[104px] shrink-0 overflow-hidden rounded-[4px]">
-                <AssetPlaceholder name={r.asset} label={r.alt} aspect="1 / 1" />
-              </div>
-              <div>
-                <h3 className="font-serif text-[21px] leading-tight text-[color:var(--charcoal)]">
-                  {r.title}
-                </h3>
-                <p className="mt-2 font-sans text-[14px] leading-[1.7] text-muted-foreground">
-                  {r.text}
-                </p>
-              </div>
-            </article>
-          </Reveal>
-        ))}
-      </div>
+        <div className="flex flex-1 flex-col p-7">
+          <h3 className="font-serif text-[24px] leading-tight text-[color:var(--charcoal)]">
+            {r.title}
+          </h3>
+
+          <p className="mt-3 font-sans text-[14.5px] leading-[1.75] text-muted-foreground">
+            {r.text}
+          </p>
+        </div>
+      </article>
+    </Reveal>
+  ))}
+</div>
+
+<div className="mt-7 grid gap-7 lg:grid-cols-3">
+  {RESPONSIBILITIES_MINOR.map((r) => (
+    <Reveal key={r.title}>
+      <article className="flex h-full gap-5 rounded-[8px] p-5 ring-1 ring-[color:var(--border)]">
+        <div className="w-[104px] shrink-0 overflow-hidden rounded-[4px]">
+          <img
+            src={r.image}
+            alt={r.alt}
+            className="w-full aspect-square object-cover"
+          />
+        </div>
+
+        <div>
+          <h3 className="font-serif text-[21px] leading-tight text-[color:var(--charcoal)]">
+            {r.title}
+          </h3>
+
+          <p className="mt-2 font-sans text-[14px] leading-[1.7] text-muted-foreground">
+            {r.text}
+          </p>
+        </div>
+      </article>
+    </Reveal>
+  ))}
+</div>
     </Section>
   );
 }
@@ -469,41 +505,44 @@ function FoundationRole() {
 const JOURNEY = [
   {
     title: "The Approach",
-    assets: ["sita-entry"],
+    images: ["https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nL2I3ODliMDBkNzY2MzRkZTlhZTdhODJlYmFkMmJjZjU0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2NDAsImhlaWdodCI6NjQwLCJmaXQiOiJpbnNpZGUifSwicm90YXRlIjpudWxsLCJ0b0Zvcm1hdCI6ICJ3ZWJwIn19"],
     text: "The first experience of entering the Sthal and moving from the surrounding landscape toward its sacred centre.",
     alt: "Entrance and approach to Sita Samahit Sthal",
   },
   {
     title: "The Main Architectural View",
-    assets: ["sita-architecture-main"],
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLmYhFMXo6dWjiWhQIj4MW01nyqro3YCBKTMcJmeeO6hwydnOKW28skTPB&s=10"],
     text: "The principal structure and its visual relationship with the wider site.",
     alt: "Wide architectural view of Sita Samahit Sthal",
   },
   {
     title: "Sacred Spaces",
-    assets: ["sita-sacred-space-main"],
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyAnoNDNHjN2XWzeZSq5-5SpTSOeNts9J7KNNyo4VrNEHLsUBz_1aEcFBh&s=10"],
     text: "Areas of prayer, reflection and devotional significance, shown only where photography is permitted.",
     alt: "Sacred area within Sita Samahit Sthal",
   },
   {
     title: "Architectural Details",
-    assets: [
-      "sita-architecture-detail-01",
-      "sita-architecture-detail-02",
-      "sita-architecture-detail-03",
+    images: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTytvuaupkATz6NUzzkfVO5pW_CR3nLCH16j70sGx-Lkw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAH32GBlUb-K5Y3mD2DWnXNC3KIYL9UD06eEXm1MbSvIPYMgPTPE3Cemo&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc8ctHKch5dX6cQZhXdcPjo-BxTKGIIie_tQQbQkuCJHp5qNdWU_hvSxHs&s=10",
     ],
     text: "Details that reveal the craftsmanship, visual language and cultural character of the site.",
     alt: "Architectural detail at Sita Samahit Sthal",
   },
   {
     title: "Pathways and Landscape",
-    assets: ["sita-pathway", "sita-landscape"],
+    images: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc8ctHKch5dX6cQZhXdcPjo-BxTKGIIie_tQQbQkuCJHp5qNdWU_hvSxHs&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOeG6GlHniCV3Kcf-_YGv7EI_rGHPBlzp8VNVMjiXEGTy0Slai3sz4M8Tv&s=10",
+    ],
     text: "The natural and built spaces through which visitors move, pause and gather.",
     alt: "Pathway and landscape at Sita Samahit Sthal",
   },
   {
     title: "The Sthal in Community Life",
-    assets: ["sita-community-gathering"],
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOeG6GlHniCV3Kcf-_YGv7EI_rGHPBlzp8VNVMjiXEGTy0Slai3sz4M8Tv&s=10"],
     text: "The site as a living place of participation, family connection and collective memory.",
     alt: "Community gathering at Sita Samahit Sthal",
   },
@@ -511,6 +550,7 @@ const JOURNEY = [
 
 function VisualJourney() {
   const [active, setActive] = useState(0);
+
   const refs = useRef<Array<HTMLLIElement | null>>([]);
 
   useEffect(() => {
@@ -518,42 +558,71 @@ function VisualJourney() {
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            const i = Number((e.target as HTMLElement).dataset["index"]);
-            if (!Number.isNaN(i)) setActive(i);
+            const i = Number(
+              (e.target as HTMLElement).dataset["index"]
+            );
+
+            if (!Number.isNaN(i)) {
+              setActive(i);
+            }
           }
         });
       },
-      { rootMargin: "-45% 0px -45% 0px" },
+      {
+        rootMargin: "-45% 0px -45% 0px",
+      },
     );
-    refs.current.forEach((el) => el && io.observe(el));
+
+    refs.current.forEach((el) => {
+      if (el) {
+        io.observe(el);
+      }
+    });
+
     return () => io.disconnect();
   }, []);
 
   const chapter = JOURNEY[active] ?? JOURNEY[0]!;
 
   return (
-    <Section id="explore" tint="oklch(0.968 0.02 64 / 0.5)">
+    <Section
+      id="explore"
+      tint="oklch(0.968 0.02 64 / 0.5)"
+    >
+      {/* Section Header */}
       <Reveal className="max-w-3xl">
         <Eyebrow tone={SITA}>Explore the Sthal</Eyebrow>
+
         <H2>A Visual Journey Through Sacred Spaces</H2>
+
         <p className="mt-6 font-sans text-[15.5px] leading-[1.8] text-muted-foreground">
-          Move through the principal spaces, architecture and landscapes that shape the visitor
-          experience of Sita Samahit Sthal.
+          Move through the principal spaces, architecture and landscapes
+          that shape the visitor experience of Sita Samahit Sthal.
         </p>
       </Reveal>
 
+      {/* Journey Content */}
       <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
+
+        {/* Desktop Sticky Images */}
         <div className="hidden lg:block">
           <div className="sticky top-24">
             <div className="grid gap-4">
-              {chapter.assets.map((a) => (
-                <Figure key={a} asset={a} alt={chapter.alt} aspect="4 / 3" />
+              {chapter.images.map((image) => (
+                <img
+                  key={image}
+                  src={image}
+                  alt={chapter.alt}
+                  className="w-full aspect-[4/3] object-cover rounded-[8px]"
+                />
               ))}
             </div>
+
             <Caption>{chapter.title}</Caption>
           </div>
         </div>
 
+        {/* Chapter Text */}
         <ol className="grid gap-14">
           {JOURNEY.map((c, i) => (
             <li
@@ -564,20 +633,32 @@ function VisualJourney() {
               }}
               className="scroll-mt-28"
             >
+              {/* Mobile Images */}
               <div className="grid gap-4 lg:hidden">
-                {c.assets.map((a) => (
-                  <Figure key={a} asset={a} alt={c.alt} aspect="4 / 3" />
+                {c.images.map((image) => (
+                  <img
+                    key={image}
+                    src={image}
+                    alt={c.alt}
+                    className="w-full aspect-[4/3] object-cover rounded-[8px]"
+                  />
                 ))}
               </div>
+
+              {/* Chapter Number */}
               <span
                 className="mt-6 block font-sans text-[11px] font-medium uppercase tracking-[0.24em] lg:mt-0"
                 style={{ color: SITA }}
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
+
+              {/* Chapter Title */}
               <h3 className="mt-3 font-serif text-[30px] leading-tight text-[color:var(--charcoal)]">
                 {c.title}
               </h3>
+
+              {/* Chapter Description */}
               <p className="mt-4 max-w-lg font-sans text-[15px] leading-[1.8] text-muted-foreground">
                 {c.text}
               </p>
@@ -591,13 +672,55 @@ function VisualJourney() {
 
 /* 7. Architecture and sacred spaces */
 const SPACES = [
-  { asset: "sita-architecture-main", alt: "Principal architecture at Sita Samahit Sthal", label: "Principal architecture", span: "lg:col-span-2 lg:row-span-2", aspect: "4 / 3" },
-  { asset: "sita-sacred-space-main", alt: "Sacred area within Sita Samahit Sthal", label: "Sacred space", span: "", aspect: "4 / 3" },
-  { asset: "sita-pathway", alt: "Pathway at Sita Samahit Sthal", label: "Pathways", span: "", aspect: "4 / 3" },
-  { asset: "sita-landscape", alt: "Sita Samahit Sthal within its wider landscape", label: "Landscape", span: "", aspect: "4 / 3" },
-  { asset: "sita-architecture-detail-01", alt: "Architectural detail at Sita Samahit Sthal", label: "Architectural detail", span: "", aspect: "1 / 1" },
-  { asset: "sita-architecture-detail-02", alt: "Architectural detail at Sita Samahit Sthal", label: "Architectural detail", span: "", aspect: "1 / 1" },
-  { asset: "sita-night-view", alt: "Evening view of Sita Samahit Sthal", label: "Evening view", span: "lg:col-span-2", aspect: "16 / 9" },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ZFIrUPocKolSVjPKdMaSjqWbieZAMLao4H0nV_6yyFD4p_o_EWyDuun7&s=10",
+    alt: "Principal architecture at Sita Samahit Sthal",
+    label: "Principal architecture",
+    span: "lg:col-span-2 lg:row-span-2",
+    aspect: "4 / 3",
+  },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWcW28lwCxdZur9fAhs7_sOxUxS-lVKY3piG82ghs6J1uUPZWoI2-XeCpx&s=10",
+    alt: "Sacred area within Sita Samahit Sthal",
+    label: "Sacred space",
+    span: "",
+    aspect: "4 / 3",
+  },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTldLuPROqG2u9IteeKJ7BxbUG9zrKXunZRISDVXTEm1ChDF9M-LrI_ne8&s=10",
+    alt: "Pathway at Sita Samahit Sthal",
+    label: "Pathways",
+    span: "",
+    aspect: "4 / 3",
+  },
+  {
+    image: "https://avathioutdoors.gumlet.io/travelGuide/dev/varanasi_P3866.jpg?w=600&h=400&format=webp&q=80&compress=true",
+    alt: "Sita Samahit Sthal within its wider landscape",
+    label: "Landscape",
+    span: "",
+    aspect: "4 / 3",
+  },
+  {
+    image: "https://images.bhaskarassets.com/thumb/360x0/web2images/521/2023/08/04/3f25a99e-9726-45d2-ab9c-36021092c791_1691141221556.jpg",
+    alt: "Architectural detail at Sita Samahit Sthal",
+    label: "Architectural detail",
+    span: "",
+    aspect: "1 / 1",
+  },
+  {
+    image: "https://thetimelock.in/wp-content/uploads/IMG_20230430_173817-Small.jpg",
+    alt: "Architectural detail at Sita Samahit Sthal",
+    label: "Architectural detail",
+    span: "",
+    aspect: "1 / 1",
+  },
+  {
+    image: "https://images.bhaskarassets.com/web2images/521/2025/09/29/2c1c99f7-9c84-478f-9263-1c6812fa4f92_1759140300613.jpg",
+    alt: "Evening view of Sita Samahit Sthal",
+    label: "Evening view",
+    span: "lg:col-span-2",
+    aspect: "16 / 9",
+  },
 ];
 
 function Architecture() {
@@ -608,12 +731,14 @@ function Architecture() {
           <Eyebrow tone={SITA}>Architecture and Place</Eyebrow>
           <H2>The Spaces That Shape the Experience</H2>
         </Reveal>
+
         <Reveal>
           <Body className="md:pt-14">
             <p>
               The physical environment of Sita Samahit Sthal plays an important role in how visitors
               encounter the site.
             </p>
+
             <p>
               Architecture, pathways, sacred spaces, landscape and gathering areas together create a
               setting for prayer, reflection, movement and community participation.
@@ -624,14 +749,25 @@ function Architecture() {
 
       <ul className="mt-12 grid auto-rows-auto gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {SPACES.map((s) => (
-          <li key={`${s.asset}-${s.label}`} className={s.span}>
+          <li key={`${s.image}-${s.label}`} className={s.span}>
             <div className="overflow-hidden rounded-[6px] ring-1 ring-[color:var(--border)]">
-              <AssetPlaceholder name={s.asset} label={s.alt} aspect={s.aspect} />
+              <img
+                src={s.image}
+                alt={s.alt}
+                className="w-full h-full object-cover"
+                style={{
+                  aspectRatio: s.aspect.replace(" / ", " / "),
+                }}
+              />
             </div>
-            <p className="mt-3 font-sans text-[13px] text-[color:var(--charcoal)]">{s.label}</p>
-            <p className="mt-1 font-sans text-[12px] text-muted-foreground">
-              <Pending>Add verified name of this space</Pending>
+
+            <p className="mt-3 font-sans text-[13px] text-[color:var(--charcoal)]">
+              {s.label}
             </p>
+
+            {/* <p className="mt-1 font-sans text-[12px] text-muted-foreground">
+              <Pending>Add verified name of this space</Pending>
+            </p> */}
           </li>
         ))}
       </ul>
@@ -671,25 +807,27 @@ function RamayanaTradition() {
 
         <Reveal>
           <div className="grid gap-5 sm:grid-cols-2">
-            <Figure
-              asset="sita-sacred-detail"
-              alt="Sacred detail at Sita Samahit Sthal"
-              aspect="3 / 4"
-              className="sm:mt-10"
-            />
-            <Figure
-              asset="sita-offerings"
-              alt="Offerings placed at Sita Samahit Sthal"
-              aspect="3 / 4"
-            />
-            <Figure
-              asset="sita-worship"
-              alt="Prayer taking place at Sita Samahit Sthal"
-              aspect="16 / 10"
-              className="sm:col-span-2"
-              caption="Photographed only where permission has been granted."
-            />
-          </div>
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyOZfDfMVPH4lZ9diZ2zR7nN7dir0f975NE0JqxFU9uj0OrV8Acdj8GwE&s=10"
+    alt="Sacred detail at Sita Samahit Sthal"
+    className="w-full aspect-[3/4] object-cover rounded-[8px] sm:mt-10"
+  />
+
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLjHhHbjhzuvkZsgYPRCDmJA3DtCw0fsbWpKsVYsjvJr9xeL461xOTjhgU&s=10"
+    alt="Offerings placed at Sita Samahit Sthal"
+    className="w-full aspect-[3/4] object-cover rounded-[8px]"
+  />
+
+  <figure className="sm:col-span-2">
+    <img
+      src="https://photos.wikimapia.org/p/00/03/95/58/30_big.jpg"
+      alt="Prayer taking place at Sita Samahit Sthal"
+      className="w-full aspect-[16/10] object-cover rounded-[8px]"
+    />
+    
+  </figure>
+</div>
         </Reveal>
       </div>
     </Section>
@@ -723,8 +861,17 @@ function LivingTraditions() {
             </p>
           </Body>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            <Figure asset="sita-worship" alt="Prayer at Sita Samahit Sthal" aspect="4 / 3" />
-            <Figure asset="sita-families" alt="Families visiting Sita Samahit Sthal" aspect="4 / 3" />
+            <img
+  src="https://static2.tripoto.com/media/filter/tst/img/2173352/SpotDocument/1632650184_1632650378049.jpg.webp"
+  alt="Prayer at Sita Samahit Sthal"
+  className="w-full aspect-[4/3] object-cover rounded-[8px]"
+/>
+
+<img
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3-Azgp0QkwJyaC1QFyr9to2aU3S2JBqESRY1wl18KpPidE16iT8__f2s&s=10"
+  alt="Families visiting Sita Samahit Sthal"
+  className="w-full aspect-[4/3] object-cover rounded-[8px]"
+/>
           </div>
         </Reveal>
 
@@ -745,8 +892,17 @@ function LivingTraditions() {
             ))}
           </ul>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
-            <Figure asset="sita-offerings" alt="Offerings at Sita Samahit Sthal" aspect="16 / 10" />
-            <Figure asset="sita-pilgrims" alt="Pilgrims at Sita Samahit Sthal" aspect="16 / 10" />
+           <img
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQzCAWaAlx9f74rAipAJv-I9iPvviccZZds1xW9dsPiaSxx1qpi3X9mgOK&s=10"
+  alt="Offerings at Sita Samahit Sthal"
+  className="w-full aspect-[16/10] object-cover rounded-[8px]"
+/>
+
+<img
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBYNYXu9-2ce_vSQY1rgVK7w1OkjLLXcDT3jsQSqOOaz-Cjf1wZNo1TbI&s=10"
+  alt="Pilgrims at Sita Samahit Sthal"
+  className="w-full aspect-[16/10] object-cover rounded-[8px]"
+/>
           </div>
         </Reveal>
       </div>
@@ -768,10 +924,26 @@ const FESTIVAL_FIELDS = [
 ];
 
 const FESTIVAL_CARDS = [
-  { asset: "sita-festival-procession", alt: "Procession during a gathering at Sita Samahit Sthal", label: "Procession" },
-  { asset: "sita-festival-worship", alt: "Festival worship at Sita Samahit Sthal", label: "Festival worship" },
-  { asset: "sita-cultural-event", alt: "Cultural programme at Sita Samahit Sthal", label: "Cultural programme" },
-  { asset: "sita-festival-night", alt: "Evening festival illumination at Sita Samahit Sthal", label: "Evening gathering" },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAzy12ETxR68DojdeR6GFxhuoqYd9B_D_b1ElQYKkqKv2FHKHj8IRSxck&s=10",
+    alt: "Procession during a gathering at Sita Samahit Sthal",
+    label: "Procession",
+  },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4gpfLZNhHVmPRNwzAWn1CXyTNa34ZU9YQWZXRGOrAcd1_JMXrGK2x_h78&s=10",
+    alt: "Festival worship at Sita Samahit Sthal",
+    label: "Festival worship",
+  },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZeZD7D3hXwu88AeyBtuDgMXySe2eU-rLeR6YzXgUcyneLp9VNe--zlJTF&s=10",
+    alt: "Cultural programme at Sita Samahit Sthal",
+    label: "Cultural programme",
+  },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc8ctHKch5dX6cQZhXdcPjo-BxTKGIIie_tQQbQkuCJHp5qNdWU_hvSxHs&s=10",
+    alt: "Evening festival illumination at Sita Samahit Sthal",
+    label: "Evening gathering",
+  },
 ];
 
 function Festivals() {
@@ -779,54 +951,70 @@ function Festivals() {
     <Section id="festivals" tint="oklch(0.97 0.018 66 / 0.5)">
       <Reveal className="max-w-3xl">
         <Eyebrow tone={SITA}>Festivals and Gatherings</Eyebrow>
+
         <H2>When the Sthal Becomes a Shared Celebration</H2>
+
         <Body className="mt-6">
           <p>
-            Festivals and major gatherings bring together devotion, culture, family participation
-            and community service.
+            Festivals and major gatherings bring together devotion, culture,
+            family participation and community service.
           </p>
+
           <p>
-            Each occasion is documented with clarity and dignity, helping visitors understand its
-            meaning as well as the practical arrangements associated with it.
+            Each occasion is documented with clarity and dignity, helping
+            visitors understand its meaning as well as the practical
+            arrangements associated with it.
           </p>
         </Body>
       </Reveal>
 
+      {/* Featured Gathering */}
       <Reveal>
         <article className="mt-12 grid overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)] lg:grid-cols-[1.1fr_0.9fr]">
-          <AssetPlaceholder
-            name="sita-festival-main"
-            label="Pilgrims gathered during a festival at Sita Samahit Sthal"
-            aspect="4 / 3"
+          <img
+            src="https://images.bhaskarassets.com/thumb/1200x900/web2images/521/2025/05/08/66be6397-13d6-40e6-98f8-9135b415d1b9_1746688195935.jpg"
+            alt="Pilgrims gathered during a festival at Sita Samahit Sthal"
+            className="w-full aspect-[4/3] object-cover"
           />
+
           <div className="bg-[color:var(--offwhite)]/80 p-7 md:p-10">
             <Eyebrow tone={SITA}>Featured Gathering</Eyebrow>
+
             <h3 className="mt-4 font-serif text-[30px] leading-tight text-[color:var(--charcoal)]">
               <Pending>Add verified festival information</Pending>
             </h3>
+
             <dl className="mt-6">
               {FESTIVAL_FIELDS.map((f) => (
                 <InfoRow key={f} label={f} />
               ))}
             </dl>
+
             <p className="mt-6 font-sans text-[13px] leading-[1.7] text-muted-foreground">
-              Festival names, dates, schedules and attendance figures are published only after
-              verification with the site management.
+              Festival names, dates, schedules and attendance figures are
+              published only after verification with the site management.
             </p>
           </div>
         </article>
       </Reveal>
 
+      {/* Festival Cards */}
       <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {FESTIVAL_CARDS.map((c) => (
           <li key={c.label}>
             <Reveal>
               <article className="h-full overflow-hidden rounded-[6px] ring-1 ring-[color:var(--border)]">
-                <AssetPlaceholder name={c.asset} label={c.alt} aspect="4 / 3" />
+                <img
+                  src={c.image}
+                  alt={c.alt}
+                  className="w-full aspect-[4/3] object-cover"
+                />
+
                 <div className="bg-[color:var(--card)]/60 p-5">
                   <h4 className="font-serif text-[20px] leading-tight text-[color:var(--charcoal)]">
                     {c.label}
                   </h4>
+
                   <p className="mt-3">
                     <Pending>Add verified festival information</Pending>
                   </p>
@@ -845,42 +1033,42 @@ const VISITOR_AREAS = [
   {
     title: "Arrival",
     text: "How to reach the entrance and where visitors begin their experience.",
-    asset: "sita-entry",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGG9bH1QAzZKkapT26B7mi0MY7hL6s8Zz-46CsQxdY4vCUu_fl2tGrpUPX&s=10",
     alt: "Entrance to Sita Samahit Sthal",
     note: "Add verified arrival information",
   },
   {
     title: "Movement Through the Site",
     text: "Pathways, queues, accessibility and important visitor routes.",
-    asset: "sita-pathway",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyOZfDfMVPH4lZ9diZ2zR7nN7dir0f975NE0JqxFU9uj0OrV8Acdj8GwE&s=10",
     alt: "Visitor pathway at Sita Samahit Sthal",
     note: "Add verified accessibility information",
   },
   {
     title: "Worship and Reflection",
     text: "Guidance for sacred spaces and expected conduct.",
-    asset: "sita-sacred-space-main",
+    image: "https://www.vidhantravels.com/img/tour-package/Sita-Samahit-Sthal-Sitamarhi-temple.jpg",
     alt: "Sacred area within Sita Samahit Sthal",
     note: "Add approved conduct guidance",
   },
   {
     title: "Family and Elderly Visitors",
     text: "Information about seating, assistance and access where verified.",
-    asset: "sita-elderly-visitors",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVgrp5-2t0scYVAhXLC6cD2w57Uasa9UxlZwDhLzF5Tv4DBLu7NJzS3qef&s=10",
     alt: "Elderly visitors at Sita Samahit Sthal",
     note: "Add verified assistance information",
   },
   {
     title: "Facilities",
     text: "Verified information about water, sanitation, parking, footwear, rest areas or other facilities.",
-    asset: "sita-families",
+    image: "https://holaciti.com/assets/place/1766572746place.webp",
     alt: "Families visiting Sita Samahit Sthal",
     note: "Add verified restroom information",
   },
   {
     title: "Help and Enquiries",
     text: "Where visitors can seek assistance.",
-    asset: "sita-visitor-support",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsYqX1Km4Rxgfg0jgDmbVzuUTefAtXdvjQBrYcBBZuOZXiSXNKRIzyTXg&s=10",
     alt: "Visitor assistance at Sita Samahit Sthal",
     note: "Add verified visitor-help contact",
   },
@@ -891,10 +1079,12 @@ function VisitorExperience() {
     <Section id="visitor-experience">
       <Reveal className="max-w-3xl">
         <Eyebrow tone={SITA}>Visiting the Sthal</Eyebrow>
+
         <H2>A Welcoming and Respectful Visitor Experience</H2>
+
         <p className="mt-6 font-sans text-[15.5px] leading-[1.8] text-muted-foreground">
-          The visitor experience should help people approach the Sthal with clarity, comfort and
-          respect for its sacred character.
+          The visitor experience should help people approach the Sthal with
+          clarity, comfort and respect for its sacred character.
         </p>
       </Reveal>
 
@@ -903,7 +1093,15 @@ function VisitorExperience() {
           <li key={v.title}>
             <Reveal>
               <article className="flex h-full flex-col overflow-hidden rounded-[8px] bg-[color:var(--card)]/60 ring-1 ring-[color:var(--border)]">
-                <AssetPlaceholder name={v.asset} label={v.alt} aspect="16 / 10" />
+
+                {/* Image */}
+                <img
+                  src={v.image}
+                  alt={v.alt}
+                  className="w-full aspect-[16/10] object-cover"
+                />
+
+                {/* Content */}
                 <div className="flex flex-1 flex-col p-6">
                   <span
                     className="font-sans text-[11px] font-medium uppercase tracking-[0.24em]"
@@ -911,12 +1109,15 @@ function VisitorExperience() {
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
+
                   <h3 className="mt-3 font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
                     {v.title}
                   </h3>
+
                   <p className="mt-3 font-sans text-[14px] leading-[1.75] text-muted-foreground">
                     {v.text}
                   </p>
+
                   <p className="mt-4">
                     <Pending>{v.note}</Pending>
                   </p>
@@ -930,30 +1131,31 @@ function VisitorExperience() {
   );
 }
 
+
 /* 12. Community connection */
 const COMMUNITY = [
   {
     title: "Local Participation",
     text: "Residents of the surrounding region take part in the everyday life of the Sthal in different ways and to different degrees.",
-    asset: "sita-community-gathering",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2sM1u743Yctr7jTil9W4OYsxM50JdiQCLnlAiyI15-BV1y67HJK9ulSZi&s=10",
     alt: "Community gathering at Sita Samahit Sthal",
   },
   {
     title: "Volunteer and Service Activity",
     text: "Volunteers and service groups contribute during gatherings, upkeep activity and visitor-support work.",
-    asset: "sita-community-service",
+    image: "https://travelocity59.wordpress.com/wp-content/uploads/2019/10/77_big.jpg",
     alt: "Volunteers serving at Sita Samahit Sthal",
   },
   {
     title: "Cultural Programmes",
     text: "Cultural events connect the Sthal with regional artistic, musical and devotional traditions.",
-    asset: "sita-cultural-event",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe-Np3m5viOgv4KJx13rYxcY4gnnkrN0SJ03riXbSutPIvu0HeCLcfgc4u&s=10",
     alt: "Cultural programme at Sita Samahit Sthal",
   },
   {
     title: "Intergenerational Memory",
     text: "Families carry memories of visits, ceremonies and gatherings across generations.",
-    asset: "sita-elderly-visitors",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT19cRnx6eVXbqNXE0r0ndp9LfjHAKk2RrMzTfAG36X94QDd6XXuLwwm_Q&s=10",
     alt: "Elderly visitors at Sita Samahit Sthal",
   },
 ];
@@ -962,30 +1164,49 @@ function CommunityConnection() {
   return (
     <Section id="community" tint="oklch(0.972 0.016 72 / 0.5)">
       <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+        
+        {/* Community Introduction */}
         <Reveal>
           <Eyebrow tone={SITA}>The Sthal and Its Community</Eyebrow>
+
           <H2>A Sacred Institution Rooted in Local Life</H2>
+
           <Body className="mt-7 max-w-xl">
-            <p>Sita Samahit Sthal is closely connected with the surrounding community.</p>
             <p>
-              Its role extends beyond those who visit occasionally. The Sthal forms part of local
-              memory, family traditions, cultural life, livelihoods and collective identity.
+              Sita Samahit Sthal is closely connected with the surrounding
+              community.
             </p>
+
             <p>
-              The Foundation’s stewardship therefore remains connected with the people who live
-              around the site and participate in its continuing life.
+              Its role extends beyond those who visit occasionally. The Sthal
+              forms part of local memory, family traditions, cultural life,
+              livelihoods and collective identity.
+            </p>
+
+            <p>
+              The Foundation’s stewardship therefore remains connected with
+              the people who live around the site and participate in its
+              continuing life.
             </p>
           </Body>
+
+          {/* Community Ceremony Image */}
           <div className="mt-8">
-            <Figure
-              asset="sita-women-visitors"
-              alt="Women participating in a ceremony at Sita Samahit Sthal"
-              aspect="16 / 10"
-              caption="Published with consent. ADD VERIFIED CAPTION."
-            />
+            <figure className="overflow-hidden rounded-[8px]">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8yTsHfiwv1AsWM3UFuJJ_Oa1xfigYl65Bigwq2HGKrg&s=10"
+                alt="Women participating in a ceremony at Sita Samahit Sthal"
+                className="w-full aspect-[16/10] object-cover"
+              />
+
+              <figcaption className="mt-3 font-sans text-[12px] leading-relaxed text-muted-foreground">
+                Published with consent.
+              </figcaption>
+            </figure>
           </div>
         </Reveal>
 
+        {/* Community Cards */}
         <Reveal>
           <ul className="grid gap-6 sm:grid-cols-2">
             {COMMUNITY.map((c) => (
@@ -993,11 +1214,17 @@ function CommunityConnection() {
                 key={c.title}
                 className="overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)]"
               >
-                <AssetPlaceholder name={c.asset} label={c.alt} aspect="4 / 3" />
+                <img
+                  src={c.image}
+                  alt={c.alt}
+                  className="w-full aspect-[4/3] object-cover"
+                />
+
                 <div className="bg-[color:var(--card)]/60 p-5">
                   <h3 className="font-serif text-[20px] leading-tight text-[color:var(--charcoal)]">
                     {c.title}
                   </h3>
+
                   <p className="mt-2 font-sans text-[13.5px] leading-[1.7] text-muted-foreground">
                     {c.text}
                   </p>
@@ -1056,34 +1283,31 @@ function Preservation() {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Pending>Add verified preservation report</Pending>
-            <Pending>Add verified maintenance programme</Pending>
-            <Pending>Add verified conservation partner</Pending>
-          </div>
         </Reveal>
 
         <Reveal>
-          <div className="grid gap-5">
-            <Figure
-              asset="sita-preservation"
-              alt="Preservation work at Sita Samahit Sthal"
-              aspect="4 / 3"
-            />
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Figure
-                asset="sita-maintenance"
-                alt="Foundation team supporting site maintenance"
-                aspect="1 / 1"
-              />
-              <Figure
-                asset="sita-foundation-team"
-                alt="Foundation site-management team"
-                aspect="1 / 1"
-              />
-            </div>
-          </div>
-        </Reveal>
+  <div className="grid gap-5">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ZFIrUPocKolSVjPKdMaSjqWbieZAMLao4H0nV_6yyFD4p_o_EWyDuun7&s=10"
+      alt="Preservation work at Sita Samahit Sthal"
+      className="w-full aspect-[4/3] object-cover rounded-[8px]"
+    />
+
+    <div className="grid gap-5 sm:grid-cols-2">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr_-LHytMM-UsfxM1pGTp648Lwjmt-ArVniXCMmAdY5sDQCflrPAQf3od-&s=10"
+        alt="Foundation team supporting site maintenance"
+        className="w-full aspect-square object-cover rounded-[8px]"
+      />
+
+      <img
+        src="https://holaciti.com/assets/place/1766573288place.webp"
+        alt="Foundation site-management team"
+        className="w-full aspect-square object-cover rounded-[8px]"
+      />
+    </div>
+  </div>
+</Reveal>
       </div>
     </Section>
   );
@@ -1185,22 +1409,22 @@ function SiteExploration() {
       <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <div className={view === "map" ? "" : "hidden lg:block"}>
           <div className="overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)]">
-            <AssetPlaceholder
-              name="sita-site-map"
-              label="UPLOAD VERIFIED SITE MAP: sita-site-map"
-              aspect="4 / 3"
-            />
+            <img
+  src="https://static2.tripoto.com/media/filter/tst/img/2173352/SpotDocument/1632644765_1632644952670.jpg.webp"
+  alt="Verified site map of Sita Samahit Sthal"
+  className="w-full aspect-[4/3] object-cover rounded-[8px]"
+/>
           </div>
           <Caption>
             A site plan is shown only once a verified map has been supplied. No plan has been drawn
             or estimated.
           </Caption>
           <div className="mt-6 overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)]">
-            <AssetPlaceholder
-              name="sita-aerial-view"
-              label="Aerial view of Sita Samahit Sthal"
-              aspect="16 / 9"
-            />
+            <img
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfMu7dRYC4hHnlnDmqKg9G4biguWXNvO0wihH3xkZVXJItPE5rJ3wyLmpy&s=10"
+  alt="Aerial view of Sita Samahit Sthal"
+  className="w-full aspect-[16/9] object-cover rounded-[8px]"
+/>
           </div>
         </div>
 
@@ -1289,12 +1513,15 @@ function VisitorInformation() {
         </div>
 
         <div>
-          <Figure
-            asset="sita-regional-map"
-            alt="Regional location map showing access to Sita Samahit Sthal"
-            aspect="4 / 3"
-            caption="A verified location map will be published here."
-          />
+          <figure className="overflow-hidden rounded-[8px]">
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzCPtQQAUpi1-v_CdojTmZUeMESH1EKYL-PkLh4w27GlnYJA6LtQaxQm5R&s=10"
+    alt="Regional location map showing access to Sita Samahit Sthal"
+    className="w-full aspect-[4/3] object-cover"
+  />
+
+  
+</figure>
           <div className="mt-7 flex flex-wrap gap-3">
             <PrimaryBtn href="#site-exploration">Get Directions</PrimaryBtn>
             <GhostBtn href="#events">View Upcoming Events</GhostBtn>
@@ -1355,74 +1582,6 @@ function EventsCalendar() {
   );
 }
 
-/* 18. Stories */
-const STORIES = [
-  {
-    asset: "sita-story-01",
-    alt: "Approved image connected with a visitor reflection",
-    type: "A Visitor Reflection",
-    text: "A respectful account of what the visit or Sthal means to an individual or family.",
-  },
-  {
-    asset: "sita-story-02",
-    alt: "Approved image connected with a community memory",
-    type: "A Community Memory",
-    text: "A story connected with the Sthal’s place in local or family life.",
-  },
-  {
-    asset: "sita-story-03",
-    alt: "Approved image connected with a stewardship story",
-    type: "A Stewardship Story",
-    text: "A story from someone involved in maintaining, serving or supporting the site.",
-  },
-];
-
-function Stories() {
-  return (
-    <Section id="stories" tint="oklch(0.968 0.022 58 / 0.45)">
-      <Reveal className="max-w-3xl">
-        <Eyebrow tone={SITA}>Voices of the Sthal</Eyebrow>
-        <H2>Stories Carried Through People and Generations</H2>
-        <p className="mt-6 font-sans text-[15.5px] leading-[1.8] text-muted-foreground">
-          The meaning of a sacred place is carried not only through buildings and ceremonies, but
-          also through the memories of those who visit, serve and remain connected with it.
-        </p>
-      </Reveal>
-
-      <ul className="mt-12 grid gap-7 lg:grid-cols-3">
-        {STORIES.map((s) => (
-          <li key={s.type}>
-            <Reveal>
-              <article className="flex h-full flex-col overflow-hidden rounded-[8px] bg-[color:var(--card)]/65 ring-1 ring-[color:var(--border)]">
-                <AssetPlaceholder name={s.asset} label={s.alt} aspect="4 / 3" />
-                <div className="flex flex-1 flex-col p-6">
-                  <span
-                    className="font-sans text-[11px] font-medium uppercase tracking-[0.22em]"
-                    style={{ color: SITA }}
-                  >
-                    {s.type}
-                  </span>
-                  <p className="mt-4 font-sans text-[14.5px] leading-[1.75] text-muted-foreground">
-                    {s.text}
-                  </p>
-                  <dl className="mt-5">
-                    <InfoRow label="Name" />
-                    <InfoRow label="Relationship with the Sthal" />
-                    <InfoRow label="Location" />
-                    <InfoRow label="Date" />
-                  </dl>
-                  <p className="mt-5">
-                    <Pending>Story published only with recorded consent</Pending>
-                  </p>
-                </div>
-              </article>
-            </Reveal>
-          </li>
-        ))}
-      </ul>
-    </Section>
-  );
-}
 
 /* 19. Gallery */
 type GalleryItem = { asset: string; alt: string; caption: string; filters: string[] };
@@ -1658,12 +1817,14 @@ function Documentation() {
             </p>
           </Body>
           <div className="mt-8">
-            <Figure
-              asset="sita-historical-document"
-              alt="Archival document relating to Sita Samahit Sthal"
-              aspect="4 / 3"
-              caption="ADD ARCHIVAL DOCUMENT"
-            />
+           <figure className="overflow-hidden rounded-[8px]">
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmR1aA6Y3qdQZGwujCZy6IhxDMJx1I_Rnmrj4zQVXCHaP1Tt6FkTIZldhh&s=10"
+    alt="Archival document relating to Sita Samahit Sthal"
+    className="w-full aspect-[4/3] object-cover"
+  />
+
+</figure>
           </div>
         </Reveal>
 
@@ -1727,11 +1888,11 @@ function DedicatedWebsite() {
           </p>
         </Reveal>
         <Reveal>
-          <Figure
-            asset="sita-samahit-sthal-logo"
-            alt="Identity mark of Sita Samahit Sthal"
-            aspect="4 / 3"
-          />
+          <img
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCf1ZmM1nKtOuyW3XkZjwpUykKOmV3zudn95_gZgorg3WKAYz3UL0dXkQ&s=10"
+  alt="Identity mark of Sita Samahit Sthal"
+  className="w-full aspect-[4/3] object-contain rounded-[8px]"
+/>
         </Reveal>
       </div>
     </Section>
@@ -1743,11 +1904,11 @@ function Closing() {
   return (
     <section className="relative">
       <div className="relative">
-        <AssetPlaceholder
-          name="sita-night-view"
-          label="Evening view of Sita Samahit Sthal"
-          aspect="21 / 9"
-        />
+      <img
+  src="https://scontent.fbom40-1.fna.fbcdn.net/v/t39.99422-6/742111198_790323114105265_745605560625900402_n.png?stp=dst-jpg_tt6&cstp=mx1080x1258&ctp=s1080x1258&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=XlBDsltmFUIQ7kNvwFcbKht&_nc_oc=AdqyH06wvnO7PIyFlQePbWgF1ymYD_PVMzxC7ltCpM3-lCFPBCN9hTd4vnaiCJX76Pc&_nc_zt=14&_nc_ht=scontent.fbom40-1.fna&_nc_gid=Wva5W2wpfNI6t05E43HxBg&_nc_ss=7b289&oh=00_AQJ3uFd4R7PJcEG5DM6YW1skjWW8Tn8Q9PFostntoZ0ZqQ&oe=6A9B410F"
+  alt="Evening view of Sita Samahit Sthal"
+  className="w-full aspect-[21/9] object-cover rounded-[8px]"
+/>
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
