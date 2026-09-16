@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutFoundationRouteImport } from './routes/about-foundation'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EducationRouteImport } from './routes/education'
 import { Route as EnvironmentRuralRegenerationRouteImport } from './routes/environment-rural-regeneration'
 import { Route as HealthcareSocialWelfareRouteImport } from './routes/healthcare-social-welfare'
@@ -24,6 +25,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutFoundationRoute = AboutFoundationRouteImport.update({
   id: '/about-foundation',
   path: '/about-foundation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EducationRoute = EducationRouteImport.update({
@@ -51,6 +57,7 @@ const SitaSamahitSthalRoute = SitaSamahitSthalRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-foundation': typeof AboutFoundationRoute
+  '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
   '/environment-rural-regeneration': typeof EnvironmentRuralRegenerationRoute
   '/healthcare-social-welfare': typeof HealthcareSocialWelfareRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-foundation': typeof AboutFoundationRoute
+  '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
   '/environment-rural-regeneration': typeof EnvironmentRuralRegenerationRoute
   '/healthcare-social-welfare': typeof HealthcareSocialWelfareRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-foundation': typeof AboutFoundationRoute
+  '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
   '/environment-rural-regeneration': typeof EnvironmentRuralRegenerationRoute
   '/healthcare-social-welfare': typeof HealthcareSocialWelfareRoute
@@ -78,6 +87,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about-foundation'
+    | '/contact'
     | '/education'
     | '/environment-rural-regeneration'
     | '/healthcare-social-welfare'
@@ -86,6 +96,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about-foundation'
+    | '/contact'
     | '/education'
     | '/environment-rural-regeneration'
     | '/healthcare-social-welfare'
@@ -94,6 +105,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about-foundation'
+    | '/contact'
     | '/education'
     | '/environment-rural-regeneration'
     | '/healthcare-social-welfare'
@@ -103,6 +115,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutFoundationRoute: typeof AboutFoundationRoute
+  ContactRoute: typeof ContactRoute
   EducationRoute: typeof EducationRoute
   EnvironmentRuralRegenerationRoute: typeof EnvironmentRuralRegenerationRoute
   HealthcareSocialWelfareRoute: typeof HealthcareSocialWelfareRoute
@@ -123,6 +136,13 @@ declare module '@tanstack/react-router' {
       path: '/about-foundation'
       fullPath: '/about-foundation'
       preLoaderRoute: typeof AboutFoundationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/education': {
@@ -159,6 +179,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutFoundationRoute: AboutFoundationRoute,
+  ContactRoute: ContactRoute,
   EducationRoute: EducationRoute,
   EnvironmentRuralRegenerationRoute: EnvironmentRuralRegenerationRoute,
   HealthcareSocialWelfareRoute: HealthcareSocialWelfareRoute,

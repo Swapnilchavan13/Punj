@@ -8,7 +8,7 @@ const NAV = [
   { label: "Healthcare & Social Welfare", to: "/healthcare-social-welfare", num: "04" },
   { label: "Sita Samahit Sthal", to: "/sita-samahit-sthal", num: "05" },
   { label: "Environment & Rural Regeneration", to: "/environment-rural-regeneration", num: "06" },
-  { label: "Contact Us", to: "/contact", num: "07" },
+  // { label: "Contact Us", to: "/contact", num: "07" }, 
 ];
 
 export function Header() {

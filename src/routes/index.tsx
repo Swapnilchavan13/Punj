@@ -7,7 +7,6 @@ import { PillarsSection } from "@/components/PillarsSection";
 import { OurWorkSection } from "@/components/OurWorkSection";
 import { SiteFooter } from "@/components/SiteFooter";
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -17,7 +16,10 @@ export const Route = createFileRoute("/")({
         content:
           "A legacy of service rooted in community — education, healthcare, social welfare, Sita Samahit Sthal and environment.",
       },
-      { property: "og:title", content: "Pt. Kanahya Lal Dayawanti Punj Foundation" },
+      {
+        property: "og:title",
+        content: "Pt. Kanahya Lal Dayawanti Punj Foundation",
+      },
       {
         property: "og:description",
         content:
@@ -32,22 +34,27 @@ function Home() {
   return (
     <div className="min-h-dvh bg-[color:var(--ivory)]">
       <Header />
+
       <main>
+        {/* Foundation Logo */}
+        {/* <div className="flex justify-center px-5 pt-8">
+          <img
+            src="/foundation-logo.png"
+            alt="Pt. Kanahya Lal Dayawanti Punj Foundation Logo"
+            className="h-auto w-[180px] object-contain rounded-[8px]"
+          />
+        </div> */}
+
         <PillarSlider />
         <FoundationSection />
         <ImpactSection />
         <OurWorkSection />
         <PillarsSection />
+
         <div className="h-24" aria-hidden="true" />
       </main>
-            <SiteFooter />
-      
+
+      <SiteFooter />
     </div>
   );
 }
-
-//  <img
-//                 src="/foundation-logo.png"
-//                 alt="Punj Foundation Logo"
-//                 className="h-full w-full object-contain"
-//               />
