@@ -202,8 +202,8 @@ function EducationPage() {
         <Educators />
         <Achievements />
         <Stories />
-        <ImpactNumbers />
-        <Admissions />
+        {/* <ImpactNumbers /> */}
+        {/* <Admissions /> */}
         <Gallery />
         <Updates />
         <Closing />
@@ -589,11 +589,11 @@ function SchoolFeature() {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-wrap gap-2">
+          {/* <div className="mt-8 flex flex-wrap gap-2">
             <Pending>Add verified school affiliation</Pending>
             <Pending>Add verified classes offered</Pending>
             <Pending>Add verified student enrolment</Pending>
-          </div>
+          </div> */}
 
           <div className="mt-8 flex flex-wrap gap-3">
             <PrimaryBtn href="/education/dayawanti-punj-model-school">Explore the School</PrimaryBtn>
@@ -646,11 +646,11 @@ function CollegeFeature() {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-wrap gap-2">
+          {/* <div className="mt-8 flex flex-wrap gap-2">
             <Pending>Add verified course list</Pending>
             <Pending>Add verified university affiliation</Pending>
             <Pending>Add verified eligibility</Pending>
-          </div>
+          </div> */}
 
           <div className="mt-8 flex flex-wrap gap-3">
             <PrimaryBtn href="/education/dayawanti-punj-degree-college">
@@ -966,16 +966,16 @@ function Scholarships() {
             >
               <h3 className="font-serif text-[21px] text-[color:var(--charcoal)]">{s.title}</h3>
               <div className="mt-3">
-                <Pending>{s.note}</Pending>
+                {/* <Pending>{s.note}</Pending> */}
               </div>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8 flex flex-wrap gap-2">
+        {/* <div className="mt-8 flex flex-wrap gap-2">
           <Pending>Add application timeline</Pending>
           <Pending>Add number of students supported</Pending>
-        </div>
+        </div> */}
 
         <div className="mt-8 flex flex-wrap gap-3">
           <PrimaryBtn href="/education/scholarships">Scholarship Information</PrimaryBtn>
@@ -1145,9 +1145,9 @@ function Facilities() {
   />
 </div>              <div className="p-5">
                 <h3 className="font-serif text-[19px] text-[color:var(--charcoal)]">{f.title}</h3>
-                <div className="mt-3">
+                {/* <div className="mt-3">
                   <Pending>Facility details to be verified</Pending>
-                </div>
+                </div> */}
               </div>
             </li>
           ))}
@@ -1209,10 +1209,10 @@ function Educators() {
             {e.title}
           </h3>
 
-          <div className="mt-4 flex flex-wrap gap-2">
+          {/* <div className="mt-4 flex flex-wrap gap-2">
             <Pending>Add verified educator profiles</Pending>
             <Pending>Add verified qualifications</Pending>
-          </div>
+          </div> */}
         </div>
       </article>
     ))}
@@ -1230,7 +1230,7 @@ function Educators() {
 const ACHIEVEMENTS = [
   {
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwejsqg0VR7B1jEZuPtdY_Htqt0Tp49ylnUKzKpt0WJ0A2Be42klRWQBg&s=10",
+      "https://i.ibb.co/rf7JRBST/Screenshot-2026-09-10-135246.png",
     area: "Academics",
     title: "CBSE Class X & XII Board Performance",
     student: "School Merit List",
@@ -1442,12 +1442,12 @@ function Stories() {
                     <dd>{story.course}</dd>
                   </div>
 
-                  <div className="flex justify-between gap-3">
+                  {/* <div className="flex justify-between gap-3">
                     <dt className="font-medium text-[color:var(--charcoal)]/70">
                       Location
                     </dt>
                     <dd>{story.location}</dd>
-                  </div>
+                  </div> */}
                 </dl>
 
                 <a
