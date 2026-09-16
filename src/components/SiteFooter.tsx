@@ -18,7 +18,7 @@ export function SiteFooter() {
           <div className="flex items-center gap-3">
             <div className="h-12 w-12 overflow-hidden">
               {/* <AssetPlaceholder name="foundation-logo" label="Foundation logo"  /> */}
-              <img src="/foundation-logo.png" alt="" />
+              <img src="/foundation-logo.png" alt="Pt. Kanhaiya Lal Dayawanti Punj Foundation Logo" />
             </div>
             <p className="font-serif text-[18px] leading-tight text-[color:var(--charcoal)]">
               Pt. Kanahya Lal Dayawanti Punj Foundation
@@ -28,9 +28,12 @@ export function SiteFooter() {
             A legacy of service across education, healthcare and social welfare, cultural
             stewardship, and environment and rural regeneration.
           </p>
-          <p className="mt-6 font-sans text-[12px] uppercase tracking-[0.2em] text-muted-foreground">
-            ADD VERIFIED CONTACT DETAILS
-          </p>
+          <div className="mt-6 space-y-1 font-sans text-[13px] text-muted-foreground">
+            <p className="font-medium text-[color:var(--charcoal)]">Contact Information:</p>
+            <p>Phone: 011-49990952</p>
+            <p>Email: pkldpfoundation@gmail.com</p>
+            <p>Registered Office / Project Region: Sitamarhi, Bhadohi, Uttar Pradesh</p>
+          </div>
         </div>
 
         <nav aria-label="Footer">
