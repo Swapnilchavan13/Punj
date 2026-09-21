@@ -201,7 +201,7 @@ function EducationPage() {
         <Facilities />
         <Educators />
         <Achievements />
-        <Stories />
+        {/* <Stories /> */}
         {/* <ImpactNumbers /> */}
         {/* <Admissions /> */}
         <Gallery />

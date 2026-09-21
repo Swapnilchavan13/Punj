@@ -124,17 +124,17 @@ function HealthcareWelfarePage() {
         {/* <MedicalCamps /> */}
         <EyeCare />
         <Ambulance />
-        <PatientSupport />
+        {/* <PatientSupport /> */}
         <Preventive />
         <WelfareIntro />
         <GroupWeddings />
-        <FamilySupport />
-        <Vulnerable />
+        {/* <FamilySupport /> */}
+        {/* <Vulnerable /> */}
         <CommunityResponse />
         <JourneyOfCare />
         <Impact />
         <Stories />
-        <Upcoming />
+        {/* <Upcoming /> */}
         <Enquiries />
         <Gallery />
         <Updates />
@@ -300,8 +300,8 @@ const PILLAR_PANELS = [
     areas: [
       "Group weddings",
       "Family support",
-      "Ration assistance",
-      "Clothing and blankets",
+      // "Ration assistance",
+      // "Clothing and blankets",
       "Women and elderly support",
       "Community response",
     ],
@@ -1301,9 +1301,9 @@ const METRICS: Metric[] = [
   { label: "Couples supported", group: "Group Weddings", unit: "Couples", programme: "Group-wedding programme", period: "Since inception", basis: "Cumulative", value: "Verified Active", source: "Foundation Ceremony Records", status: "Verified" },
   { label: "Group-wedding programmes", group: "Group Weddings", unit: "Programmes", programme: "Group-wedding programme", period: "Since inception", basis: "Cumulative", value: "Verified Active", source: "Foundation Archives", status: "Verified" },
   { label: "Families assisted", group: "Family Support", unit: "Families", programme: "Family and household support", period: "Annual Active Reporting", basis: "Annual", value: "Verified Active", source: "Welfare Distribution Logs", status: "Verified" },
-  { label: "Ration kits distributed", group: "Family Support", unit: "Kits", programme: "Ration assistance", period: "Annual Active Reporting", basis: "Annual", value: "Verified Active", source: "Relief Drive Records", status: "Verified" },
-  { label: "Clothing items distributed", group: "Family Support", unit: "Items", programme: "Clothing assistance", period: "Annual Active Reporting", basis: "Annual", value: "Verified Active", source: "Charity Distribution Logs", status: "Verified" },
-  { label: "Blankets distributed", group: "Family Support", unit: "Blankets", programme: "Seasonal assistance", period: "Annual Active Reporting", basis: "Annual", value: "Verified Active", source: "Winter Support Records", status: "Verified" },
+  // { label: "Ration kits distributed", group: "Family Support", unit: "Kits", programme: "Ration assistance", period: "Annual Active Reporting", basis: "Annual", value: "Verified Active", source: "Relief Drive Records", status: "Verified" },
+  // { label: "Clothing items distributed", group: "Family Support", unit: "Items", programme: "Clothing assistance", period: "Annual Active Reporting", basis: "Annual", value: "Verified Active", source: "Charity Distribution Logs", status: "Verified" },
+  // { label: "Blankets distributed", group: "Family Support", unit: "Blankets", programme: "Seasonal assistance", period: "Annual Active Reporting", basis: "Annual", value: "Verified Active", source: "Winter Support Records", status: "Verified" },
   { label: "Seasonal-support programmes", group: "Family Support", unit: "Programmes", programme: "Community response", period: "Annual Active Reporting", basis: "Cumulative", value: "Verified Active", source: "Community Response Reports", status: "Verified" },
 ];
 
@@ -2175,26 +2175,26 @@ const GALLERY: GalleryItem[] = [
     location: "Foundation Ceremonial Grounds",
     date: "August 2026",
   },
-  {
-    asset: "family-support",
-    image: "https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg",
-    alt: "Practical support being provided to a family",
-    caption: "Family support",
-    programme: "Family and household support",
-    filters: ["Family Support"],
-    location: "Regional Welfare Distribution Hub",
-    date: "August 2026",
-  },
-  {
-    asset: "blanket-distribution",
-    image: "https://i.ibb.co/NdXPKFFh/New-Picture-6.png",
-    alt: "Blankets being provided during a seasonal support programme",
-    caption: "Seasonal support",
-    programme: "Seasonal assistance",
-    filters: ["Family Support"],
-    location: "Sitamarhi Community Center",
-    date: "August 2026",
-  },
+  // {
+  //   asset: "family-support",
+  //   image: "https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg",
+  //   alt: "Practical support being provided to a family",
+  //   caption: "Family support",
+  //   programme: "Family and household support",
+  //   filters: ["Family Support"],
+  //   location: "Regional Welfare Distribution Hub",
+  //   date: "August 2026",
+  // },
+  // {
+  //   asset: "blanket-distribution",
+  //   image: "https://i.ibb.co/NdXPKFFh/New-Picture-6.png",
+  //   alt: "Blankets being provided during a seasonal support programme",
+  //   caption: "Seasonal support",
+  //   programme: "Seasonal assistance",
+  //   filters: ["Family Support"],
+  //   location: "Sitamarhi Community Center",
+  //   date: "August 2026",
+  // },
   {
     asset: "preventive-health-session",
     image: "https://i.ibb.co/6RMT09vV/Whats-App-Image-2026-08-12-at-3-42-19-PM-2.jpg",
@@ -2423,15 +2423,15 @@ const UPDATE_CATEGORIES: UpdateItem[] = [
     summary: "Registration and support arrangements are progressing smoothly to assist participating underprivileged families.",
     location: "Foundation Ceremonial Grounds",
   },
-  {
-    label: "Family Support",
-    image: "https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg",
-    accent: SW,
-    date: "August 12, 2026",
-    title: "Targeted Household Welfare Kits Distributed to Vulnerable Households",
-    summary: "Providing essential rations, seasonal supplies, and direct social assistance to families facing resource gaps.",
-    location: "Regional Welfare Distribution Hub",
-  },
+  // {
+  //   label: "Family Support",
+  //   image: "https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg",
+  //   accent: SW,
+  //   date: "August 12, 2026",
+  //   title: "Targeted Household Welfare Kits Distributed to Vulnerable Households",
+  //   summary: "Providing essential rations, seasonal supplies, and direct social assistance to families facing resource gaps.",
+  //   location: "Regional Welfare Distribution Hub",
+  // },
 ];
 
 function Updates() {
