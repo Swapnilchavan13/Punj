@@ -1179,7 +1179,7 @@ const RESPONSE_FIELDS = [
   "Situation or need: Seasonal hardship, winter requirements, and urgent community support",
   "Location: Sitamarhi, Bhadohi, and surrounding regional project sites",
   "Date: Conducted through recurring seasonal relief and active community drives",
-  "Assistance provided: Distribution of dry rations, blankets, clothing, and relief supplies",
+  // "Assistance provided: Distribution of dry rations, blankets, clothing, and relief supplies",
   "Families or individuals reached: Local rural households and vulnerable families",
   "Partners: Foundation members, community volunteers, and local institutions",
   "Photographs: Documented field images of active relief distribution",
