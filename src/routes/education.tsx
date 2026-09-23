@@ -242,12 +242,12 @@ function Hero() {
             <PrimaryBtn href="#ecosystem">Explore Our Institutions</PrimaryBtn>
             <GhostBtn href="#admissions">Admissions &amp; Enquiries</GhostBtn>
           </div>
-          <a
+          {/* <a
             href="#student-stories"
             className="mt-6 inline-block font-serif text-[16px] italic text-[color:var(--charcoal)]/70 underline-offset-4 hover:text-[color:var(--accent-education)] hover:underline"
           >
             Discover Student Stories →
-          </a>
+          </a> */}
         </Reveal>
 
         <Reveal>

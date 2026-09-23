@@ -806,7 +806,7 @@ function Partnership() {
             Learn About the Partnership
           </PrimaryBtn>
           <a
-            href="https://nettzero.in"
+            href="https://nettzero.world"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--charcoal)]/25 px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-[color:var(--charcoal)] transition-colors hover:border-[color:var(--accent-environment)] hover:text-[color:var(--accent-environment)]"

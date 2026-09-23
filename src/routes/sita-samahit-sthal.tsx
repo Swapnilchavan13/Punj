@@ -179,7 +179,7 @@ function Hero() {
               to preserve the site, support visitors and pilgrims, sustain its living traditions and
               protect its significance for future generations.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
+            {/* <div className="mt-9 flex flex-wrap items-center gap-3">
               <PrimaryBtn href="#explore">Explore the Sthal</PrimaryBtn>
               <GhostBtn href="#plan-your-visit">Plan Your Visit</GhostBtn>
             </div>
@@ -188,7 +188,7 @@ function Hero() {
               className="mt-6 inline-block font-serif text-[16px] italic text-[color:var(--charcoal)]/70 underline-offset-4 hover:text-[color:var(--accent-sita)] hover:underline"
             >
               Discover Its Significance →
-            </a>
+            </a> */}
           </Reveal>
 
           <Reveal>
@@ -250,12 +250,12 @@ function Introduction() {
               preserving its significance across generations.
             </p>
           </Body>
-          <a
+          {/* <a
             href="#foundation-stewardship"
             className="mt-7 inline-block font-serif text-[16px] italic text-[color:var(--charcoal)]/70 underline-offset-4 hover:text-[color:var(--accent-sita)] hover:underline"
           >
             Read about the Foundation’s stewardship →
-          </a>
+          </a> */}
         </Reveal>
 
         <Reveal>
@@ -2510,11 +2510,11 @@ function Closing() {
             character, support those who visit and sustain its cultural significance for future
             generations.
           </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
+          {/* <div className="mt-9 flex flex-wrap justify-center gap-3">
             <PrimaryBtn href="#plan-your-visit">Plan Your Visit</PrimaryBtn>
             <GhostBtn href="#events">View Upcoming Events</GhostBtn>
             <GhostBtn href="#foundation-stewardship">Explore the Foundation’s Stewardship</GhostBtn>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

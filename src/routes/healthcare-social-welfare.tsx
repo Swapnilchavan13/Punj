@@ -171,16 +171,16 @@ function Hero() {
             weddings and community-support programmes, the Foundation seeks to protect both
             wellbeing and dignity.
           </p>
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          {/* <div className="mt-9 flex flex-wrap items-center gap-3">
             <PrimaryBtn href="#healthcare">Explore Healthcare</PrimaryBtn>
             <GhostBtn href="#social-welfare">Explore Social Welfare</GhostBtn>
-          </div>
-          <a
+          </div> */}
+          {/* <a
             href="#upcoming"
             className="mt-6 inline-block font-serif text-[16px] italic text-[color:var(--charcoal)]/70 underline-offset-4 hover:text-[color:var(--accent-healthcare)] hover:underline"
           >
             View Upcoming Programmes →
-          </a>
+          </a> */}
         </Reveal>
 
         <Reveal>
@@ -365,11 +365,11 @@ function TwoPillars() {
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-2">
+                {/* <div className="mt-8 pt-2">
                   <PrimaryBtn href={p.cta.href}>
                     {p.cta.label}
                   </PrimaryBtn>
-                </div>
+                </div> */}
               </div>
             </article>
           </Reveal>
@@ -459,7 +459,7 @@ function HospitalFeature() {
             ))}
           </dl>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          {/* <div className="mt-8 flex flex-wrap gap-3">
             <PrimaryBtn href="/healthcare-social-welfare/hospital">Explore the Hospital</PrimaryBtn>
             <GhostBtn href="#enquiries">Hospital Enquiry</GhostBtn>
             <GhostBtn 
@@ -469,7 +469,7 @@ function HospitalFeature() {
             >
               Get Directions
             </GhostBtn>
-          </div>
+          </div> */}
           <p className="mt-5 font-sans text-[13px] text-muted-foreground">
             <span className="text-emerald-600 font-medium">✓ Location &amp; Foundation Contact Verified</span>
           </p>
@@ -630,12 +630,12 @@ function EyeCare() {
             Charitable eye care services, vision screening camps, and specialized treatment pathways 
             are organized regularly in coordination with expert ophthalmology teams.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          {/* <div className="mt-8 flex flex-wrap gap-3">
             <PrimaryBtn href="/healthcare-social-welfare/eye-care">
               Explore Eye-Care Programmes
             </PrimaryBtn>
             <GhostBtn href="#enquiries">Eye-Care Enquiry</GhostBtn>
-          </div>
+          </div> */}
         </Reveal>
         <Reveal>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -989,12 +989,12 @@ function GroupWeddings() {
           <p className="mt-5 font-sans text-[13px] text-emerald-600 font-medium">
             ✓ Verified Foundation Group-Wedding Initiative Active
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          {/* <div className="mt-8 flex flex-wrap gap-3">
             <PrimaryBtn href="/healthcare-social-welfare/group-weddings">
               Learn About the Group-Wedding Programme
             </PrimaryBtn>
             <GhostBtn href="#enquiries">Group-Wedding Enquiry</GhostBtn>
-          </div>
+          </div> */}
         </Reveal>
       </div>
     </Section>
@@ -1568,9 +1568,9 @@ function Stories() {
                 </dl>
 
                 <div className="mt-6 flex items-center justify-between">
-                  <GhostBtn href="/stories-updates/healthcare-social-welfare">
+                  {/* <GhostBtn href="/stories-updates/healthcare-social-welfare">
                     Read Full Story
-                  </GhostBtn>
+                  </GhostBtn> */}
                   <span className="text-xs font-medium text-emerald-600">✓ Verified Story Record</span>
                 </div>
               </div>
@@ -2523,11 +2523,11 @@ function Closing() {
               and family.
             </p>
           </Body>
-          <div className="mt-9 flex flex-wrap gap-3">
+          {/* <div className="mt-9 flex flex-wrap gap-3">
             <PrimaryBtn href="/healthcare-social-welfare/hospital">Explore the Hospital</PrimaryBtn>
             <GhostBtn href="#upcoming">View Upcoming Programmes</GhostBtn>
             <GhostBtn href="#enquiries">Contact the Healthcare &amp; Social Welfare Team</GhostBtn>
-          </div>
+          </div> */}
         </Reveal>
         <Reveal>
          <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">

@@ -215,7 +215,7 @@ const CHAPTERS: Chapter[] = [
           "A visionary entrepreneur and educationist, he founded DPMS to bring world-class learning to Sitamarhi. His mission lives on through every student's success.",
       },
     ],
-    link: { label: "Explore Education", href: "/education" },
+    // link: { label: "Explore Education", href: "/education" },
   },
   {
     id: "community-care",
@@ -493,7 +493,7 @@ function AboutFoundation() {
                   environment and rural regeneration.
                 </p>
               </div>
-              <div className="mt-8 flex flex-wrap items-center gap-6">
+              {/* <div className="mt-8 flex flex-wrap items-center gap-6">
                 <a
                   href="#the-journey"
                   className="inline-flex min-h-11 items-center rounded-full bg-[color:var(--charcoal)] px-7 py-3 font-sans text-[13px] font-medium uppercase tracking-[0.2em] text-[color:var(--ivory)] transition-colors hover:bg-[color:var(--accent-sita)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
@@ -506,7 +506,7 @@ function AboutFoundation() {
                 >
                   Discover Our Work
                 </a>
-              </div>
+              </div> */}
             </div>
 
             <figure>
