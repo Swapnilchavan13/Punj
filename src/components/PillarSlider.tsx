@@ -60,7 +60,8 @@ const SLIDES: Slide[] = [
   },
 ];
 
-const AUTOPLAY_MS = 8000;
+// Updated to 3 seconds as requested
+const AUTOPLAY_MS = 3000;
 
 export function PillarSlider() {
   const [index, setIndex] = useState(0);
@@ -124,7 +125,8 @@ export function PillarSlider() {
         touchStart.current = null;
       }}
     >
-      <div className="relative min-h-[560px] md:min-h-[640px] lg:min-h-[calc(80vh-92px)] lg:max-h-[780px]">
+      {/* Increased height constraints to prevent any text clipping */}
+      <div className="relative min-h-[620px] md:min-h-[700px] lg:min-h-[calc(85vh-92px)] lg:max-h-[820px]">
         {SLIDES.map((s, i) => {
           const active = i === index;
           return (
@@ -138,10 +140,10 @@ export function PillarSlider() {
                 active ? "opacity-100" : "pointer-events-none opacity-0"
               }`}
             >
-              <div className="grid h-full min-h-[560px] grid-cols-1 md:min-h-[640px] lg:grid-cols-[40%_60%]">
+              <div className="grid h-full min-h-[620px] grid-cols-1 md:min-h-[700px] lg:grid-cols-[40%_60%]">
                 {/* Text panel */}
                 <div
-                  className="order-2 flex flex-col justify-center px-6 py-10 backdrop-blur-sm md:px-12 lg:order-1 lg:px-14 lg:py-16"
+                  className="order-2 flex flex-col justify-center px-6 py-12 backdrop-blur-sm md:px-12 lg:order-1 lg:px-14 lg:py-16"
                   style={{ backgroundColor: s.panelBg }}
                 >
                   <div className="max-w-xl">
@@ -155,7 +157,7 @@ export function PillarSlider() {
                       </span>
                     </div>
                     <h2
-                      className="mt-5 font-serif text-[34px] leading-[1.1] md:text-[46px] lg:text-[54px]"
+                      className="mt-5 font-serif text-[32px] leading-[1.1] md:text-[44px] lg:text-[52px]"
                       style={{ color: `var(${s.accentVar})` }}
                     >
                       {s.title}

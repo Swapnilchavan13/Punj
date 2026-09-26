@@ -124,7 +124,7 @@ function Caption({ children }: { children: ReactNode }) {
 }
 
 const btnBase =
-  "inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent-education)]";
+  "inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent-education)] cursor-pointer";
 
 function PrimaryBtn({
   children,
@@ -149,12 +149,16 @@ function PrimaryBtn({
   );
 }
 
-function GhostBtn({ children, href }: { children: ReactNode; href?: string }) {
+function GhostBtn({ children, href, onClick }: { children: ReactNode; href?: string; onClick?: () => void }) {
   const cls = `${btnBase} border border-[color:var(--charcoal)]/25 text-[color:var(--charcoal)] hover:border-[color:var(--accent-education)] hover:text-[color:var(--accent-education)]`;
-  return (
-    <a href={href ?? "#"} className={cls}>
+  return href ? (
+    <a href={href} className={cls}>
       {children}
     </a>
+  ) : (
+    <button type="button" onClick={onClick} className={cls}>
+      {children}
+    </button>
   );
 }
 
@@ -181,14 +185,131 @@ function Figure({
   );
 }
 
+/* ---------------- Popups ---------------- */
+
+function ExploreInstitutionsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const [submitted, setSubmitted] = useState(false);
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+      <div className="relative w-full max-w-lg rounded-2xl bg-[color:var(--ivory)] p-8 shadow-2xl ring-1 ring-[color:var(--border)]">
+        <button
+          onClick={onClose}
+          className="absolute right-5 top-5 text-muted-foreground hover:text-[color:var(--charcoal)] text-xl font-bold"
+        >
+          ✕
+        </button>
+        <h3 className="font-serif text-2xl text-[color:var(--charcoal)] mb-2">Explore Our Institutions</h3>
+        <p className="font-sans text-sm text-muted-foreground mb-6">
+          Select which institution you would like to request information or a brochure packet for.
+        </p>
+
+        {submitted ? (
+          <div className="py-8 text-center">
+            <h4 className="font-serif text-xl text-[color:var(--accent-education)] mb-2">Thank You!</h4>
+            <p className="font-sans text-sm text-muted-foreground mb-6">We have received your request and will mail/email the institutional details shortly.</p>
+            <PrimaryBtn onClick={() => { setSubmitted(false); onClose(); }}>Close Window</PrimaryBtn>
+          </div>
+        ) : (
+          <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
+            <div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Full Name</label>
+              <input required type="text" placeholder="Enter your full name" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+            </div>
+            <div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Email Address</label>
+              <input required type="email" placeholder="you@example.com" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+            </div>
+            <div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Choose Institution</label>
+              <select className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]">
+                <option value="both">Both Institutions (School & Degree College)</option>
+                <option value="school">Dayawanti Punj Model School</option>
+                <option value="college">Dayawanti Punj Degree College</option>
+              </select>
+            </div>
+            <div className="pt-4 flex justify-end gap-3">
+              <GhostBtn onClick={onClose}>Cancel</GhostBtn>
+              <PrimaryBtn type="submit">Submit Request</PrimaryBtn>
+            </div>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function AdmissionsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const [submitted, setSubmitted] = useState(false);
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+      <div className="relative w-full max-w-lg rounded-2xl bg-[color:var(--ivory)] p-8 shadow-2xl ring-1 ring-[color:var(--border)]">
+        <button
+          onClick={onClose}
+          className="absolute right-5 top-5 text-muted-foreground hover:text-[color:var(--charcoal)] text-xl font-bold"
+        >
+          ✕
+        </button>
+        <h3 className="font-serif text-2xl text-[color:var(--charcoal)] mb-2">Admissions &amp; Enquiries</h3>
+        <p className="font-sans text-sm text-muted-foreground mb-6">
+          Fill out your details below and our admissions team will contact you regarding seats, fee structures, and campus visits.
+        </p>
+
+        {submitted ? (
+          <div className="py-8 text-center">
+            <h4 className="font-serif text-xl text-[color:var(--accent-education)] mb-2">Enquiry Received!</h4>
+            <p className="font-sans text-sm text-muted-foreground mb-6">Our admissions coordinator will get in touch with you shortly.</p>
+            <PrimaryBtn onClick={() => { setSubmitted(false); onClose(); }}>Close Window</PrimaryBtn>
+          </div>
+        ) : (
+          <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
+            <div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Student / Applicant Name</label>
+              <input required type="text" placeholder="Student's name" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Phone Number</label>
+                <input required type="tel" placeholder="+91 00000 00000" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+              </div>
+              <div>
+                <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Grade / Course Sought</label>
+                <input required type="text" placeholder="e.g. Class 9 / BA Program" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+              </div>
+            </div>
+            <div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Specific Query or Message</label>
+              <textarea rows={3} placeholder="Ask about admissions, hostel facilities, scholarships..." className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+            </div>
+            <div className="pt-4 flex justify-end gap-3">
+              <GhostBtn onClick={onClose}>Cancel</GhostBtn>
+              <PrimaryBtn type="submit">Send Enquiry</PrimaryBtn>
+            </div>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
+
+
+
 /* ---------------- page ---------------- */
 
 function EducationPage() {
+
+  const [isExploreOpen, setIsExploreOpen] = useState(false);
+  const [isAdmissionsOpen, setIsAdmissionsOpen] = useState(false);
   return (
     <div className="min-h-dvh bg-[color:var(--ivory)]">
       <Header />
       <main>
-        <Hero />
+        <Hero 
+        onOpenExplore={() => setIsExploreOpen(true)} 
+        onOpenAdmissions={() => setIsAdmissionsOpen(true)} />
         <Philosophy />
         <Ecosystem />
         <SchoolFeature />
@@ -209,12 +330,19 @@ function EducationPage() {
         <Closing />
       </main>
       <SiteFooter />
+
+
+       {/* Popups */}
+      <ExploreInstitutionsModal isOpen={isExploreOpen} onClose={() => setIsExploreOpen(false)} />
+      <AdmissionsModal isOpen={isAdmissionsOpen} onClose={() => setIsAdmissionsOpen(false)} />
     </div>
   );
 }
 
+
+
 /* 1. Hero */
-function Hero() {
+function Hero({ onOpenExplore, onOpenAdmissions }: { onOpenExplore: () => void; onOpenAdmissions: () => void }) {
   return (
     <section
       className="px-5 pb-16 pt-10 md:px-10 md:pb-24 md:pt-16"
@@ -239,56 +367,50 @@ function Hero() {
             aspiration and opportunity closer to young people in and around Sitamarhi.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
-            <PrimaryBtn href="#ecosystem">Explore Our Institutions</PrimaryBtn>
-            <GhostBtn href="#admissions">Admissions &amp; Enquiries</GhostBtn>
+            <PrimaryBtn onClick={onOpenExplore}>Explore Our Institutions</PrimaryBtn>
+            <GhostBtn onClick={onOpenAdmissions}>Admissions &amp; Enquiries</GhostBtn>
           </div>
-          {/* <a
-            href="#student-stories"
-            className="mt-6 inline-block font-serif text-[16px] italic text-[color:var(--charcoal)]/70 underline-offset-4 hover:text-[color:var(--accent-education)] hover:underline"
-          >
-            Discover Student Stories →
-          </a> */}
         </Reveal>
 
         <Reveal>
           <div className="relative">
             <div
-  style={{
-    aspectRatio: "16 / 11",
-    overflow: "hidden",
-    borderRadius: "12px", // optional
-  }}
->
-  <img
-    src="https://dpms.in/wp-content/uploads/2025/08/0F2A2035.jpg" // Update with your image path
-    alt="Students participating in a classroom activity at Dayawanti Punj Model School"
-    style={{
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      display: "block",
-    }}
-  />
-</div>
+              style={{
+                aspectRatio: "16 / 11",
+                overflow: "hidden",
+                borderRadius: "12px",
+              }}
+            >
+              <img
+                src="https://dpms.in/wp-content/uploads/2025/08/0F2A2035.jpg"
+                alt="Students participating in a classroom activity at Dayawanti Punj Model School"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+              />
+            </div>
             <div className="absolute -bottom-8 -left-6 hidden w-[190px] md:block">
               <div className="overflow-hidden rounded-[4px] ring-1 ring-[color:var(--border)] shadow-[0_18px_50px_-24px_rgba(0,0,0,0.4)]">
                 <div
-  style={{
-    aspectRatio: "4 / 3",
-    overflow: "hidden",
-  }}
->
-  <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjvbYBp7WXi8H5HL-IdnSon0U2MYvDYx5m545an4HlXqk_Ev71COB1nd4&s=10" // Update with your image path
-    alt="Students participating in a classroom activity at Dayawanti Punj Model School"
-    style={{
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      display: "block",
-    }}
-  />
-</div>
+                  style={{
+                    aspectRatio: "4 / 3",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjvbYBp7WXi8H5HL-IdnSon0U2MYvDYx5m545an4HlXqk_Ev71COB1nd4&s=10"
+                    alt="Students participating in a classroom activity at Dayawanti Punj Model School"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -297,7 +419,6 @@ function Hero() {
     </section>
   );
 }
-
 /* 2. Philosophy */
 function Philosophy() {
   return (
@@ -357,7 +478,7 @@ function Philosophy() {
   />
 </div>
 
-<p
+{/* <p
   style={{
     marginTop: "8px",
     fontSize: "14px",
@@ -366,7 +487,7 @@ function Philosophy() {
   }}
 >
   Archival image from the Foundation’s educational work. ADD VERIFIED CAPTION AND DATE.
-</p>
+</p> */}
 
             <p className="mt-6 border-l-2 pl-5 font-serif text-[20px] italic leading-[1.45] text-[color:var(--charcoal)]" style={{ borderColor: OCHRE }}>
               “Education creates the confidence to imagine a different future.”
@@ -459,10 +580,10 @@ function InstitutionPanel({
           ))}
         </ul>
 
-        <div className="mt-auto flex flex-wrap gap-3 pt-8">
+        {/* <div className="mt-auto flex flex-wrap gap-3 pt-8">
           <PrimaryBtn href={exploreHref}>{exploreLabel}</PrimaryBtn>
           <GhostBtn href={admissionsHref}>{admissionsLabel}</GhostBtn>
-        </div>
+        </div> */}
       </div>
     </article>
   );
@@ -595,12 +716,12 @@ function SchoolFeature() {
             <Pending>Add verified student enrolment</Pending>
           </div> */}
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          {/* <div className="mt-8 flex flex-wrap gap-3">
             <PrimaryBtn href="/education/dayawanti-punj-model-school">Explore the School</PrimaryBtn>
             <GhostBtn href="/education/dayawanti-punj-model-school/admissions">
               School Admissions
             </GhostBtn>
-          </div>
+          </div> */}
         </Reveal>
       </div>
     </Section>
@@ -652,14 +773,14 @@ function CollegeFeature() {
             <Pending>Add verified eligibility</Pending>
           </div> */}
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          {/* <div className="mt-8 flex flex-wrap gap-3">
             <PrimaryBtn href="/education/dayawanti-punj-degree-college">
               Explore the College
             </PrimaryBtn>
             <GhostBtn href="/education/dayawanti-punj-degree-college/admissions">
               College Admissions
             </GhostBtn>
-          </div>
+          </div> */}
         </Reveal>
 
         <Reveal>
@@ -1081,7 +1202,7 @@ const FACILITIES = [
   },
   {
     title: "Science Laboratories",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMI4SpPDJWCGDnYi1jvbsxujYhAy8DNxVPX7Ol5BLSqw&s",
+    image: "https://i.ibb.co/j7xp6xL/Screenshot-2026-09-23-125452.png",
     alt: "Students participating in a school science activity",
   },
   {
@@ -1232,12 +1353,12 @@ const ACHIEVEMENTS = [
     image:
       "https://i.ibb.co/rf7JRBST/Screenshot-2026-09-10-135246.png",
     area: "Academics",
-    title: "CBSE Class X & XII Board Performance",
+    title: "CBSE Class X Board Performance",
     student: "School Merit List",
     institution: "Dayawanti Punj Model School",
     date: "Academic Session 2025–26",
     description:
-      "Students demonstrated strong performance in the CBSE board examinations, with several securing distinction grades across Science, Commerce and Humanities streams.",
+      "Students achieved strong CBSE board results, with several securing distinction grades across Science, Commerce and Humanities streams.",
   },
   {
     image:
@@ -1248,18 +1369,18 @@ const ACHIEVEMENTS = [
     institution: "Dayawanti Punj Model School",
     date: "2025",
     description:
-      "Students participated in district-level athletics and indoor sports, earning medals and representing the school across multiple events.",
+      "Students competed in district-level athletics and indoor sports, earning medals and representing the school across multiple events.",
   },
   {
     image:
       "https://images.jdmagicbox.com/v2/comp/bhadohi/a9/9999p5414.5414.110123122915.q2a9/catalogue/dayawanti-punj-model-school-bhadohi-ho-bhadohi-cbse-schools-irpypaxou2.jpg",
     area: "Culture",
     title: "Annual Cultural & Literary Festival",
-    student: "Music, Dance & Debate Teams",
+    student: "Music & Debate Teams",
     institution: "Dayawanti Punj Model School",
     date: "2025",
     description:
-      "Students showcased their talents through cultural performances, debates, music, drama and art exhibitions during the annual school festival.",
+      "Students showcased their talents through music, dance, drama, debates and art during the annual cultural and literary festival.",
   },
   {
     image:
@@ -1270,7 +1391,7 @@ const ACHIEVEMENTS = [
     institution: "Dayawanti Punj Degree College",
     date: "2025–26",
     description:
-      "Students successfully completed undergraduate examinations, with many progressing to postgraduate studies and professional career opportunities.",
+      "Students successfully completed undergraduate examinations, with many progressing towards postgraduate studies and professional career opportunities.",
   },
 ];
 
@@ -2108,7 +2229,7 @@ function Closing() {
               communities across generations.
             </p>
           </div>
-          <div className="mt-9 flex flex-wrap gap-3">
+          {/* <div className="mt-9 flex flex-wrap gap-3">
             <PrimaryBtn href="/education/dayawanti-punj-model-school">
               Explore Dayawanti Punj Model School
             </PrimaryBtn>
@@ -2116,7 +2237,7 @@ function Closing() {
               Explore Dayawanti Punj Degree College
             </GhostBtn>
             <GhostBtn href="/contact">Contact the Education Team</GhostBtn>
-          </div>
+          </div> */}
         </Reveal>
         <Reveal>
           <div className="overflow-hidden rounded-[6px]">

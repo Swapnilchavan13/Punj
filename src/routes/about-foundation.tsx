@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about-foundation")({
       {
         name: "description",
         content:
-          "The story of the Pt. Kanahya Lal Dayawanti Punj Foundation — its founding values, institutions in Sitamarhi, and work across education, healthcare, heritage and rural regeneration.",
+          "The story of the Pt. Kanhaiya Lal Dayawanti Punj Foundation — its founding values, institutions in Sitamarhi, and work across education, healthcare, heritage and rural regeneration.",
       },
       { property: "og:title", content: "A Legacy of Service, Built Across Generations" },
       {
@@ -94,7 +94,6 @@ function Caption({ children }: { children: ReactNode }) {
 }
 
 function Portrait({
-  asset,
   name,
   href,
   description,
@@ -115,15 +114,15 @@ function Portrait({
       >
         <div className="h-[96px] w-[78px] overflow-hidden rounded-[3px] md:h-[118px] md:w-[96px]">
           <img
-  src={href}
-  alt=""
-  style={{
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    display: "block",
-  }}
-/>
+            src={href}
+            alt=""
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
+          />
         </div>
       </div>
       <figcaption>
@@ -148,7 +147,7 @@ type Chapter = {
   accent: string;
   panel: string;
   himg: string;
-  portraits?: { asset: string; name: string; description: string; href:string }[];
+  portraits?: { asset: string; name: string; description: string; href: string }[];
   pull?: string;
   pullNote?: string;
   smallLabel?: string;
@@ -162,27 +161,27 @@ const CHAPTERS: Chapter[] = [
     title: "A Legacy Built on Integrity, Discipline and Service",
     body: [
       "The earliest foundations of the institution were laid through values rather than programmes.",
-      "Late Pt. Kanahya Lal Punj represented a tradition of vision, integrity, hard work and public responsibility. His life established the moral foundation on which the institution would later grow.",
+      "Late Pt. Kanhaiya Lal Punj represented a tradition of vision, integrity, hard work and public responsibility. His life established the moral foundation on which the institution would later grow.",
       "Late Smt. Dayawanti Punj brought wisdom, devotion, grace and a strong sense of service to the family's public legacy.",
       "Together, their values created the guiding framework for a Foundation that would later work across education, healthcare, social welfare, heritage and rural development.",
     ],
     asset: "archive-foundation-early-years",
     alt: "Archival material representing the Foundation's early years",
     accent: "var(--accent-education)",
-    himg:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQTfv44SVHwdP1FmHlHjWiIqxhhH81lowvee58dXdkhxfDfIxF0mgYiAy&s=10",
+    himg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQTfv44SVHwdP1FmHlHjWiIqxhhH81lowvee58dXdkhxfDfIxF0mgYiAy&s=10",
     panel: "oklch(0.965 0.026 85 / 0.7)",
     portraits: [
       {
         asset: "founder-kanahya-lal-punj",
-        href:"/founders/kanahya.jpg",
-        name: "Late Pt. Kanahya Lal Punj",
+        href: "/founders/kanahya.jpg",
+        name: "Late Pt. Kanhaiya Lal Punj",
         description:
           "A man of vision and integrity, he built his legacy on honesty, sincerity, and hard work. His life continues to inspire generations.",
       },
       {
         asset: "founder-dayawanti-punj",
         name: "Late Smt. Dayawanti Punj",
-        href:"/founders/dayawanti.jpg",
+        href: "/founders/dayawanti.jpg",
         description:
           "A noble and idealistic woman, she embodied wisdom, devotion, and grace. Her values remain the guiding light of the Foundation.",
       },
@@ -210,12 +209,11 @@ const CHAPTERS: Chapter[] = [
       {
         asset: "founder-snp-punj",
         name: "Late Shri S. N. P. Punj",
-        href:"/founders/snp.jpg",
+        href: "/founders/snp.jpg",
         description:
           "A visionary entrepreneur and educationist, he founded DPMS to bring world-class learning to Sitamarhi. His mission lives on through every student's success.",
       },
     ],
-    // link: { label: "Explore Education", href: "/education" },
   },
   {
     id: "community-care",
@@ -231,12 +229,12 @@ const CHAPTERS: Chapter[] = [
     alt: "Community assistance activity supported by the Foundation",
     accent: "oklch(0.52 0.11 45)",
     panel: "oklch(0.965 0.028 55 / 0.7)",
-    himg:"/src/assets/generated/work-social-welfare.jpg",
+    himg: "/src/assets/generated/work-social-welfare.jpg",
     portraits: [
       {
         asset: "founder-indu-punj",
         name: "Late Smt. Indu Punj",
-        href:"/founders/indu.jpg",
+        href: "/founders/indu.jpg",
         description:
           "A compassionate and inspiring soul, she worked tirelessly for the upliftment of the poor and underprivileged. Her kindness is woven into every initiative of the Foundation.",
       },
@@ -256,7 +254,7 @@ const CHAPTERS: Chapter[] = [
     alt: "Community healthcare activity supported by the Foundation",
     accent: "var(--accent-healthcare)",
     panel: "oklch(0.96 0.022 230 / 0.7)",
-    himg:"/src/assets/generated/slider-healthcare.png",
+    himg: "/src/assets/generated/slider-healthcare.png",
     link: { label: "Explore Healthcare & Social Welfare", href: "/healthcare-social-welfare" },
   },
   {
@@ -272,7 +270,7 @@ const CHAPTERS: Chapter[] = [
     alt: "Architectural view of Sita Samahit Sthal",
     accent: "var(--accent-sita)",
     panel: "oklch(0.955 0.026 30 / 0.7)",
-    himg:"https://dpms.in/wp-content/uploads/2025/08/transport-area.jpg",
+    himg: "https://dpms.in/wp-content/uploads/2025/08/transport-area.jpg",
     link: { label: "Explore Sita Samahit Sthal", href: "/sita-samahit-sthal" },
   },
   {
@@ -289,7 +287,7 @@ const CHAPTERS: Chapter[] = [
     alt: "Farmer participating in a soil-restoration field programme",
     accent: "var(--accent-environment)",
     panel: "oklch(0.96 0.022 150 / 0.7)",
-    himg:"https://assets.ramen.101reporters.com/imgs/2025/6/826*532/101RPT2542363/7.webp",
+    himg: "https://assets.ramen.101reporters.com/imgs/2025/6/826*532/101RPT2542363/7.webp",
     link: {
       label: "Explore Environment and Rural Regeneration",
       href: "/environment-rural-regeneration",
@@ -308,7 +306,7 @@ const CHAPTERS: Chapter[] = [
     alt: "Current Foundation leadership",
     accent: "var(--charcoal)",
     panel: "oklch(0.96 0.01 80 / 0.7)",
-    himg:"https://dpms.in/wp-content/uploads/2025/08/IMG_0733.jpg",
+    himg: "https://dpms.in/wp-content/uploads/2025/08/IMG_0733.jpg",
   },
 ];
 
@@ -321,7 +319,6 @@ function ChapterBlock({ chapter, index }: { chapter: Chapter; index: number }) {
         aria-labelledby={`${chapter.id}-title`}
         className="relative pl-10 md:pl-0"
       >
-        {/* marker */}
         <span
           aria-hidden="true"
           className="absolute left-[10px] top-2 h-3 w-3 -translate-x-1/2 rounded-full ring-4 ring-[color:var(--ivory)] md:left-1/2"
@@ -386,8 +383,7 @@ function ChapterBlock({ chapter, index }: { chapter: Chapter; index: number }) {
           <div className={flip ? "md:order-1 md:pr-16" : "md:pl-16"}>
             <figure>
               <div className="overflow-hidden rounded-lg shadow-[0_18px_50px_-30px_rgba(60,40,20,0.6)]">
-                {/* <AssetPlaceholder name={chapter.asset} aspect="4/3" label={chapter.alt} /> */}
-                <img src={chapter.himg} alt="" />
+                <img src={chapter.himg} alt="" className="w-full h-auto object-cover" />
               </div>
               {chapter.smallLabel ? (
                 <figcaption className="mt-3 font-sans text-[10.5px] uppercase tracking-[0.24em] text-muted-foreground">
@@ -463,6 +459,18 @@ const VALUES = [
 ];
 
 function AboutFoundation() {
+  // State for infinite automatic cycling every 2 seconds
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % PILLAR_CARDS.length);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const activePillar = PILLAR_CARDS[currentIndex];
+
   return (
     <div
       className="min-h-dvh"
@@ -483,7 +491,7 @@ function AboutFoundation() {
               </h1>
               <div className="mt-7 max-w-[60ch] rounded-lg border border-[color:var(--border)]/60 bg-[oklch(0.97_0.016_85_/_0.65)] p-6 backdrop-blur-[2px] md:p-7">
                 <p className="font-sans text-[15.5px] leading-[1.8] text-[color:var(--charcoal)]/85">
-                  The Pt. Kanahya Lal Dayawanti Punj Foundation was shaped by a belief that
+                  The Pt. Kanhaiya Lal Dayawanti Punj Foundation was shaped by a belief that
                   meaningful service must be sustained through values, institutions and long-term
                   commitment to the community.
                 </p>
@@ -493,31 +501,17 @@ function AboutFoundation() {
                   environment and rural regeneration.
                 </p>
               </div>
-              {/* <div className="mt-8 flex flex-wrap items-center gap-6">
-                <a
-                  href="#the-journey"
-                  className="inline-flex min-h-11 items-center rounded-full bg-[color:var(--charcoal)] px-7 py-3 font-sans text-[13px] font-medium uppercase tracking-[0.2em] text-[color:var(--ivory)] transition-colors hover:bg-[color:var(--accent-sita)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                >
-                  Explore Our Journey
-                </a>
-                <a
-                  href="/#pillars"
-                  className="inline-flex min-h-11 items-center font-sans text-[13px] font-medium uppercase tracking-[0.2em] text-[color:var(--charcoal)] underline-offset-8 hover:underline"
-                >
-                  Discover Our Work
-                </a>
-              </div> */}
             </div>
 
             <figure>
               <div className="overflow-hidden rounded-xl shadow-[0_30px_70px_-40px_rgba(60,40,20,0.75)]">
                 <div className="aspect-[16/10] overflow-hidden rounded-[6px]">
-  <img
-    src="https://dpms.in/wp-content/uploads/2025/08/school-building.jpg"
-    alt="Institutional image of the Foundation"
-    className="h-full w-full object-cover"
-  />
-</div>
+                  <img
+                    src="https://dpms.in/wp-content/uploads/2025/08/school-building.jpg"
+                    alt="Institutional image of the Foundation"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               </div>
               <Caption>An institutional view of the Foundation's work in Sitamarhi.</Caption>
             </figure>
@@ -534,7 +528,7 @@ function AboutFoundation() {
               </h2>
               <div className="mt-7 max-w-[64ch] space-y-4">
                 {[
-                  "The Pt. Kanahya Lal Dayawanti Punj Foundation emerged from a deeply held belief that progress in rural communities must be built patiently, institution by institution and generation by generation.",
+                  "The Pt. Kanhaiya Lal Dayawanti Punj Foundation emerged from a deeply held belief that progress in rural communities must be built patiently, institution by institution and generation by generation.",
                   "Its founding vision was not limited to charitable assistance. It was rooted in creating durable systems of education, care, dignity and community support.",
                   "From the beginning, the Foundation's work was shaped by values of honesty, sincerity, compassion, discipline and service.",
                   "Over time, these values took institutional form through schools, higher education, healthcare initiatives, social-welfare programmes, the stewardship of Sita Samahit Sthal and, more recently, programmes for soil, water and rural regeneration.",
@@ -554,24 +548,24 @@ function AboutFoundation() {
               <figure>
                 <div className="overflow-hidden rounded-lg shadow-[0_18px_50px_-32px_rgba(60,40,20,0.6)]">
                   <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
-  <img
-    src="https://content3.jdmagicbox.com/comp/bhadohi/g9/9999p5414.5414.110223220140.w9g9/catalogue/dayawanti-punj-model-school-khamaria-srn-bhadohi-cbse-schools-ph7jus1k13.jpg"
-    alt="Archival material from the Foundation's early years"
-    className="h-full w-full object-cover"
-  />
-</div>
+                    <img
+                      src="https://content3.jdmagicbox.com/comp/bhadohi/g9/9999p5414.5414.110223220140.w9g9/catalogue/dayawanti-punj-model-school-khamaria-srn-bhadohi-cbse-schools-ph7jus1k13.jpg"
+                      alt="Archival material from the Foundation's early years"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                 </div>
                 <Caption>An early chapter in the Foundation's institutional journey.</Caption>
               </figure>
               <figure>
                 <div className="overflow-hidden rounded-lg">
-                 <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
-  <img
-    src="https://i.ytimg.com/vi/B_SA6LpddW8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDBuW7vKu0ceZi7j8E9MrIybZZc7A"
-    alt="Historical Foundation document"
-    className="h-full w-full object-cover"
-  />
-</div>
+                  <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
+                    <img
+                      src="https://i.ytimg.com/vi/B_SA6LpddW8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDBuW7vKu0ceZi7j8E9MrIybZZc7A"
+                      alt="Historical Foundation document"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                 </div>
                 <Caption>Institutional material held by the Foundation.</Caption>
               </figure>
@@ -641,7 +635,7 @@ function AboutFoundation() {
           </div>
         </section>
 
-        {/* EVOLUTION */}
+        {/* EVOLUTION (2-SECOND INFINITE ROTATING CARD WITH FIXED HEIGHT) */}
         <section className="mx-auto w-full max-w-[1360px] px-5 py-20 md:px-10 md:py-28">
           <Reveal className="max-w-3xl">
             <Eyebrow>How the Foundation's Work Has Evolved</Eyebrow>
@@ -650,84 +644,86 @@ function AboutFoundation() {
               life.
             </p>
           </Reveal>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {PILLAR_CARDS.map((p) => (
-              <Reveal key={p.title}>
-                <a
-                  href={p.href}
-                  className="group flex h-full flex-col overflow-hidden rounded-lg border border-[color:var(--border)]/70 bg-[oklch(0.985_0.008_80_/_0.8)] transition-shadow hover:shadow-[0_20px_50px_-35px_rgba(60,40,20,0.8)] focus-visible:outline focus-visible:outline-2"
-                >
-                  <div className="overflow-hidden">
-                    <div className="transition-transform duration-700 group-hover:scale-[1.04] motion-reduce:transform-none">
-                      <AssetPlaceholder name={p.asset} aspect="4/3" label={p.title} />
-                    </div>
+
+          <div className="mt-12 max-w-md">
+            <Reveal className="h-full">
+              <a
+                href={activePillar.href}
+                className="group flex min-h-[460px] flex-col overflow-hidden rounded-lg border border-[color:var(--border)]/70 bg-[oklch(0.985_0.008_80_/_0.8)] transition-all duration-500 hover:shadow-[0_20px_50px_-35px_rgba(60,40,20,0.8)] focus-visible:outline focus-visible:outline-2"
+              >
+                <div className="overflow-hidden">
+                  <div className="transition-transform duration-700 group-hover:scale-[1.04] motion-reduce:transform-none">
+                    <AssetPlaceholder name={activePillar.asset} aspect="4/3" label={activePillar.title} />
                   </div>
-                  <div className="flex flex-1 flex-col p-6">
+                </div>
+                <div className="flex flex-1 flex-col justify-between p-6">
+                  <div>
                     <h3 className="font-serif text-[21px] leading-tight text-[color:var(--charcoal)]">
-                      {p.title}
+                      {activePillar.title}
                     </h3>
-                    <p className="mt-3 flex-1 font-sans text-[14px] leading-[1.7] text-muted-foreground">
-                      {p.desc}
+                    <p className="mt-3 font-sans text-[14px] leading-[1.7] text-muted-foreground">
+                      {activePillar.desc}
                     </p>
-                    <span
-                      className="mt-5 font-sans text-[11.5px] font-medium uppercase tracking-[0.2em]"
-                      style={{ color: p.accent }}
-                    >
-                      Explore →
-                    </span>
                   </div>
-                </a>
-              </Reveal>
-            ))}
+                  <span
+                    className="mt-5 font-sans text-[11.5px] font-medium uppercase tracking-[0.2em]"
+                    style={{ color: activePillar.accent }}
+                  >
+                    Explore →
+                  </span>
+                </div>
+              </a>
+            </Reveal>
           </div>
         </section>
 
-        {/* SITAMARHI */}
-       <section className="relative">
-  <div className="mx-auto w-full max-w-[1360px] px-5 md:px-10">
-    <Reveal>
-      <div className="relative overflow-hidden rounded-xl">
-        <div className="aspect-[16/9] overflow-hidden rounded-[6px]">
-          <img
-            src="https://d3fphkxyf5o5bm.cloudfront.net/image-resize/format=webp,w=960/QwRY54Li1HMwD7oNfppnX6fmVwarHfwu0r8chvFiKA"
-            alt="Sita Samahit Sthal in Sitamarhi, Bhadohi, Uttar Pradesh"
-            className="h-full w-full object-cover"
-          />
-        </div>
-      </div>
+        {/* SITAMARHI (FIXED OVERLAPPING HEIGHTS & RELATIVE SPACING) */}
+        <section className="relative pb-16 md:pb-24">
+          <div className="mx-auto w-full max-w-[1360px] px-5 md:px-10">
+            <Reveal>
+              <div className="relative overflow-hidden rounded-xl">
+                <div className="aspect-[16/9] overflow-hidden rounded-[6px]">
+                  <img
+                    src="https://d3fphkxyf5o5bm.cloudfront.net/image-resize/format=webp,w=960/QwRY54Li1HMwD7oNfppnX6fmVwarHfwu0r8chvFiKA"
+                    alt="Sita Samahit Sthal in Sitamarhi, Bhadohi, Uttar Pradesh"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </Reveal>
 
-      <div className="relative z-10 -mt-10 w-full rounded-lg border border-[color:var(--border)]/60 bg-[oklch(0.98_0.012_85_/_0.92)] p-7 backdrop-blur-md md:-mt-24 md:ml-10 md:max-w-[640px] md:p-10">
-        <Eyebrow tone="var(--accent-environment)">
-          Rooted in Sitamarhi
-        </Eyebrow>
+            {/* Adjusted spacing box using natural stacking layout instead of aggressive negative margins to stop text overlap */}
+            <div className="relative z-20 mx-auto mt-8 w-full rounded-lg border border-[color:var(--border)]/60 bg-[oklch(0.98_0.012_85_/_0.95)] p-6 shadow-xl backdrop-blur-md md:-mt-24 md:ml-12 md:max-w-[640px] md:p-10">
+              <Eyebrow tone="var(--accent-environment)">
+                Rooted in Sitamarhi
+              </Eyebrow>
 
-        <h2 className="mt-3 font-serif text-[28px] leading-[1.15] text-[color:var(--charcoal)] md:text-[38px]">
-          A Long-Term Relationship With Place and Community
-        </h2>
+              <h2 className="mt-3 font-serif text-[26px] leading-[1.15] text-[color:var(--charcoal)] md:text-[38px]">
+                A Long-Term Relationship With Place and Community
+              </h2>
 
-        <div className="mt-5 space-y-4">
-          {[
-            "The Foundation's identity is closely connected with Sitamarhi and the communities around it.",
-            "Its institutions, programmes and relationships have developed through sustained presence rather than distant intervention.",
-            "The school, college, healthcare work, social-welfare initiatives, Sita Samahit Sthal and newer rural-regeneration programmes all form part of this long-term regional commitment.",
-            "The Foundation's work is shaped by an understanding that lasting development must remain connected with the realities, aspirations and cultural life of the people it serves.",
-          ].map((p) => (
-            <p
-              key={p.slice(0, 20)}
-              className="font-sans text-[15px] leading-[1.8] text-[color:var(--charcoal)]/85"
-            >
-              {p}
-            </p>
-          ))}
-        </div>
+              <div className="mt-5 space-y-4">
+                {[
+                  "The Foundation's identity is closely connected with Sitamarhi and the communities around it.",
+                  "Its institutions, programmes and relationships have developed through sustained presence rather than distant intervention.",
+                  "The school, college, healthcare work, social-welfare initiatives, Sita Samahit Sthal and newer rural-regeneration programmes all form part of this long-term regional commitment.",
+                  "The Foundation's work is shaped by an understanding that lasting development must remain connected with the realities, aspirations and cultural life of the people it serves.",
+                ].map((p) => (
+                  <p
+                    key={p.slice(0, 20)}
+                    className="font-sans text-[15px] leading-[1.8] text-[color:var(--charcoal)]/85"
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
 
-        <p className="mt-6 font-sans text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-          Sitamarhi, Bhadohi, Uttar Pradesh
-        </p>
-      </div>
-    </Reveal>
-  </div>
-</section>
+              <p className="mt-6 font-sans text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+                Sitamarhi, Bhadohi, Uttar Pradesh
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* VISION MISSION VALUES */}
         <section className="mt-20 border-y border-[color:var(--border)]/60 bg-[oklch(0.96_0.016_220_/_0.5)] md:mt-28">
@@ -814,13 +810,13 @@ function AboutFoundation() {
             <Reveal>
               <figure>
                 <div className="overflow-hidden rounded-lg shadow-[0_20px_55px_-38px_rgba(60,40,20,0.7)]">
-                 <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
-  <img
-    src="https://dpms.in/wp-content/uploads/2025/08/IMG_0822.jpg"
-    alt="Current Foundation leadership"
-    className="h-full w-full object-cover"
-  />
-</div>
+                  <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
+                    <img
+                      src="https://dpms.in/wp-content/uploads/2025/08/IMG_0822.jpg"
+                      alt="Current Foundation leadership"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                 </div>
                 <Caption>Foundation leadership photograph to be added.</Caption>
               </figure>

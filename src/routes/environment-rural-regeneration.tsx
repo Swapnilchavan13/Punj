@@ -256,7 +256,7 @@ function EnvironmentPage() {
         <KhetBachao />
         {/* <Stories /> */}
         <Geography />
-        <Reports />
+        {/* <Reports /> */}
         <Partnerships />
         <Registration />
         <Faq />
@@ -1198,20 +1198,20 @@ function RootZone() {
         <Reveal>
           <div className="grid gap-4">
   <img
-    src="https://i.ibb.co/cSWn33dB/IMG-20260811-WA0035.jpg"
+    src="https://i.ibb.co/9kGNrD4r/Image-4-3.jpg"
     alt="Soil profile"
     className="w-full aspect-[16/10] object-cover rounded-[8px]"
   />
 
   <div className="grid grid-cols-2 gap-4">
     <img
-      src="https://i.ibb.co/x0m0Q48/IMG-20260811-WA0032.jpg"
+      src="https://i.ibb.co/DHffj1nx/IMG-20260811-WA0034.jpg"
       alt="Root zone"
       className="w-full aspect-square object-cover rounded-[8px]"
     />
 
     <img
-      src="https://i.ibb.co/wFThPmTN/IMG-20260811-WA0070.jpg"
+      src="https://i.ibb.co/gFwk42sy/IMG-20260812-WA0023.jpg"
       alt="B3 material"
       className="w-full aspect-square object-cover rounded-[8px]"
     />
@@ -1292,7 +1292,7 @@ function ForFarmers() {
       </Reveal>
       <div className="mt-12 grid gap-4 md:grid-cols-4">
   {[
-    ["https://i.ibb.co/Y7kkx3zm/Image-2-1.jpg", "Farmer training"],
+    ["https://i.ibb.co/s9Y85P3x/Whats-App-Image-2026-09-26-at-12-49-39-PM.jpg", "Farmer training"],
     ["https://i.ibb.co/8gKP7JkW/IMG-20260811-WA0077.jpg", "Field application"],
     ["https://i.ibb.co/rKd1gTVy/Image-5-2.jpg", "Farmer meeting"],
     ["https://i.ibb.co/yFJsqWRR/IMG-20260810-WA0034.jpg", "Farm landscape"],
@@ -1374,7 +1374,7 @@ function ForSoil() {
         <div className="grid gap-5 md:grid-cols-2">
           <div>
 <img
-  src="https://i.ibb.co/xt0xJPXN/IMG-20260812-WA0028.jpg"
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhdjzN4kUBwBqCFYD0Yja8W3Qh5qhZeIvO-JXwNdcu2iwo-ZTVKZxyEuxA&s=10"
   alt="Depleted soil"
   className="w-full aspect-[16/10] object-cover rounded-[8px]"
 />            <p className="mt-3 font-sans text-[13px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -1383,7 +1383,7 @@ function ForSoil() {
           </div>
           <div>
             <img
-  src="https://i.ibb.co/fV8n0hJf/IMG-20260811-WA0075.jpg"
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnHX9HgzhlgxjfB0EPyoCAwmRKC83z5yTQ1x2Yzq8a55x6SOJ-6_wofvM&s=10"
   alt="Restored soil"
   className="w-full aspect-[16/10] object-cover rounded-[8px]"
 />
@@ -1399,7 +1399,7 @@ function ForSoil() {
 
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         <img
-  src="https://i.ibb.co/mVw3H1dJ/IMG-20260811-WA0071.jpg"
+  src="https://cawood.co.uk/wp-content/uploads/2022/01/Soil-carbon-what-weve-learned-so-far-1.jpg"
   alt="Soil organic carbon"
   className="w-full aspect-[16/9] object-cover rounded-[8px]"
 />
@@ -1741,19 +1741,19 @@ function ApplicationJourney() {
     />
 
     <img
-      src="https://i.ibb.co/3mzcHg15/Image-5-3.jpg"
+      src="https://i.ibb.co/tpYNLTJr/Whats-App-Image-2026-09-07-at-4-29-44-PM.jpg"
       alt="Field team"
       className="w-full aspect-square object-cover rounded-[8px]"
     />
 
     <img
-      src="https://i.ibb.co/DHffj1nx/IMG-20260811-WA0034.jpg"
+      src="https://www.povertyactionlab.org/sites/default/files/styles/large/public/2021-04/bangladesh_south-asia_agriculture_farmer-using-fertilizer-on-rice-paddy.jpg?itok=sF700e1B"
       alt="Paddy application"
       className="w-full aspect-square object-cover rounded-[8px]"
     />
 
     <img
-      src="https://i.ibb.co/9kGNrD4r/Image-4-3.jpg"
+      src="https://www.globaltimes.cn/Portals/0/attachment/2021/2021-08-29/beddd9e4-dc26-4cf2-847b-33c6439e1258.jpeg"
       alt="Crop measurement"
       className="w-full aspect-square object-cover rounded-[8px]"
     />
@@ -1914,10 +1914,10 @@ function WaterStewardship() {
         </div>
        <div className="mt-12 grid gap-4 md:grid-cols-4">
   {[
-    ["https://i.ibb.co/9HxBKDns/IMG-20260811-WA0062.jpg", "Water monitoring"],
+    ["http://www.knowledgebank.irri.org/images/stories/watermgt-rice-field.jpg", "Water monitoring"],
     ["https://i.ibb.co/0j8nJw5K/Image-2-3.jpg", "Recharge context"],
-    ["https://i.ibb.co/qM5nW88m/IMG-20260811-WA0061.jpg", "Groundwater landscape"],
-    ["https://i.ibb.co/fVBt4yWX/IMG-20260811-WA0045.jpg", "Irrigation"],
+    ["https://thumb.photo-ac.com/8b/8be5742785f6142b0ea7693bf7ee5153_t.jpeg", "Groundwater landscape"],
+    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJnO4yUimOzFU922FT-1X-SMlx_H1MPKybeXaOqrVG9U-By9G3gG3sLXYI&s=10", "Irrigation"],
   ].map(([image, label]) => (
     <Reveal key={image}>
       <img
@@ -2295,25 +2295,25 @@ function Regenerative() {
         <Reveal>
           <div className="grid grid-cols-2 gap-4">
             <img
-  src="https://i.ibb.co/xt0xJPXN/IMG-20260812-WA0028.jpg"
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdP29kmntJvdIZJj-WT4puOyL2fvukiO5d8RYmPW6AtRkjUEouIqLZAxn0&s=10"
   alt="Field trial"
   className="w-full aspect-[4/3] object-cover rounded-[8px]"
 />
 
 <img
-  src="https://i.ibb.co/rKVMdS2G/Image-3-3.jpg"
+  src="https://agritech.tnau.ac.in/agriculture/agri_index_sample_clip_image006.jpg"
   alt="Soil sampling"
   className="w-full aspect-[4/3] object-cover rounded-[8px]"
 />
 
 <img
-  src="https://i.ibb.co/tpYNLTJr/Whats-App-Image-2026-09-07-at-4-29-44-PM.jpg"
+  src="https://thumbs.dreamstime.com/b/th-february-orgram-west-bengal-india-rural-women-farmers-manually-transplanting-rice-seedlings-flooded-agricultural-field-453992530.jpg"
   alt="Farmer training"
   className="w-full aspect-[4/3] object-cover rounded-[8px]"
 />
 
 <img
-  src="https://i.ibb.co/9HxBKDns/IMG-20260811-WA0062.jpg"
+  src="https://media.assettype.com/indiawaterportal%2Fimport%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fimage_1200x675%2Fpublic%2Fiwp%2Fpaddy1_0.jpg"
   alt="Irrigation"
   className="w-full aspect-[4/3] object-cover rounded-[8px]"
 />
@@ -2368,9 +2368,9 @@ function Livelihoods() {
       </Reveal>
       <div className="mt-12 grid gap-4 md:grid-cols-4">
   {[
-    ["https://i.ibb.co/tpYNLTJr/Whats-App-Image-2026-09-07-at-4-29-44-PM.jpg", "Farmer meeting"],
+    ["https://i.ibb.co/pjmRqrgy/Whats-App-Image-2026-09-26-at-12-49-40-PM.jpg", "Farmer meeting"],
     ["https://i.ibb.co/5WDhmgM6/Whats-App-Image-2026-09-04-at-6-40-21-PM.jpg", "Biomass collection"],
-    ["https://i.ibb.co/VYfXN6Xh/Image-5.jpg", "Field team"],
+    ["https://images.indianexpress.com/2025/09/rice-cultivation.jpg", "Field team"],
     ["https://i.ibb.co/3mzcHg15/Image-5-3.jpg", "Farm landscape"],
   ].map(([image, label]) => (
     <Reveal key={image}>
@@ -2891,7 +2891,7 @@ function KhetBachao() {
   />
 
   <img
-    src="https://i.ibb.co/tpYNLTJr/Whats-App-Image-2026-09-07-at-4-29-44-PM.jpg"
+    src="https://srdsindia.org/wp-content/uploads/2016/10/Farmer-meeting.jpg"
     alt="Farmer meeting"
     className="w-full aspect-[4/3] object-cover rounded-[8px]"
   />

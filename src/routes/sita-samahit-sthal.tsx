@@ -134,7 +134,7 @@ function SitaPage() {
         <VisitorInformation />
         <EventsCalendar />
         {/* <Numbers /> */}
-        <Documentation />
+        {/* <Documentation /> */}
         <DedicatedWebsite />
         <Closing />
       </main>
@@ -808,13 +808,13 @@ function RamayanaTradition() {
         <Reveal>
           <div className="grid gap-5 sm:grid-cols-2">
   <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyOZfDfMVPH4lZ9diZ2zR7nN7dir0f975NE0JqxFU9uj0OrV8Acdj8GwE&s=10"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb_k6_sUib6A1wMZ7F4oSoVtvNlnH9hbhaqbQKd-J8Cw&s=10"
     alt="Sacred detail at Sita Samahit Sthal"
     className="w-full aspect-[3/4] object-cover rounded-[8px] sm:mt-10"
   />
 
   <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLjHhHbjhzuvkZsgYPRCDmJA3DtCw0fsbWpKsVYsjvJr9xeL461xOTjhgU&s=10"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS2-3x2ejuHdu2AQJY5C3FxQnxYZoX8-ezim6C14_fPpXyFOME0k5VS9zb&s=10"
     alt="Offerings placed at Sita Samahit Sthal"
     className="w-full aspect-[3/4] object-cover rounded-[8px]"
   />
@@ -1132,12 +1132,12 @@ function Festivals() {
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-[color:var(--border)]/60">
+                  {/* <div className="mt-4 pt-3 border-t border-[color:var(--border)]/60">
                     <span className="text-[11px] font-medium text-amber-800 flex items-center gap-1.5">
                       <span className="h-1.5 w-1.5 rounded-full bg-amber-600" />
                       Verified Feature
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </article>
             </Reveal>
@@ -1550,12 +1550,12 @@ function VisitWithRespect() {
                 {g.description}
               </p>
             </div>
-            <div className="mt-3 pl-4">
+            {/* <div className="mt-3 pl-4">
               <span className="text-[11.5px] font-medium text-emerald-600 flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
                 Verified Management Guideline
               </span>
-            </div>
+            </div> */}
           </li>
         ))}
       </ul>
@@ -1729,7 +1729,7 @@ function SiteExploration() {
             </p>
             <div className="mt-4 pt-3 border-t border-[color:var(--border)]/60 font-sans text-[12px] text-muted-foreground space-y-1">
               <p><strong className="text-[color:var(--charcoal)]">Location:</strong> {current.locationDetails}</p>
-              <p className="text-emerald-600 font-medium pt-1">✓ Verified Site Information Active</p>
+              {/* <p className="text-emerald-600 font-medium pt-1">✓ Verified Site Information Active</p> */}
             </div>
           </div>
         </div>
@@ -1841,12 +1841,12 @@ function VisitorInformation() {
             <GhostBtn href="mailto:pkldpfoundation@gmail.com">Visitor Enquiry</GhostBtn>
           </div>
 
-          <div className="mt-5 rounded-[6px] bg-emerald-50/50 p-4 ring-1 ring-emerald-600/20">
+          {/* <div className="mt-5 rounded-[6px] bg-emerald-50/50 p-4 ring-1 ring-emerald-600/20">
             <p className="font-sans text-[13px] leading-[1.7] text-emerald-900 flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-emerald-600 shrink-0" />
               <span>Verified location coordinates, access routes, and foundation contact channels are fully active.</span>
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </Section>
@@ -1985,10 +1985,10 @@ function EventsCalendar() {
                 </dl>
               </div>
 
-              <div className="mt-6 pt-3 border-t border-[color:var(--border)]/60 text-[11.5px] text-emerald-700 font-medium flex items-center gap-1.5">
+              {/* <div className="mt-6 pt-3 border-t border-[color:var(--border)]/60 text-[11.5px] text-emerald-700 font-medium flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
                 Verified Event Schedule Active
-              </div>
+              </div> */}
             </article>
           ))}
         </div>
@@ -2443,33 +2443,44 @@ function DedicatedWebsite() {
       <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:gap-16">
         <Reveal>
           <Eyebrow tone={SITA}>Explore Further</Eyebrow>
+
           <H2>Visit the Dedicated Sita Samahit Sthal Website</H2>
+
           <Body className="mt-7 max-w-xl">
             <p>
               The Foundation website presents Sita Samahit Sthal as one of its principal pillars of
               work and explains its institutional role in the site’s stewardship.
             </p>
+
             <p>
               For more detailed information about visits, festivals, worship schedules,
               site-specific announcements and cultural content, visitors may continue to the
               dedicated Sita Samahit Sthal website.
             </p>
           </Body>
+
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <span className="inline-flex min-h-11 items-center rounded-full border border-dashed border-[color:var(--border)] px-6 py-3 font-sans text-[12px] uppercase tracking-[0.18em] text-muted-foreground">
-              Add verified Sita Samahit Sthal website link
-            </span>
+            <a
+              href="https://mindtrip.ai/attraction/uttar-pradesh/sita-samahit-sthal-sitamarhi-bhadohi/at-JQxJCvK6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center rounded-full border border-[color:var(--border)] px-6 py-3 font-sans text-[12px] uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:border-[color:var(--foreground)] hover:text-foreground"
+            >
+              Visit Dedicated Website
+            </a>
           </div>
+
           <p className="mt-4 font-sans text-[13px] text-muted-foreground">
             The external link will open in a new tab and be clearly identified as an external site.
           </p>
         </Reveal>
+
         <Reveal>
           <img
-  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCf1ZmM1nKtOuyW3XkZjwpUykKOmV3zudn95_gZgorg3WKAYz3UL0dXkQ&s=10"
-  alt="Identity mark of Sita Samahit Sthal"
-  className="w-full aspect-[4/3] object-contain rounded-[8px]"
-/>
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCf1ZmM1nKtOuyW3XkZjwpUykKOmV3zudn95_gZgorg3WKAYz3UL0dXkQ&s=10"
+            alt="Identity mark of Sita Samahit Sthal"
+            className="w-full aspect-[4/3] object-contain rounded-[8px]"
+          />
         </Reveal>
       </div>
     </Section>
