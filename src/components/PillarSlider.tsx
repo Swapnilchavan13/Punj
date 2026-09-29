@@ -60,7 +60,6 @@ const SLIDES: Slide[] = [
   },
 ];
 
-// Updated to 3 seconds as requested
 const AUTOPLAY_MS = 3000;
 
 export function PillarSlider() {
@@ -125,7 +124,6 @@ export function PillarSlider() {
         touchStart.current = null;
       }}
     >
-      {/* Increased height constraints to prevent any text clipping */}
       <div className="relative min-h-[620px] md:min-h-[700px] lg:min-h-[calc(85vh-92px)] lg:max-h-[820px]">
         {SLIDES.map((s, i) => {
           const active = i === index;
@@ -137,19 +135,19 @@ export function PillarSlider() {
               aria-label={`${i + 1} of ${SLIDES.length}: ${s.title}`}
               aria-hidden={!active}
               className={`absolute inset-0 transition-opacity duration-[800ms] ease-out ${
-                active ? "opacity-100" : "pointer-events-none opacity-0"
+                active ? "opacity-100 z-10" : "pointer-events-none opacity-0 z-0"
               }`}
             >
               <div className="grid h-full min-h-[620px] grid-cols-1 md:min-h-[700px] lg:grid-cols-[40%_60%]">
-                {/* Text panel */}
+                {/* Text panel shifted to top alignment */}
                 <div
-                  className="order-2 flex flex-col justify-center px-6 py-12 backdrop-blur-sm md:px-12 lg:order-1 lg:px-14 lg:py-16"
+                  className="order-2 flex flex-col justify-start px-6 pt-10 pb-12 backdrop-blur-sm md:px-12 lg:order-1 lg:px-14 lg:pt-16 lg:pb-16 min-w-0 overflow-y-auto"
                   style={{ backgroundColor: s.panelBg }}
                 >
                   <div className="max-w-xl">
                     <div className="flex items-center gap-3">
                       <span
-                        className="h-[2px] w-8"
+                        className="h-[2px] w-8 shrink-0"
                         style={{ backgroundColor: `var(${s.accentVar})` }}
                       />
                       <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-[color:var(--charcoal)]/70">
@@ -157,17 +155,17 @@ export function PillarSlider() {
                       </span>
                     </div>
                     <h2
-                      className="mt-5 font-serif text-[32px] leading-[1.1] md:text-[44px] lg:text-[52px]"
+                      className="mt-4 font-serif text-[30px] leading-[1.1] md:text-[40px] lg:text-[48px]"
                       style={{ color: `var(${s.accentVar})` }}
                     >
                       {s.title}
                     </h2>
-                    <p className="mt-5 font-sans text-[15.5px] leading-relaxed text-[color:var(--charcoal)]/80 md:text-[17px]">
+                    <p className="mt-4 font-sans text-[15px] leading-relaxed text-[color:var(--charcoal)]/80 md:text-[16.5px]">
                       {s.description}
                     </p>
                     <a
                       href={s.href}
-                      className="mt-8 inline-flex items-center gap-2 font-sans text-[13.5px] font-medium uppercase tracking-[0.18em] text-[color:var(--charcoal)] transition-colors hover:opacity-70"
+                      className="mt-6 inline-flex items-center gap-2 font-sans text-[13px] font-medium uppercase tracking-[0.18em] text-[color:var(--charcoal)] transition-colors hover:opacity-70"
                     >
                       <span
                         className="border-b pb-1"
@@ -181,7 +179,7 @@ export function PillarSlider() {
                 </div>
 
                 {/* Visual panel */}
-                <div className="order-1 h-[280px] w-full md:h-[420px] lg:order-2 lg:h-full">
+                <div className="order-1 h-[260px] w-full md:h-[380px] lg:order-2 lg:h-full min-w-0 min-h-0 overflow-hidden">
                   <AssetPlaceholder name={s.asset} />
                 </div>
               </div>
@@ -194,7 +192,7 @@ export function PillarSlider() {
           type="button"
           aria-label="Previous programme"
           onClick={prev}
-          className="absolute left-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[color:var(--ivory)]/70 text-[color:var(--charcoal)] backdrop-blur transition hover:bg-[color:var(--ivory)]/95 md:left-5 md:h-12 md:w-12"
+          className="absolute left-3 top-1/2 z-20 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[color:var(--ivory)]/70 text-[color:var(--charcoal)] backdrop-blur transition hover:bg-[color:var(--ivory)]/95 md:left-5 md:h-12 md:w-12"
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
@@ -202,7 +200,7 @@ export function PillarSlider() {
           type="button"
           aria-label="Next programme"
           onClick={next}
-          className="absolute right-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[color:var(--ivory)]/70 text-[color:var(--charcoal)] backdrop-blur transition hover:bg-[color:var(--ivory)]/95 md:right-5 md:h-12 md:w-12"
+          className="absolute right-3 top-1/2 z-20 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[color:var(--ivory)]/70 text-[color:var(--charcoal)] backdrop-blur transition hover:bg-[color:var(--ivory)]/95 md:right-5 md:h-12 md:w-12"
         >
           <ChevronRight className="h-5 w-5" />
         </button>
@@ -211,7 +209,7 @@ export function PillarSlider() {
         <div
           role="tablist"
           aria-label="Slides"
-          className="absolute inset-x-0 bottom-4 z-10 flex justify-center gap-2"
+          className="absolute inset-x-0 bottom-4 z-20 flex justify-center gap-2"
         >
           {SLIDES.map((s, i) => (
             <button
