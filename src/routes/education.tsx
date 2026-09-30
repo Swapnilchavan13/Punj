@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AssetPlaceholder } from "@/components/AssetPlaceholder";
+import { Section } from "@/components/editorial";
 
 export const Route = createFileRoute("/education")({
   head: () => ({
@@ -85,36 +86,6 @@ function Eyebrow({ children, tone }: { children: ReactNode; tone?: string }) {
   );
 }
 
-function Section({
-  id,
-  children,
-  className = "",
-  tint,
-}: {
-  id?: string;
-  children: ReactNode;
-  className?: string;
-  tint?: string;
-}) {
-  return (
-    <section
-      id={id}
-      className={`scroll-mt-24 px-5 py-20 md:px-10 md:py-28 ${className}`}
-      style={tint ? { background: tint } : undefined}
-    >
-      <div className="mx-auto w-full max-w-[1360px]">{children}</div>
-    </section>
-  );
-}
-
-function Pending({ children }: { children: ReactNode }) {
-  return (
-    <span className="inline-block rounded-[3px] border border-dashed border-[color:var(--border)] bg-[color:var(--muted)]/50 px-2 py-[3px] font-sans text-[10.5px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
-      {children}
-    </span>
-  );
-}
-
 function Caption({ children }: { children: ReactNode }) {
   return (
     <p className="mt-3 font-sans text-[12px] italic leading-relaxed text-muted-foreground">
@@ -131,13 +102,28 @@ function PrimaryBtn({
   href,
   onClick,
   type = "button",
+  disabled = false,
 }: {
   children: ReactNode;
   href?: string;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
 }) {
-  const cls = `${btnBase} bg-[color:var(--charcoal)] text-[color:var(--ivory)] hover:bg-[color:var(--brown)]`;
+  const cls = `${btnBase} bg-[color:var(--charcoal)] text-[color:var(--ivory)] hover:bg-[color:var(--brown)] disabled:opacity-50 disabled:cursor-not-allowed`;
+  return href ? (
+    <a href={href} className={cls}>
+      {children}
+    </a>
+  ) : (
+    <button type={type} onClick={onClick} disabled={disabled} className={cls}>
+      {children}
+    </button>
+  );
+}
+
+function GhostBtn({ children, href, onClick, type = "button" }: { children: ReactNode; href?: string; onClick?: () => void; type?: "button" | "submit" }) {
+  const cls = `${btnBase} border border-[color:var(--charcoal)]/25 text-[color:var(--charcoal)] hover:border-[color:var(--accent-education)] hover:text-[color:var(--accent-education)]`;
   return href ? (
     <a href={href} className={cls}>
       {children}
@@ -149,51 +135,59 @@ function PrimaryBtn({
   );
 }
 
-function GhostBtn({ children, href, onClick }: { children: ReactNode; href?: string; onClick?: () => void }) {
-  const cls = `${btnBase} border border-[color:var(--charcoal)]/25 text-[color:var(--charcoal)] hover:border-[color:var(--accent-education)] hover:text-[color:var(--accent-education)]`;
-  return href ? (
-    <a href={href} className={cls}>
-      {children}
-    </a>
-  ) : (
-    <button type="button" onClick={onClick} className={cls}>
-      {children}
-    </button>
-  );
-}
-
-function Figure({
-  asset,
-  alt,
-  aspect = "4 / 3",
-  caption,
-  className = "",
-}: {
-  asset: string;
-  alt: string;
-  aspect?: string;
-  caption?: string;
-  className?: string;
-}) {
-  return (
-    <figure className={className}>
-      <div className="overflow-hidden rounded-[4px] ring-1 ring-[color:var(--border)]">
-        <AssetPlaceholder name={asset} label={alt} aspect={aspect} />
-      </div>
-      {caption ? <figcaption><Caption>{caption}</Caption></figcaption> : null}
-    </figure>
-  );
-}
-
-/* ---------------- Popups ---------------- */
+/* ---------------- Popups with Web3Forms Integration ---------------- */
 
 function ExploreInstitutionsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [submitted, setSubmitted] = useState(false);
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const [captchaNum1] = useState(() => Math.floor(Math.random() * 10) + 1);
+  const [captchaNum2] = useState(() => Math.floor(Math.random() * 10) + 1);
+  const [captchaInput, setCaptchaInput] = useState("");
+  const [captchaError, setCaptchaError] = useState(false);
+
   if (!isOpen) return null;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (parseInt(captchaInput, 10) !== captchaNum1 + captchaNum2) {
+      setCaptchaError(true);
+      return;
+    }
+    setCaptchaError(false);
+    setIsSubmitting(true);
+    setResult("Sending...");
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      formData.append("access_key", "bd95baf9-6f48-441e-9291-e4096b95e75f");
+      formData.append("subject", "New Institutional Enquiry Packet Request");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setResult("");
+      } else {
+        setResult(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setResult("Network error. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="relative w-full max-w-lg rounded-2xl bg-[color:var(--ivory)] p-8 shadow-2xl ring-1 ring-[color:var(--border)]">
+      <div className="relative w-full max-w-lg rounded-2xl bg-[color:var(--ivory)] p-8 shadow-2xl ring-1 ring-[color:var(--border)] max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute right-5 top-5 text-muted-foreground hover:text-[color:var(--charcoal)] text-xl font-bold"
@@ -212,26 +206,40 @@ function ExploreInstitutionsModal({ isOpen, onClose }: { isOpen: boolean; onClos
             <PrimaryBtn onClick={() => { setSubmitted(false); onClose(); }}>Close Window</PrimaryBtn>
           </div>
         ) : (
-          <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Full Name</label>
-              <input required type="text" placeholder="Enter your full name" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Name</label>
+              <input required name="name" type="text" placeholder="Enter your full name" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
             </div>
             <div>
-              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Email Address</label>
-              <input required type="email" placeholder="you@example.com" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Number</label>
+              <input required name="number" type="tel" placeholder="Enter your phone number" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
             </div>
             <div>
-              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Choose Institution</label>
-              <select className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]">
-                <option value="both">Both Institutions (School & Degree College)</option>
-                <option value="school">Dayawanti Punj Model School</option>
-                <option value="college">Dayawanti Punj Degree College</option>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">What are you enquiring for</label>
+              <select name="enquiring_for" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]">
+                <option value="Both Institutions (School & Degree College)">Both Institutions (School & Degree College)</option>
+                <option value="Dayawanti Punj Model School">Dayawanti Punj Model School</option>
+                <option value="Dayawanti Punj Degree College">Dayawanti Punj Degree College</option>
               </select>
             </div>
+            <div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Message</label>
+              <textarea name="message" rows={3} placeholder="Enter your message or query..." className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+            </div>
+            <div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Captcha: What is {captchaNum1} + {captchaNum2}?</label>
+              <input required type="text" value={captchaInput} onChange={(e) => setCaptchaInput(e.target.value)} placeholder="Enter sum" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+              {captchaError && <p className="text-xs text-red-500 mt-1">Incorrect captcha answer. Please try again.</p>}
+            </div>
+
+            {result && <p className="text-xs text-center text-red-600 font-medium">{result}</p>}
+
             <div className="pt-4 flex justify-end gap-3">
-              <GhostBtn onClick={onClose}>Cancel</GhostBtn>
-              <PrimaryBtn type="submit">Submit Request</PrimaryBtn>
+              <GhostBtn type="button" onClick={onClose}>Cancel</GhostBtn>
+              <PrimaryBtn type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit Request"}
+              </PrimaryBtn>
             </div>
           </form>
         )}
@@ -242,11 +250,55 @@ function ExploreInstitutionsModal({ isOpen, onClose }: { isOpen: boolean; onClos
 
 function AdmissionsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [submitted, setSubmitted] = useState(false);
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [captchaNum1] = useState(() => Math.floor(Math.random() * 10) + 1);
+  const [captchaNum2] = useState(() => Math.floor(Math.random() * 10) + 1);
+  const [captchaInput, setCaptchaInput] = useState("");
+  const [captchaError, setCaptchaError] = useState(false);
+
   if (!isOpen) return null;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (parseInt(captchaInput, 10) !== captchaNum1 + captchaNum2) {
+      setCaptchaError(true);
+      return;
+    }
+    setCaptchaError(false);
+    setIsSubmitting(true);
+    setResult("Sending...");
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      formData.append("access_key", "bd95baf9-6f48-441e-9291-e4096b95e75f");
+      formData.append("subject", "New Admissions & Enquiry Submission");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setResult("");
+      } else {
+        setResult(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setResult("Network error. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="relative w-full max-w-lg rounded-2xl bg-[color:var(--ivory)] p-8 shadow-2xl ring-1 ring-[color:var(--border)]">
+      <div className="relative w-full max-w-lg rounded-2xl bg-[color:var(--ivory)] p-8 shadow-2xl ring-1 ring-[color:var(--border)] max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute right-5 top-5 text-muted-foreground hover:text-[color:var(--charcoal)] text-xl font-bold"
@@ -265,28 +317,40 @@ function AdmissionsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
             <PrimaryBtn onClick={() => { setSubmitted(false); onClose(); }}>Close Window</PrimaryBtn>
           </div>
         ) : (
-          <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Student / Applicant Name</label>
-              <input required type="text" placeholder="Student's name" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Phone Number</label>
-                <input required type="tel" placeholder="+91 00000 00000" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
-              </div>
-              <div>
-                <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Grade / Course Sought</label>
-                <input required type="text" placeholder="e.g. Class 9 / BA Program" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
-              </div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Name</label>
+              <input required name="name" type="text" placeholder="Enter your full name" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
             </div>
             <div>
-              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Specific Query or Message</label>
-              <textarea rows={3} placeholder="Ask about admissions, hostel facilities, scholarships..." className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Number</label>
+              <input required name="number" type="tel" placeholder="Enter your phone number" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
             </div>
+            <div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">What are you enquiring for</label>
+              <select name="enquiring_for" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]">
+                <option value="Dayawanti Punj Model School">Dayawanti Punj Model School</option>
+                <option value="Dayawanti Punj Degree College">Dayawanti Punj Degree College</option>
+                <option value="General Enquiry / Campus Visit">General Enquiry / Campus Visit</option>
+              </select>
+            </div>
+            <div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Message</label>
+              <textarea name="message" rows={3} placeholder="Ask about admissions, hostel facilities, scholarships..." className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+            </div>
+            <div>
+              <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">Captcha: What is {captchaNum1} + {captchaNum2}?</label>
+              <input required type="text" value={captchaInput} onChange={(e) => setCaptchaInput(e.target.value)} placeholder="Enter sum" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]" />
+              {captchaError && <p className="text-xs text-red-500 mt-1">Incorrect captcha answer. Please try again.</p>}
+            </div>
+
+            {result && <p className="text-xs text-center text-red-600 font-medium">{result}</p>}
+
             <div className="pt-4 flex justify-end gap-3">
-              <GhostBtn onClick={onClose}>Cancel</GhostBtn>
-              <PrimaryBtn type="submit">Send Enquiry</PrimaryBtn>
+              <GhostBtn type="button" onClick={onClose}>Cancel</GhostBtn>
+              <PrimaryBtn type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Enquiry"}
+              </PrimaryBtn>
             </div>
           </form>
         )}
@@ -294,7 +358,6 @@ function AdmissionsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
     </div>
   );
 }
-
 
 
 /* ---------------- page ---------------- */
@@ -331,8 +394,7 @@ function EducationPage() {
       </main>
       <SiteFooter />
 
-
-       {/* Popups */}
+{/* Popups */}
       <ExploreInstitutionsModal isOpen={isExploreOpen} onClose={() => setIsExploreOpen(false)} />
       <AdmissionsModal isOpen={isAdmissionsOpen} onClose={() => setIsAdmissionsOpen(false)} />
     </div>
