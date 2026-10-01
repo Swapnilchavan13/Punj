@@ -1160,10 +1160,10 @@ function Scholarships() {
           <Pending>Add number of students supported</Pending>
         </div> */}
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        {/* <div className="mt-8 flex flex-wrap gap-3">
           <PrimaryBtn href="/education/scholarships">Scholarship Information</PrimaryBtn>
           <GhostBtn href="/education/student-support-enquiry">Student Support Enquiry</GhostBtn>
-        </div>
+        </div> */}
       </Reveal>
     </Section>
   );
@@ -1401,9 +1401,9 @@ function Educators() {
     ))}
   </div>
 
-  <div className="mt-8">
+  {/* <div className="mt-8">
     <GhostBtn href="/education/educators">Meet Our Educators</GhostBtn>
-  </div>
+  </div> */}
 </Reveal>
     </Section>
   );
@@ -2260,11 +2260,11 @@ function Updates() {
           ))}
         </ul>
 
-        <div className="mt-10">
+        {/* <div className="mt-10">
           <GhostBtn href="/stories-updates/education">
             View All Education Updates
           </GhostBtn>
-        </div>
+        </div> */}
       </Reveal>
     </Section>
   );

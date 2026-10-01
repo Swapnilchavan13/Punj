@@ -132,7 +132,7 @@ function HealthcareWelfarePage() {
         {/* <Vulnerable /> */}
         <CommunityResponse />
         <JourneyOfCare />
-        <Impact />
+        {/* <Impact /> */}
         <Stories />
         {/* <Upcoming /> */}
         <Enquiries />
@@ -401,59 +401,65 @@ function HealthcareIntro() {
 }
 
 const HOSPITAL_INFO = [
-  "Services (Free check-ups, ambulance services, essential medicines)",
-  "Departments & Healthcare team",
-  "Timings (Open 24 Hours)",
-  "Patient guidance",
-  "Appointment or consultation process",
-  "Emergency and ambulance information",
-  "Location: Near Sita Samahit Sthal, Sitamarhi, Jangigani, Bhadohi, UP - 221309",
-  "Contact Foundation: 011-49990952 | pkldpfoundation@gmail.com",
+  { label: "Services", detail: "Free check-ups, ambulance services, essential medicines" },
+  { label: "Departments & Healthcare team", detail: "Specialized departments and experienced healthcare professionals available." },
+  { label: "Timings", detail: "Open 24 Hours" },
+  { label: "Patient guidance", detail: "Dedicated support for patient registration, consultation flow, and general inquiries." },
+  { label: "Appointment or consultation process", detail: "Walk-ins welcome; register at the front desk for immediate consultation." },
+  { label: "Emergency and ambulance information", detail: "24/7 emergency response and quick ambulance dispatch for critical cases." },
+  { label: "Location", detail: "Near Sita Samahit Sthal, Sitamarhi, Jangigani, Bhadohi, UP - 221309" },
+  { label: "Contact Foundation", detail: "011-49990952 | pkldpfoundation@gmail.com" },
 ];
 
 function HospitalFeature() {
   return (
     <Section tint="oklch(0.972 0.016 225 / 0.5)">
-      <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 items-stretch">
         <Reveal>
           <Eyebrow tone={HC}>Foundation Institution</Eyebrow>
 
           <H2>Pt. Kanahya Lal Punj Hospital</H2>
 
-          <details className="mt-7 group border-b border-border pb-4">
-            <summary className="flex cursor-pointer list-none items-center justify-between font-sans text-base font-semibold text-foreground">
-              <span>Hospital Overview</span>
+          {/* Overview paragraphs */}
+          <div className="mt-7 max-w-xl font-sans text-[15px] leading-7 text-muted-foreground">
+            <p>
+              Pt. Kanahya Lal Punj Hospital represents the Foundation’s commitment
+              to bringing organised healthcare services closer to the surrounding
+              rural community in Sitamarhi, Bhadohi.
+            </p>
 
-              <span className="ml-4 transition-transform duration-300 group-open:rotate-180">
-                ▼
-              </span>
-            </summary>
+            <p className="mt-4">
+              Providing accessible care, essential medicines, and emergency
+              support to families in need, rooted in service and practical
+              patient care.
+            </p>
 
-            <div className="mt-5 max-w-xl font-sans text-[15px] leading-7 text-muted-foreground">
-              <p>
-                Pt. Kanahya Lal Punj Hospital represents the Foundation’s commitment
-                to bringing organised healthcare services closer to the surrounding
-                rural community in Sitamarhi, Bhadohi.
-              </p>
-
-              <p className="mt-4">
-                Providing accessible care, essential medicines, and emergency
-                support to families in need, rooted in service and practical
-                patient care.
-              </p>
-
-              <dl className="mt-6">
-                {HOSPITAL_INFO.map((label) => (
-                  <InfoRow key={label} label={label} />
-                ))}
-              </dl>
+            {/* Individual dropdowns for each info point */}
+            <div className="mt-6 divide-y divide-border border-t border-border">
+              <h3 className="pt-4 pb-2 font-sans text-sm font-semibold text-foreground tracking-wide uppercase">
+                Hospital Overview
+              </h3>
+              {HOSPITAL_INFO.map(({ label, detail }) => (
+                <details key={label} className="group py-2.5">
+                  <summary className="flex cursor-pointer list-none items-center justify-between font-sans text-sm font-medium text-foreground">
+                    <span>{label}</span>
+                    <span className="ml-4 transition-transform duration-300 group-open:rotate-180 text-xs">
+                      ▼
+                    </span>
+                  </summary>
+                  <p className="mt-1.5 text-sm text-muted-foreground pl-1">
+                    {detail}
+                  </p>
+                </details>
+              ))}
             </div>
-          </details>
+          </div>
         </Reveal>
 
-        <Reveal>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <div className="sm:col-span-2 aspect-[16/9] w-full overflow-hidden rounded-lg">
+        {/* Images column set to match height dynamically without sticky positioning */}
+        <Reveal className="h-full flex flex-col">
+          <div className="grid gap-3 sm:grid-cols-2 flex-1 h-full">
+            <div className="sm:col-span-2 w-full overflow-hidden rounded-lg shadow-sm flex-1 min-h-[200px]">
               <img
                 src="https://i.ibb.co/35mpZjmT/Whats-App-Image-2026-08-12-at-3-42-35-PM.jpg"
                 alt="Exterior of Pt. Kanahya Lal Punj Hospital"
@@ -461,7 +467,7 @@ function HospitalFeature() {
               />
             </div>
 
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+            <div className="w-full overflow-hidden rounded-lg shadow-sm flex-1 min-h-[160px]">
               <img
                 src="https://i.ibb.co/BHd1YGDn/Whats-App-Image-2026-08-12-at-3-42-29-PM-2.jpg"
                 alt="Interior of Pt. Kanahya Lal Punj Hospital"
@@ -469,18 +475,10 @@ function HospitalFeature() {
               />
             </div>
 
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+            <div className="w-full overflow-hidden rounded-lg shadow-sm flex-1 min-h-[160px]">
               <img
                 src="https://i.ibb.co/FqzgbWqK/Whats-App-Image-2026-08-12-at-3-42-20-PM.jpg"
                 alt="Doctors and nursing staff at Pt. Kanahya Lal Punj Hospital"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="sm:col-span-2 aspect-[16/9] w-full overflow-hidden rounded-lg">
-              <img
-                src="https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg"
-                alt="Doctor consulting a patient at the hospital"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -698,49 +696,60 @@ function Outreach() {
 
       {/* Diagnostics, Medicines & Dabur Partnership */}
       <div className="mt-16 grid gap-12 lg:grid-cols-3">
-        <Reveal>
-          <h3 className="font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
-            Health Check-up &amp; Diagnostics
-          </h3>
-          <p className="mt-3 font-sans text-sm text-muted-foreground">
-            Basic health screening and diagnostics for early risk identification:
-          </p>
-          <ul className="mt-4 grid gap-2">
-            {COW_DIAGNOSTICS.map((diag) => (
-              <li key={diag} className="flex items-center gap-2 text-sm text-[color:var(--charcoal)]/85">
-                <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent-healthcare)] shrink-0" />
-                {diag}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+  <Reveal>
+    <h3 className="font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
+      Health Check-up &amp; Diagnostics
+    </h3>
+    <p className="mt-3 font-sans text-sm text-muted-foreground">
+      Basic health screening and diagnostics for early risk identification:
+    </p>
+    <ul className="mt-4 grid gap-2">
+      {COW_DIAGNOSTICS.map((diag) => (
+        <li key={diag} className="flex items-center gap-2 text-sm text-[color:var(--charcoal)]/85">
+          <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent-healthcare)] shrink-0" />
+          {diag}
+        </li>
+      ))}
+    </ul>
+  </Reveal>
 
-        <Reveal>
-          <h3 className="font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
-            Free Medicines &amp; Counselling
-          </h3>
-          <p className="mt-3 font-sans text-sm text-muted-foreground">
-            Medicines are provided free based strictly on prescriptions, alongside pharmacist guidance on dosage, timing, precautions, and safe medication practices.
-          </p>
-        </Reveal>
+  <Reveal className="flex flex-col justify-between">
+    <div>
+      <h3 className="font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
+        Free Medicines &amp; Counselling
+      </h3>
+      <p className="mt-3 font-sans text-sm text-muted-foreground">
+        Medicines are provided free based strictly on prescriptions, alongside pharmacist guidance on dosage, timing, precautions, and safe medication practices.
+      </p>
+    </div>
+    
+    {/* Added image below text with consistent spacing and styling */}
+    <div className="mt-6 aspect-[16/10] w-full overflow-hidden rounded-lg shadow-sm">
+      <img
+        src="https://i.ibb.co/n8b6LRYB/Screenshot-2026-08-22-113614.png"
+        alt="Free Medicines & Counselling"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  </Reveal>
 
-        <Reveal>
-          <h3 className="font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
-            Dabur Product Distribution
-          </h3>
-          <p className="mt-3 font-sans text-sm text-muted-foreground">
-            Supplementary health, nutrition, and personal hygiene support featuring items such as:
-          </p>
-          <ul className="mt-4 grid gap-2">
-            {DABUR_PRODUCTS.map((prod) => (
-              <li key={prod} className="flex items-center gap-2 text-sm text-[color:var(--charcoal)]/85">
-                <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent-healthcare)] shrink-0" />
-                {prod}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </div>
+  <Reveal>
+    <h3 className="font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
+      Dabur Product Distribution
+    </h3>
+    <p className="mt-3 font-sans text-sm text-muted-foreground">
+      Supplementary health, nutrition, and personal hygiene support featuring items such as:
+    </p>
+    <ul className="mt-4 grid gap-2">
+      {DABUR_PRODUCTS.map((prod) => (
+        <li key={prod} className="flex items-center gap-2 text-sm text-[color:var(--charcoal)]/85">
+          <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent-healthcare)] shrink-0" />
+          {prod}
+        </li>
+      ))}
+    </ul>
+  </Reveal>
+</div>
 
       <div className="mt-12">
         <Reveal>
@@ -823,25 +832,29 @@ function EyeCare() {
 function Ambulance() {
   return (
     <Section tint="oklch(0.972 0.016 225 / 0.45)">
-      <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+      <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 items-start">
+        {/* Left column: Two images stacked cleanly with consistent proportions */}
         <Reveal>
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
-            <img
-              src="https://i.ibb.co/vCkHBc6C/Whats-App-Image-2026-08-12-at-3-42-14-PM-2.jpg"
-              alt="Foundation-supported ambulance"
-              className="h-full w-full object-cover"
-            />
-          </div>
+          <div className="grid gap-4">
+            <div className="aspect-[16/9] w-full overflow-hidden rounded-lg shadow-sm">
+              <img
+                src="https://i.ibb.co/vCkHBc6C/Whats-App-Image-2026-08-12-at-3-42-14-PM-2.jpg"
+                alt="Foundation-supported ambulance"
+                className="h-full w-full object-cover"
+              />
+            </div>
 
-          <div className="mt-5 aspect-[16/9] w-full overflow-hidden rounded-lg">
-            <img
-              src="https://i.ibb.co/5gtn76Th/Whats-App-Image-2026-08-12-at-3-42-13-PM-1.jpg"
-              alt="Ambulance-related assistance being provided to a patient"
-              className="h-full w-full object-cover"
-            />
+            <div className="aspect-[16/9] w-full overflow-hidden rounded-lg shadow-sm">
+              <img
+                src="https://i.ibb.co/5gtn76Th/Whats-App-Image-2026-08-12-at-3-42-13-PM-1.jpg"
+                alt="Ambulance-related assistance being provided to a patient"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </Reveal>
 
+        {/* Right column: Text content + image below it with matching proportions */}
         <Reveal>
           <Eyebrow tone={HC}>Ambulance and Access Support</Eyebrow>
 
@@ -853,13 +866,22 @@ function Ambulance() {
               medical care is reached in time.
             </p>
 
-            <p>
+            <p className="mt-4">
               Through emergency transport and patient-access support linked
               with Pt. Kanahya Lal Punj Hospital and the Foundation's outreach
               networks, emergency conveyance assistance helps bridge the gap
               between remote rural areas and urgent medical attention.
             </p>
           </Body>
+
+          {/* Third image placed neatly below the text with matching aspect ratio */}
+          <div className="mt-8 aspect-[16/9] w-full overflow-hidden rounded-lg shadow-sm">
+            <img
+              src="https://i.ibb.co/7008BFY/Whats-App-Image-2026-08-12-at-3-42-20-PM-2.jpg"
+              alt="Doctor consulting a patient at the hospital"
+              className="h-full w-full object-cover"
+            />
+          </div>
         </Reveal>
       </div>
     </Section>
@@ -940,24 +962,27 @@ const AWARENESS = [
 function Preventive() {
   return (
     <Section tint="oklch(0.974 0.012 95 / 0.45)">
-      <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-        <Reveal>
-         <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
-          <img
-            src="https://i.ibb.co/7Njbjf1y/Whats-App-Image-2026-08-12-at-3-42-28-PM.jpg"
-            alt="Community health-awareness session"
-            className="h-full w-full object-cover"
-          />
-        </div>
+      <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 items-stretch">
+        <Reveal className="flex flex-col justify-between">
+          <div className="grid gap-5 flex-1 h-full">
+            <div className="aspect-[16/10] w-full overflow-hidden rounded-lg shadow-sm flex-1">
+              <img
+                src="https://i.ibb.co/7Njbjf1y/Whats-App-Image-2026-08-12-at-3-42-28-PM.jpg"
+                alt="Community health-awareness session"
+                className="h-full w-full object-cover"
+              />
+            </div>
 
-        <div className="mt-5 aspect-[16/9] w-full overflow-hidden rounded-lg">
-          <img
-            src="https://i.ibb.co/rfsMBWfX/Whats-App-Image-2026-08-12-at-3-42-31-PM-2.jpg"
-            alt="Women's health and wellbeing session in progress"
-            className="h-full w-full object-cover"
-          />
-        </div>
+            <div className="aspect-[16/10] w-full overflow-hidden rounded-lg shadow-sm flex-1">
+              <img
+                src="https://i.ibb.co/rfsMBWfX/Whats-App-Image-2026-08-12-at-3-42-31-PM-2.jpg"
+                alt="Women's health and wellbeing session in progress"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
         </Reveal>
+
         <Reveal>
           <Eyebrow tone={HC}>Health Awareness</Eyebrow>
           <H2>Supporting Health Before Illness Becomes a Crisis</H2>
@@ -966,7 +991,7 @@ function Preventive() {
               Preventive healthcare and community awareness can help families recognise risks, seek
               timely advice and make informed decisions.
             </p>
-            <p>
+            <p className="mt-4">
               Through community outreach programs and health education initiatives led by the Foundation, 
               awareness sessions equip rural families with vital knowledge to maintain long-term wellness.
             </p>
@@ -986,7 +1011,6 @@ function Preventive() {
     </Section>
   );
 }
-
 /* 12. Social Welfare introduction */
 
 function WelfareIntro() {
@@ -997,54 +1021,42 @@ function WelfareIntro() {
       accent={SW}
       tint="linear-gradient(180deg, oklch(0.975 0.02 45 / 0.55), oklch(0.985 0.006 80 / 0.4))"
     >
-      <div className="grid items-center gap-12 md:grid-cols-[1.02fr_0.98fr] md:gap-16">
-        <Reveal>
+      <div className="grid items-stretch gap-12 md:grid-cols-[1.02fr_0.98fr] md:gap-16">
+        <Reveal className="flex flex-col justify-center">
           <Eyebrow tone={SW}>Dignity and Community Support</Eyebrow>
 
           <H2 id="welfare-heading">
             Standing Beside Families During Important Moments
           </H2>
 
-          {/* Social Welfare Info Dropdown */}
-          <details className="mt-7 group max-w-xl rounded-[6px] bg-[color:var(--card)]/75 ring-1 ring-[color:var(--border)]">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5">
-              <span className="font-sans text-[13px] font-medium uppercase tracking-[0.16em] text-[color:var(--charcoal)]/70">
-                Info
-              </span>
+          {/* Social Welfare Info - Displayed directly without dropdown */}
+          <div className="mt-7 max-w-xl rounded-[6px] bg-[color:var(--card)]/75 p-6 ring-1 ring-[color:var(--border)]">
+            {/* <h3 className="font-sans text-[13px] font-medium uppercase tracking-[0.16em] text-[color:var(--charcoal)]/70 mb-4">
+              Info
+            </h3> */}
+            <Body>
+              <p>
+                The Foundation’s social-welfare work responds to practical
+                needs that can place significant pressure on individuals and
+                families.
+              </p>
 
-              <span
-                aria-hidden="true"
-                className="shrink-0 text-lg transition-transform duration-300 group-open:rotate-180"
-              >
-                ▼
-              </span>
-            </summary>
+              <p className="mt-4">
+                This support may involve important life events, seasonal
+                hardship, household needs or periods of vulnerability.
+              </p>
 
-            <div className="border-t border-[color:var(--border)] px-5 pb-5 pt-5">
-              <Body>
-                <p>
-                  The Foundation’s social-welfare work responds to practical
-                  needs that can place significant pressure on individuals and
-                  families.
-                </p>
-
-                <p className="mt-4">
-                  This support may involve important life events, seasonal
-                  hardship, household needs or periods of vulnerability.
-                </p>
-
-                <p className="mt-4">
-                  The approach is one of dignity and partnership — not pity.
-                  Its purpose is to offer practical assistance while respecting
-                  the people, families and communities involved.
-                </p>
-              </Body>
-            </div>
-          </details>
+              <p className="mt-4">
+                The approach is one of dignity and partnership — not pity.
+                Its purpose is to offer practical assistance while respecting
+                the people, families and communities involved.
+              </p>
+            </Body>
+          </div>
         </Reveal>
 
-        <Reveal>
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+        <Reveal className="h-full flex flex-col justify-center">
+          <div className="w-full h-full min-h-[320px] overflow-hidden rounded-lg shadow-sm flex-1">
             <img
               src="https://i.ibb.co/YFhGGqmy/Whats-App-Image-2026-08-12-at-3-42-18-PM-2.jpg"
               alt="Practical support being provided to a family by the Foundation"
@@ -1061,24 +1073,24 @@ function WelfareIntro() {
 /* 13. Group weddings */
 
 const WEDDING_FIELDS = [
-  "Programme timing: Organised every year on the auspicious occasion of Sita Mata Jayanti",
-  "Scale & growth: Growing steadily — from 45 couples in 2023 to 55 couples in 2025",
-  "Eligibility: Groom 21+ yrs, bride 18+ yrs, both passed Class 10, with full family consent",
-  "Application process: Public newspaper announcements followed by direct registration",
-  "Verification process: Personal family visits, Zila Head/local checks, and mutual consent confirmation",
-  "Venue: Organised at the Dayawanti Punj Model School campus",
-  "Support provided: Essential items, financial assistance, community backing, and complete ritual setup",
-  "Partner participation: Community volunteers, well-wishers, local leaders, and external sponsors",
-  "Enquiry contact: 011-49990952 | pkldpfoundation@gmail.com",
+  { label: "Programme timing", detail: "Organised every year on the auspicious occasion of Sita Mata Jayanti" },
+  { label: "Scale & growth", detail: "Growing steadily — from 45 couples in 2023 to 55 couples in 2025" },
+  { label: "Eligibility", detail: "Groom 21+ yrs, bride 18+ yrs, both passed Class 10, with full family consent" },
+  { label: "Application process", detail: "Public newspaper announcements followed by direct registration" },
+  { label: "Verification process", detail: "Personal family visits, Zila Head/local checks, and mutual consent confirmation" },
+  { label: "Venue", detail: "Organised at the Dayawanti Punj Model School campus" },
+  { label: "Support provided", detail: "Essential items, financial assistance, community backing, and complete ritual setup" },
+  { label: "Partner participation", detail: "Community volunteers, well-wishers, local leaders, and external sponsors" },
+  { label: "Enquiry contact", detail: "011-49990952 | pkldpfoundation@gmail.com" },
 ];
 
 function GroupWeddings() {
   return (
     <Section accent={SW}>
-      <div className="grid gap-12 lg:grid-cols-[0.98fr_1.02fr] lg:gap-16">
-        <Reveal>
-          <div className="grid gap-5">
-            <div className="aspect-[16/10] w-full overflow-hidden rounded-lg">
+      <div className="grid gap-12 lg:grid-cols-[0.98fr_1.02fr] lg:gap-16 items-stretch">
+        <Reveal className="flex flex-col justify-between">
+          <div className="grid gap-5 flex-1">
+            <div className="aspect-[16/10] w-full overflow-hidden rounded-lg shadow-sm">
               <img
                 src="https://i.ibb.co/5xt2Z2GG/Screenshot-2026-08-20-183214.png"
                 alt="Couples participating in a Foundation-supported group-wedding ceremony"
@@ -1086,8 +1098,8 @@ function GroupWeddings() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+            <div className="grid grid-cols-2 gap-5 flex-1">
+              <div className="aspect-[4/3] w-full overflow-hidden rounded-lg shadow-sm">
                 <img
                   src="https://i.ibb.co/wZkZ5L8G/Screenshot-2026-08-20-183323.png"
                   alt="Participating couples at a Foundation group wedding"
@@ -1095,7 +1107,7 @@ function GroupWeddings() {
                 />
               </div>
 
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+              <div className="aspect-[4/3] w-full overflow-hidden rounded-lg shadow-sm">
                 <img
                   src="https://i.ibb.co/VYZ8btph/Screenshot-2026-08-20-183442.png"
                   alt="Wider view of a community group-wedding ceremony"
@@ -1116,34 +1128,30 @@ function GroupWeddings() {
               The Pt. Kanahya Lal Dayawanti Punj Foundation organises a Group Wedding Programme every year on the auspicious occasion of Sita Mata Jayanti.
             </p>
 
-            <p>
+            <p className="mt-4">
               Growing steadily from 45 couples in 2023 to 55 couples in 2025, the initiative brings together families and community members to support eligible couples as they begin their married lives with dignity, respect, and happiness.
             </p>
           </Body>
-          <details className="mt-8 group max-w-xl rounded-[6px] bg-[color:var(--card)]/75 ring-1 ring-[color:var(--border)]">
 
-          {/* Group Wedding Info Dropdown */}
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5">
-              <span className="font-sans text-[13px] font-medium uppercase tracking-[0.16em] text-[color:var(--charcoal)]/70">
-                Info
-              </span>
-
-              <span
-                aria-hidden="true"
-                className="shrink-0 text-lg transition-transform duration-300 group-open:rotate-180"
-              >
-                ▼
-              </span>
-            </summary>
-
-            <div className="border-t border-[color:var(--border)] px-5 pb-5 pt-3">
-              <dl>
-                {WEDDING_FIELDS.map((f) => (
-                  <InfoRow key={f} label={f} />
-                ))}
-              </dl>
-            </div>
-          </details>
+          {/* Individual pointwise dropdowns */}
+          <div className="mt-6 max-w-xl divide-y divide-border border-t border-border">
+            <h3 className="pt-4 pb-2 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--charcoal)]/70">
+              Overview
+            </h3>
+            {WEDDING_FIELDS.map(({ label, detail }) => (
+              <details key={label} className="group py-2.5">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-sans text-sm font-medium text-foreground">
+                  <span>{label}</span>
+                  <span className="ml-4 transition-transform duration-300 group-open:rotate-180 text-xs">
+                    ▼
+                  </span>
+                </summary>
+                <p className="mt-1.5 text-sm text-muted-foreground pl-1">
+                  {detail}
+                </p>
+              </details>
+            ))}
+          </div>
         </Reveal>
       </div>
     </Section>
@@ -1374,7 +1382,7 @@ function CommunityResponse() {
           <details className="mt-8 group max-w-xl rounded-[6px] bg-[color:var(--card)]/75 ring-1 ring-[color:var(--border)]">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5">
               <span className="font-sans text-[13px] font-medium uppercase tracking-[0.16em] text-[color:var(--charcoal)]/70">
-                Info
+                Overview
               </span>
 
               <span
@@ -2186,18 +2194,18 @@ function Enquiries() {
                 <dd>{p.hours}</dd>
               </div>
             </dl>
-            <div className="mt-5">
+            {/* <div className="mt-5">
               <GhostBtn href="#hsw-enquiry-heading">Send Enquiry</GhostBtn>
-            </div>
+            </div> */}
           </li>
         ))}
       </ul>
-
+{/* 
       <Reveal className="mt-14">
         <div className="rounded-[8px] bg-[color:var(--offwhite)] p-6 ring-1 ring-[color:var(--border)] md:p-10">
           <EnquiryFormBlock />
         </div>
-      </Reveal>
+      </Reveal> */}
     </Section>
   );
 }
@@ -2599,12 +2607,12 @@ function Updates() {
             </li>
           ))}
         </ul>
-
+{/* 
         <div className="mt-10">
           <GhostBtn href="/stories-updates/healthcare-social-welfare">
             View All Healthcare &amp; Social Welfare Updates
           </GhostBtn>
-        </div>
+        </div> */}
       </Reveal>
     </Section>
   );

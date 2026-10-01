@@ -193,11 +193,11 @@ function Hero() {
 
           <Reveal>
            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
-  <img
+  {/* <img
     src="https://images.bhaskarassets.com/web2images/521/2026/02/16/aab13e49-21d4-4892-8705-2e8f9b60a3f3_1771218456037.jpg"
     alt="Visitors entering Sita Samahit Sthal"
     className="w-full aspect-[16/10] object-cover rounded-[8px]"
-  />
+  /> */}
 
   <img
     src="https://www.omastrology.com/indian-temples/images/sita-samahit-sthal-uttar-pradesh.jpg"
@@ -675,106 +675,87 @@ const SPACES = [
   {
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ZFIrUPocKolSVjPKdMaSjqWbieZAMLao4H0nV_6yyFD4p_o_EWyDuun7&s=10",
     alt: "Principal architecture at Sita Samahit Sthal",
-    label: "Principal architecture",
-    span: "lg:col-span-2 lg:row-span-2",
-    aspect: "4 / 3",
+    label: "Principal Architecture",
+    span: "md:col-span-2 md:row-span-2",
   },
   {
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWcW28lwCxdZur9fAhs7_sOxUxS-lVKY3piG82ghs6J1uUPZWoI2-XeCpx&s=10",
     alt: "Sacred area within Sita Samahit Sthal",
-    label: "Sacred space",
+    label: "Sacred Space",
     span: "",
-    aspect: "4 / 3",
   },
   {
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTldLuPROqG2u9IteeKJ7BxbUG9zrKXunZRISDVXTEm1ChDF9M-LrI_ne8&s=10",
     alt: "Pathway at Sita Samahit Sthal",
-    label: "Pathways",
+    label: "Pathways & Walkways",
     span: "",
-    aspect: "4 / 3",
   },
   {
     image: "https://avathioutdoors.gumlet.io/travelGuide/dev/varanasi_P3866.jpg?w=600&h=400&format=webp&q=80&compress=true",
     alt: "Sita Samahit Sthal within its wider landscape",
-    label: "Landscape",
-    span: "",
-    aspect: "4 / 3",
+    label: "Surrounding Landscape",
+    span: "md:col-span-2",
   },
   {
     image: "https://images.bhaskarassets.com/thumb/360x0/web2images/521/2023/08/04/3f25a99e-9726-45d2-ab9c-36021092c791_1691141221556.jpg",
     alt: "Architectural detail at Sita Samahit Sthal",
-    label: "Architectural detail",
+    label: "Architectural Detail",
     span: "",
-    aspect: "1 / 1",
   },
   {
     image: "https://thetimelock.in/wp-content/uploads/IMG_20230430_173817-Small.jpg",
     alt: "Architectural detail at Sita Samahit Sthal",
-    label: "Architectural detail",
+    label: "Intricate Carvings",
     span: "",
-    aspect: "1 / 1",
-  },
-  {
-    image: "https://images.bhaskarassets.com/web2images/521/2025/09/29/2c1c99f7-9c84-478f-9263-1c6812fa4f92_1759140300613.jpg",
-    alt: "Evening view of Sita Samahit Sthal",
-    label: "Evening view",
-    span: "lg:col-span-2",
-    aspect: "16 / 9",
   },
 ];
 
 function Architecture() {
   return (
     <Section id="architecture">
-      <div className="grid gap-10 md:grid-cols-[1fr_0.85fr] md:gap-16">
+      {/* Top Header Grid: Text above/alongside headline arrangement */}
+      <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-start">
         <Reveal>
           <Eyebrow tone={SITA}>Architecture and Place</Eyebrow>
-          <H2>The Spaces That Shape the Experience</H2>
+          <H2 className="mt-2">The Spaces That Shape the Experience</H2>
         </Reveal>
 
         <Reveal>
-          <Body className="md:pt-14">
-            <p>
-              The physical environment of Sita Samahit Sthal plays an important role in how visitors
-              encounter the site.
+          <Body className="text-[15px] leading-relaxed text-muted-foreground">
+            <p className="font-medium text-[color:var(--charcoal)] mb-3">
+              The physical environment of Sita Samahit Sthal plays an important role in how visitors encounter the site.
             </p>
-
             <p>
-              Architecture, pathways, sacred spaces, landscape and gathering areas together create a
-              setting for prayer, reflection, movement and community participation.
+              Architecture, pathways, sacred spaces, landscape and gathering areas together create a harmonious setting for prayer, reflection, movement and community participation.
             </p>
           </Body>
         </Reveal>
       </div>
 
-      <ul className="mt-12 grid auto-rows-auto gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Clean Asymmetric Bento Grid for Images */}
+      <div className="mt-12 grid auto-rows-[220px] gap-5 sm:grid-cols-2 md:grid-cols-4">
         {SPACES.map((s) => (
-          <li key={`${s.image}-${s.label}`} className={s.span}>
-            <div className="overflow-hidden rounded-[6px] ring-1 ring-[color:var(--border)]">
+          <Reveal key={`${s.image}-${s.label}`} className={`group flex flex-col ${s.span}`}>
+            <div className="relative h-full w-full overflow-hidden rounded-xl bg-[color:var(--muted)] shadow-sm ring-1 ring-[color:var(--border)]">
               <img
                 src={s.image}
                 alt={s.alt}
-                className="w-full h-full object-cover"
-                style={{
-                  aspectRatio: s.aspect.replace(" / ", " / "),
-                }}
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                loading="lazy"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <span className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-white/90 drop-shadow">
+                  {s.label}
+                </span>
+              </div>
             </div>
-
-            <p className="mt-3 font-sans text-[13px] text-[color:var(--charcoal)]">
-              {s.label}
-            </p>
-
-            {/* <p className="mt-1 font-sans text-[12px] text-muted-foreground">
-              <Pending>Add verified name of this space</Pending>
-            </p> */}
-          </li>
+          </Reveal>
         ))}
-      </ul>
+      </div>
     </Section>
   );
 }
-
 /* 8. Ramayana tradition */
 function RamayanaTradition() {
   return (
@@ -886,51 +867,74 @@ const PRACTICES: PracticeItem[] = [
     location: "Satsang Bhavan",
     guidelines: "Seating is available on a first-come, first-served basis. Attendees should arrive 15 minutes prior.",
   },
-  {
-    title: "Cultural Programmes",
-    description: "Devotional music, classical bhajans, and theatrical enactments celebrating sacred legends and heritage.",
-    timing: "Monthly Special Evenings & Festivals",
-    location: "Open-Air Amphitheatre",
-    guidelines: "Open to all visitors and pilgrims free of charge.",
-  },
-  {
-    title: "Special Observances",
-    description: "Major festive celebrations during Navratri, Vivah Panchami, and other sacred calendar occasions with grand arrangements.",
-    timing: "Special Festival Dates",
-    location: "Entire Temple & Sthal Grounds",
-    guidelines: "Special queue management and security protocols active during major festive observances.",
-  },
+  // {
+  //   title: "Cultural Programmes",
+  //   description: "Devotional music, classical bhajans, and theatrical enactments celebrating sacred legends and heritage.",
+  //   timing: "Monthly Special Evenings & Festivals",
+  //   location: "Open-Air Amphitheatre",
+  //   guidelines: "Open to all visitors and pilgrims free of charge.",
+  // },
+  // {
+  //   title: "Special Observances",
+  //   description: "Major festive celebrations during Navratri, Vivah Panchami, and other sacred calendar occasions with grand arrangements.",
+  //   timing: "Special Festival Dates",
+  //   location: "Entire Temple & Sthal Grounds",
+  //   guidelines: "Special queue management and security protocols active during major festive observances.",
+  // },
 ];
 
 function LivingTraditions() {
   return (
     <Section id="living-traditions">
-      <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-        <Reveal>
-          <Eyebrow tone={SITA}>A Living Place of Devotion</Eyebrow>
-          <H2>Faith Expressed Through Everyday Practice</H2>
-          <Body className="mt-7 max-w-xl">
-            <p>
-              The spiritual life of the Sthal is experienced not only during major festivals, but
-              also through everyday prayer, family visits, offerings, reflection and community
-              participation.
-            </p>
-          </Body>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            <img
-              src="https://static2.tripoto.com/media/filter/tst/img/2173352/SpotDocument/1632650184_1632650378049.jpg.webp"
-              alt="Prayer at Sita Samahit Sthal"
-              className="w-full aspect-[4/3] object-cover rounded-[8px]"
-            />
+      <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 items-start">
+        {/* Left Column: Eyebrow, Header, Intro text, and all 4 Images */}
+        <Reveal className="flex flex-col justify-between">
+          <div>
+            <Eyebrow tone={SITA}>A Living Place of Devotion</Eyebrow>
+            <H2>Faith Expressed Through Everyday Practice</H2>
+            <Body className="mt-7 max-w-xl">
+              <p>
+                The spiritual life of the Sthal is experienced not only during major festivals, but
+                also through everyday prayer, family visits, offerings, reflection and community
+                participation.
+              </p>
+            </Body>
+          </div>
 
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3-Azgp0QkwJyaC1QFyr9to2aU3S2JBqESRY1wl18KpPidE16iT8__f2s&s=10"
-              alt="Families visiting Sita Samahit Sthal"
-              className="w-full aspect-[4/3] object-cover rounded-[8px]"
-            />
+          {/* All 4 images arranged in a clean grid matching the vertical span */}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="overflow-hidden rounded-[8px] shadow-sm">
+              <img
+                src="https://static2.tripoto.com/media/filter/tst/img/2173352/SpotDocument/1632650184_1632650378049.jpg.webp"
+                alt="Prayer at Sita Samahit Sthal"
+                className="w-full aspect-[4/3] object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-[8px] shadow-sm">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3-Azgp0QkwJyaC1QFyr9to2aU3S2JBqESRY1wl18KpPidE16iT8__f2s&s=10"
+                alt="Families visiting Sita Samahit Sthal"
+                className="w-full aspect-[4/3] object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-[8px] shadow-sm">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQzCAWaAlx9f74rAipAJv-I9iPvviccZZds1xW9dsPiaSxx1qpi3X9mgOK&s=10"
+                alt="Offerings at Sita Samahit Sthal"
+                className="w-full aspect-[4/3] object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-[8px] shadow-sm">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBYNYXu9-2ce_vSQY1rgVK7w1OkjLLXcDT3jsQSqOOaz-Cjf1wZNo1TbI&s=10"
+                alt="Pilgrims at Sita Samahit Sthal"
+                className="w-full aspect-[4/3] object-cover"
+              />
+            </div>
           </div>
         </Reveal>
 
+        {/* Right Column: Practices Grid Only */}
         <Reveal>
           <ul className="grid gap-4 sm:grid-cols-2">
             {PRACTICES.map((p) => (
@@ -958,19 +962,6 @@ function LivingTraditions() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQzCAWaAlx9f74rAipAJv-I9iPvviccZZds1xW9dsPiaSxx1qpi3X9mgOK&s=10"
-              alt="Offerings at Sita Samahit Sthal"
-              className="w-full aspect-[16/10] object-cover rounded-[8px]"
-            />
-
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBYNYXu9-2ce_vSQY1rgVK7w1OkjLLXcDT3jsQSqOOaz-Cjf1wZNo1TbI&s=10"
-              alt="Pilgrims at Sita Samahit Sthal"
-              className="w-full aspect-[16/10] object-cover rounded-[8px]"
-            />
-          </div>
         </Reveal>
       </div>
     </Section>
@@ -981,13 +972,13 @@ const FESTIVAL_DETAILS = {
   name: "Vivah Panchami Grand Festival",
   significance: "Commemorates the divine marriage of Lord Rama and Devi Sita with sacred rituals, cultural recitations, and mass devotional assemblies.",
   date: "November – December (Auspicious Shukla Paksha Panchami)",
-  time: "05:00 AM – 10:00 PM Daily",
+  time: "06:00 AM – 09:30 PM Daily (Aarti at 6:00 AM & 7:00 PM)",
   expectedAttendance: "Over 50,000 pilgrims and visitors",
   visitorguidance: "Devotees should register early for special participation and follow designated queue pathways around the main mandap.",
   programmeschedule: "Morning Vedic chanting, afternoon Ramayana discourses, and grand evening aarti with cultural performances.",
   facilities: "Free prasad distribution, medical first-aid camps, cloakrooms, and dedicated drinking water stations across the Sthal.",
   trafficandaccess: "Special traffic diversions and temporary parking zones established around the perimeter with free shuttle buses from nearby rail heads.",
-  contact: "Sita Samahit Sthal Trust Office / Helpdesk: +91 (05332) 2XXXXX",
+  contact: "Sita Samahit Temple, Sitamarhi (On the banks of River Ganga, near Valmiki Ashram, Between Prayagraj and Varanasi, UP)\nPhones: +91 9450238251 / +91 6392239480\nEmails: sitadham@gmail.com / info@sitasamahittemple.com",
 };
 
 const FESTIVAL_CARDS = [
@@ -1028,10 +1019,10 @@ function Festivals() {
         <Body className="mt-6">
           <p>
             Festivals and major gatherings bring together devotion, culture,
-            family participation and community service.
+            family participation and community service on the sacred banks of the Ganga.
           </p>
 
-          <p>
+          <p className="mt-4">
             Each occasion is documented with clarity and dignity, helping
             visitors understand its meaning as well as the practical
             arrangements associated with it.
@@ -1041,68 +1032,69 @@ function Festivals() {
 
       {/* Featured Gathering */}
       <Reveal>
-        <article className="mt-12 grid overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)] lg:grid-cols-[1.1fr_0.9fr]">
-          <img
-            src="https://images.bhaskarassets.com/thumb/1200x900/web2images/521/2025/05/08/66be6397-13d6-40e6-98f8-9135b415d1b9_1746688195935.jpg"
-            alt="Pilgrims gathered during a festival at Sita Samahit Sthal"
-            className="w-full aspect-[4/3] object-cover"
-          />
+        <article className="mt-12 grid overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)] lg:grid-cols-[1.1fr_0.9fr] items-stretch">
+          <div className="h-full min-h-[360px] overflow-hidden">
+            <img
+              src="https://images.bhaskarassets.com/thumb/1200x900/web2images/521/2025/05/08/66be6397-13d6-40e6-98f8-9135b415d1b9_1746688195935.jpg"
+              alt="Pilgrims gathered during a festival at Sita Samahit Sthal"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-          <div className="bg-[color:var(--offwhite)]/80 p-7 md:p-10">
-            <div className="flex items-center justify-between">
-              <Eyebrow tone={SITA}>Featured Gathering</Eyebrow>
-              <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-[10px] font-medium text-amber-800 ring-1 ring-amber-600/20">
-                Verified Festival
-              </span>
+          <div className="bg-[color:var(--offwhite)]/80 p-7 md:p-10 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between">
+                <Eyebrow tone={SITA}>Featured Gathering</Eyebrow>
+                <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-[10px] font-medium text-amber-800 ring-1 ring-amber-600/20">
+                  Verified Festival
+                </span>
+              </div>
+
+              <h3 className="mt-4 font-serif text-[28px] md:text-[30px] leading-tight text-[color:var(--charcoal)]">
+                {FESTIVAL_DETAILS.name}
+              </h3>
+
+              <dl className="mt-6 space-y-3 font-sans text-[13.5px]">
+                <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
+                  <dt className="font-semibold text-[color:var(--charcoal)]">Significance</dt>
+                  <dd className="text-muted-foreground">{FESTIVAL_DETAILS.significance}</dd>
+                </div>
+                <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
+                  <dt className="font-semibold text-[color:var(--charcoal)]">Date</dt>
+                  <dd className="text-muted-foreground">{FESTIVAL_DETAILS.date}</dd>
+                </div>
+                <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
+                  <dt className="font-semibold text-[color:var(--charcoal)]">Time</dt>
+                  <dd className="text-muted-foreground">{FESTIVAL_DETAILS.time}</dd>
+                </div>
+                <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
+                  <dt className="font-semibold text-[color:var(--charcoal)]">Expected attendance</dt>
+                  <dd className="text-muted-foreground">{FESTIVAL_DETAILS.expectedAttendance}</dd>
+                </div>
+                <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
+                  <dt className="font-semibold text-[color:var(--charcoal)]">Visitor guidance</dt>
+                  <dd className="text-muted-foreground">{FESTIVAL_DETAILS.visitorguidance}</dd>
+                </div>
+                <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
+                  <dt className="font-semibold text-[color:var(--charcoal)]">Programme schedule</dt>
+                  <dd className="text-muted-foreground">{FESTIVAL_DETAILS.programmeschedule}</dd>
+                </div>
+                <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
+                  <dt className="font-semibold text-[color:var(--charcoal)]">Facilities</dt>
+                  <dd className="text-muted-foreground">{FESTIVAL_DETAILS.facilities}</dd>
+                </div>
+                {/* <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
+                  <dt className="font-semibold text-[color:var(--charcoal)]">Traffic and access</dt>
+                  <dd className="text-muted-foreground">{FESTIVAL_DETAILS.trafficandaccess}</dd>
+                </div> */}
+                <div className="grid grid-cols-[130px_1fr] gap-2 pb-2 whitespace-pre-line">
+                  <dt className="font-semibold text-[color:var(--charcoal)]">Contact</dt>
+                  <dd className="text-muted-foreground">{FESTIVAL_DETAILS.contact}</dd>
+                </div>
+              </dl>
             </div>
 
-            <h3 className="mt-4 font-serif text-[30px] leading-tight text-[color:var(--charcoal)]">
-              {FESTIVAL_DETAILS.name}
-            </h3>
-
-            <dl className="mt-6 space-y-3 font-sans text-[13.5px]">
-              <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
-                <dt className="font-semibold text-[color:var(--charcoal)]">Significance</dt>
-                <dd className="text-muted-foreground">{FESTIVAL_DETAILS.significance}</dd>
-              </div>
-              <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
-                <dt className="font-semibold text-[color:var(--charcoal)]">Date</dt>
-                <dd className="text-muted-foreground">{FESTIVAL_DETAILS.date}</dd>
-              </div>
-              <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
-                <dt className="font-semibold text-[color:var(--charcoal)]">Time</dt>
-                <dd className="text-muted-foreground">{FESTIVAL_DETAILS.time}</dd>
-              </div>
-              <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
-                <dt className="font-semibold text-[color:var(--charcoal)]">Expected attendance</dt>
-                <dd className="text-muted-foreground">{FESTIVAL_DETAILS.expectedAttendance}</dd>
-              </div>
-              <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
-                <dt className="font-semibold text-[color:var(--charcoal)]">Visitor guidance</dt>
-                <dd className="text-muted-foreground">{FESTIVAL_DETAILS.visitorguidance}</dd>
-              </div>
-              <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
-                <dt className="font-semibold text-[color:var(--charcoal)]">Programme schedule</dt>
-                <dd className="text-muted-foreground">{FESTIVAL_DETAILS.programmeschedule}</dd>
-              </div>
-              <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
-                <dt className="font-semibold text-[color:var(--charcoal)]">Facilities</dt>
-                <dd className="text-muted-foreground">{FESTIVAL_DETAILS.facilities}</dd>
-              </div>
-              <div className="grid grid-cols-[130px_1fr] gap-2 border-b border-[color:var(--border)]/60 pb-2">
-                <dt className="font-semibold text-[color:var(--charcoal)]">Traffic and access</dt>
-                <dd className="text-muted-foreground">{FESTIVAL_DETAILS.trafficandaccess}</dd>
-              </div>
-              <div className="grid grid-cols-[130px_1fr] gap-2 pb-2">
-                <dt className="font-semibold text-[color:var(--charcoal)]">Contact</dt>
-                <dd className="text-muted-foreground">{FESTIVAL_DETAILS.contact}</dd>
-              </div>
-            </dl>
-
-            <p className="mt-6 font-sans text-[13px] leading-[1.7] text-muted-foreground">
-              Festival names, dates, schedules and attendance figures are
-              published only after verification with the site management.
-            </p>
+          
           </div>
         </article>
       </Reveal>
@@ -1111,9 +1103,9 @@ function Festivals() {
       <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {FESTIVAL_CARDS.map((c) => (
           <li key={c.label}>
-            <Reveal>
+            <Reveal className="h-full">
               <article className="flex h-full flex-col overflow-hidden rounded-[6px] ring-1 ring-[color:var(--border)] bg-[color:var(--card)]/60">
-                <div className="aspect-[4/3] w-full overflow-hidden">
+                <div className="aspect-[16/10] w-full overflow-hidden">
                   <img
                     src={c.image}
                     alt={c.alt}
@@ -1131,13 +1123,6 @@ function Festivals() {
                       {c.description}
                     </p>
                   </div>
-
-                  {/* <div className="mt-4 pt-3 border-t border-[color:var(--border)]/60">
-                    <span className="text-[11px] font-medium text-amber-800 flex items-center gap-1.5">
-                      <span className="h-1.5 w-1.5 rounded-full bg-amber-600" />
-                      Verified Feature
-                    </span>
-                  </div> */}
                 </div>
               </article>
             </Reveal>
@@ -1649,7 +1634,7 @@ function SiteExploration() {
         </p>
       </Reveal>
 
-      <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Choose map or list view">
+      {/* <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Choose map or list view">
         {(["map", "list"] as const).map((v) => (
           <button
             key={v}
@@ -1665,7 +1650,7 @@ function SiteExploration() {
             {v === "map" ? "Map view" : "List of spaces"}
           </button>
         ))}
-      </div>
+      </div> */}
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <div className={view === "map" ? "" : "hidden lg:block"}>
@@ -1676,9 +1661,7 @@ function SiteExploration() {
               className="w-full aspect-[4/3] object-cover rounded-[8px]"
             />
           </div>
-          <Caption>
-            Site layout map showing key zones, visitor corridors, and principal shrine locations at Sita Samahit Sthal.
-          </Caption>
+         
           <div className="mt-6 overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)]">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfMu7dRYC4hHnlnDmqKg9G4biguWXNvO0wihH3xkZVXJItPE5rJ3wyLmpy&s=10"
@@ -1748,8 +1731,8 @@ const VISIT_INFO: VisitInfoGroup[] = [
   {
     group: "Location and Access",
     rows: [
-      { label: "Location", value: "Sita Samahit Sthal, Sitamarhi, Jangigani, Bhadohi, Uttar Pradesh - 221309" },
-      { label: "Road access", value: "Directly connected via Varanasi-Allahabad Highway near Jangigani" },
+      { label: "Location", value: "Sita Samahit Sthal, Sitamarhi, Jangiganj, Bhadohi, Uttar Pradesh - 221309" },
+      { label: "Road access", value: "Directly connected via Varanasi-Allahabad Highway near Jangiganj" },
       { label: "Rail access", value: "Jangiganj and Bhadohi Railway Stations are the nearest commuter links" },
       { label: "Nearest major transport point", value: "Varanasi Lal Bahadur Shastri International Airport (~65 km)" },
     ],
@@ -1777,8 +1760,8 @@ const VISIT_INFO: VisitInfoGroup[] = [
     group: "Enquiries",
     rows: [
       { label: "Group visits", value: "Prior intimation recommended for large pilgrim groups and yatras" },
-      { label: "Contact number", value: "+91 (011) 49990952 (Foundation Helpdesk)" },
-      { label: "Email", value: "pkldpfoundation@gmail.com" },
+      { label: "Contact numbers", value: "+91 9450238251 / +91 6392239480" },
+      { label: "Emails", value: "sitadham@gmail.com / info@sitasamahittemple.com" },
     ],
   },
 ];
@@ -1837,16 +1820,17 @@ function VisitorInformation() {
             <PrimaryBtn href="https://maps.google.com/?q=Sita+Samahit+Sthal+Sitamarhi+Bhadohi" target="_blank" rel="noopener noreferrer">
               Get Directions
             </PrimaryBtn>
-            <GhostBtn href="#festivals">View Upcoming Events</GhostBtn>
-            <GhostBtn href="mailto:pkldpfoundation@gmail.com">Visitor Enquiry</GhostBtn>
+            {/* <GhostBtn href="#festivals">View Upcoming Events</GhostBtn> */}
+            {/* <GhostBtn href="mailto:sitadham@gmail.com">Visitor Enquiry</GhostBtn> */}
           </div>
-
-          {/* <div className="mt-5 rounded-[6px] bg-emerald-50/50 p-4 ring-1 ring-emerald-600/20">
-            <p className="font-sans text-[13px] leading-[1.7] text-emerald-900 flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-emerald-600 shrink-0" />
-              <span>Verified location coordinates, access routes, and foundation contact channels are fully active.</span>
-            </p>
-          </div> */}
+          <br />
+           <figure className="overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)]">
+            <img
+              src="https://sitasamahittemple.com/wp-content/uploads/2025/09/gallery_0001_0F2A6298-768x512.jpg"
+              alt="Regional location map showing access to Sita Samahit Sthal"
+              className="w-full aspect-[4/3] object-cover"
+            />
+          </figure>
         </div>
       </div>
     </Section>
@@ -2461,7 +2445,7 @@ function DedicatedWebsite() {
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
-              href="https://mindtrip.ai/attraction/uttar-pradesh/sita-samahit-sthal-sitamarhi-bhadohi/at-JQxJCvK6"
+              href="https://sitasamahittemple.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-11 items-center rounded-full border border-[color:var(--border)] px-6 py-3 font-sans text-[12px] uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:border-[color:var(--foreground)] hover:text-foreground"
@@ -2470,9 +2454,6 @@ function DedicatedWebsite() {
             </a>
           </div>
 
-          <p className="mt-4 font-sans text-[13px] text-muted-foreground">
-            The external link will open in a new tab and be clearly identified as an external site.
-          </p>
         </Reveal>
 
         <Reveal>

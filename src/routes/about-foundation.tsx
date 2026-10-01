@@ -166,7 +166,7 @@ const CHAPTERS: Chapter[] = [
       "Together, their values created the guiding framework for a Foundation that would later work across education, healthcare, social welfare, heritage and rural development.",
     ],
     asset: "archive-foundation-early-years",
-    alt: "Archival material representing the Foundation's early years",
+    alt: "",
     accent: "var(--accent-education)",
     himg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQTfv44SVHwdP1FmHlHjWiIqxhhH81lowvee58dXdkhxfDfIxF0mgYiAy&s=10",
     panel: "oklch(0.965 0.026 85 / 0.7)",
@@ -200,11 +200,11 @@ const CHAPTERS: Chapter[] = [
       "The educational mission later expanded in scope, creating pathways for school education, higher learning, student development and the long-term growth of the region's young people.",
     ],
     asset: "archive-education-beginnings",
-    alt: "Students participating in an early educational programme",
+    alt: "",
     accent: "var(--accent-education)",
     panel: "oklch(0.97 0.024 85 / 0.7)",
     himg: "/src/assets/generated/slider-education.png",
-    smallLabel: "Education as institution-building",
+    smallLabel: "",
     portraits: [
       {
         asset: "founder-snp-punj",
@@ -267,7 +267,7 @@ const CHAPTERS: Chapter[] = [
       "Through this stewardship, the Foundation's work connects service with belonging and institutional care with cultural continuity.",
     ],
     asset: "archive-sita-samahit-sthal",
-    alt: "Architectural view of Sita Samahit Sthal",
+    alt: "",
     accent: "var(--accent-sita)",
     panel: "oklch(0.955 0.026 30 / 0.7)",
     himg: "https://dpms.in/wp-content/uploads/2025/08/transport-area.jpg",
@@ -303,7 +303,7 @@ const CHAPTERS: Chapter[] = [
       "The Foundation continues to evolve by responding to the needs of the community while remaining anchored in the values established by its founders.",
     ],
     asset: "leadership-current",
-    alt: "Current Foundation leadership",
+    alt: "",
     accent: "var(--charcoal)",
     panel: "oklch(0.96 0.01 80 / 0.7)",
     himg: "https://dpms.in/wp-content/uploads/2025/08/IMG_0733.jpg",
@@ -513,7 +513,7 @@ function AboutFoundation() {
                   />
                 </div>
               </div>
-              <Caption>An institutional view of the Foundation's work in Sitamarhi.</Caption>
+              {/* <Caption>An institutional view of the Foundation's work in Sitamarhi.</Caption> */}
             </figure>
           </div>
         </section>
@@ -523,7 +523,7 @@ function AboutFoundation() {
           <div className="mx-auto grid w-full max-w-[1360px] gap-12 px-5 py-20 md:grid-cols-[1.1fr_0.9fr] md:gap-20 md:px-10 md:py-28">
             <Reveal>
               <Eyebrow>Our Beginning</Eyebrow>
-              <h2 className="mt-4 max-w-[18ch] font-serif text-[30px] leading-[1.12] text-[color:var(--charcoal)] md:text-[42px]">
+              <h2 className="mt-4 max-w-[180ch] font-serif text-[30px] leading-[1.12] text-[color:var(--charcoal)] md:text-[42px]">
                 A Foundation Created to Serve Beyond a Single Generation
               </h2>
               <div className="mt-7 max-w-[64ch] space-y-4">
@@ -555,7 +555,7 @@ function AboutFoundation() {
                     />
                   </div>
                 </div>
-                <Caption>An early chapter in the Foundation's institutional journey.</Caption>
+                {/* <Caption>An early chapter in the Foundation's institutional journey.</Caption> */}
               </figure>
               <figure>
                 <div className="overflow-hidden rounded-lg">
@@ -567,7 +567,7 @@ function AboutFoundation() {
                     />
                   </div>
                 </div>
-                <Caption>Institutional material held by the Foundation.</Caption>
+                {/* <Caption>Institutional material held by the Foundation.</Caption> */}
               </figure>
             </Reveal>
           </div>
@@ -636,7 +636,8 @@ function AboutFoundation() {
         </section>
 
         {/* EVOLUTION (2-SECOND INFINITE ROTATING CARD WITH FIXED HEIGHT) */}
-        <section className="mx-auto w-full max-w-[1360px] px-5 py-20 md:px-10 md:py-28">
+        {/* EVOLUTION */}
+        {/* <section className="mx-auto w-full max-w-[1360px] px-5 py-20 md:px-10 md:py-28">
           <Reveal className="max-w-3xl">
             <Eyebrow>How the Foundation's Work Has Evolved</Eyebrow>
             <p className="mt-4 max-w-[62ch] font-serif text-[24px] leading-[1.35] text-[color:var(--charcoal)] md:text-[30px]">
@@ -645,37 +646,40 @@ function AboutFoundation() {
             </p>
           </Reveal>
 
-          <div className="mt-12 max-w-md">
-            <Reveal className="h-full">
-              <a
-                href={activePillar.href}
-                className="group flex min-h-[460px] flex-col overflow-hidden rounded-lg border border-[color:var(--border)]/70 bg-[oklch(0.985_0.008_80_/_0.8)] transition-all duration-500 hover:shadow-[0_20px_50px_-35px_rgba(60,40,20,0.8)] focus-visible:outline focus-visible:outline-2"
-              >
-                <div className="overflow-hidden">
-                  <div className="transition-transform duration-700 group-hover:scale-[1.04] motion-reduce:transform-none">
-                    <AssetPlaceholder name={activePillar.asset} aspect="4/3" label={activePillar.title} />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {PILLAR_CARDS.map((pillar) => (
+              <Reveal key={pillar.title} className="h-full">
+                <a
+                  href={pillar.href}
+                  className="group flex h-full flex-col overflow-hidden rounded-lg border border-[color:var(--border)]/70 bg-[oklch(0.985_0.008_80_/_0.8)] transition-all duration-500 hover:shadow-[0_20px_50px_-35px_rgba(60,40,20,0.8)] focus-visible:outline focus-visible:outline-2"
+                >
+                  <div className="overflow-hidden">
+                    <div className="transition-transform duration-700 group-hover:scale-[1.04] motion-reduce:transform-none">
+                      <AssetPlaceholder name={pillar.asset} aspect="4/3" label={pillar.title} />
+                    </div>
                   </div>
-                </div>
-                <div className="flex flex-1 flex-col justify-between p-6">
-                  <div>
-                    <h3 className="font-serif text-[21px] leading-tight text-[color:var(--charcoal)]">
-                      {activePillar.title}
-                    </h3>
-                    <p className="mt-3 font-sans text-[14px] leading-[1.7] text-muted-foreground">
-                      {activePillar.desc}
-                    </p>
+                  <div className="flex flex-1 flex-col justify-between p-6">
+                    <div>
+                      <h3 className="font-serif text-[21px] leading-tight text-[color:var(--charcoal)]">
+                        {pillar.title}
+                      </h3>
+                      <p className="mt-3 font-sans text-[14px] leading-[1.7] text-muted-foreground">
+                        {pillar.desc}
+                      </p>
+                    </div>
+                    <span
+                      className="mt-5 font-sans text-[11.5px] font-medium uppercase tracking-[0.2em]"
+                      style={{ color: pillar.accent }}
+                    >
+                      Explore →
+                    </span>
                   </div>
-                  <span
-                    className="mt-5 font-sans text-[11.5px] font-medium uppercase tracking-[0.2em]"
-                    style={{ color: activePillar.accent }}
-                  >
-                    Explore →
-                  </span>
-                </div>
-              </a>
-            </Reveal>
+                </a>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </section> */}
+
 
         {/* SITAMARHI (FIXED OVERLAPPING HEIGHTS & RELATIVE SPACING) */}
         <section className="relative pb-16 md:pb-24">
@@ -740,7 +744,7 @@ function AboutFoundation() {
               <p className="max-w-[24ch] font-sans text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
                 Vision
               </p>
-              <p className="mt-4 max-w-[22ch] font-serif text-[34px] leading-[1.15] text-[color:var(--charcoal)] md:max-w-[26ch] md:text-[54px]">
+              <p className="mt-4 font-serif text-[34px] leading-[1.15] text-[color:var(--charcoal)] md:text-[54px]">
                 To help build strong, educated, healthy, dignified and environmentally resilient
                 rural communities.
               </p>
@@ -797,15 +801,7 @@ function AboutFoundation() {
                   through its present areas of work and future responsibilities.
                 </p>
               </div>
-              <p className="mt-6 font-sans text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-                Leadership details to be added — add current trustee details
-              </p>
-              <a
-                href="/about-foundation/leadership"
-                className="mt-7 inline-flex min-h-11 items-center rounded-full border border-[color:var(--charcoal)]/30 px-7 py-3 font-sans text-[12.5px] font-medium uppercase tracking-[0.2em] text-[color:var(--charcoal)] transition-colors hover:border-[color:var(--accent-sita)] hover:text-[color:var(--accent-sita)]"
-              >
-                Meet the Leadership
-              </a>
+              
             </Reveal>
             <Reveal>
               <figure>
@@ -813,12 +809,11 @@ function AboutFoundation() {
                   <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
                     <img
                       src="https://dpms.in/wp-content/uploads/2025/08/IMG_0822.jpg"
-                      alt="Current Foundation leadership"
+                      // alt="Current Foundation leadership"
                       className="h-full w-full object-cover"
                     />
                   </div>
                 </div>
-                <Caption>Foundation leadership photograph to be added.</Caption>
               </figure>
             </Reveal>
           </div>

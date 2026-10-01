@@ -255,7 +255,7 @@ function EnvironmentPage() {
         <Dashboard />
         <KhetBachao />
         {/* <Stories /> */}
-        <Geography />
+        {/* <Geography /> */}
         {/* <Reports /> */}
         <Partnerships />
         <Registration />
@@ -333,7 +333,7 @@ function Hero() {
     </div>
 
     {/* Buttons */}
-    <div className="mt-10 flex flex-wrap gap-3">
+    {/* <div className="mt-10 flex flex-wrap gap-3">
       <a
         href="#programme"
         className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--ivory)] px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-[color:var(--charcoal)] transition-colors hover:bg-[color:var(--ivory)]/85"
@@ -354,7 +354,7 @@ function Hero() {
       >
         Farmer Registration
       </a>
-    </div>
+    </div> */}
 
     {/* Focus Areas */}
     <ul className="mt-14 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-4 border-t border-[color:var(--ivory)]/25 pt-6 md:grid-cols-4">
@@ -802,9 +802,7 @@ function Partnership() {
           Environmental Advisory Technologies Pvt. Ltd.
         </blockquote>
         <div className="mt-8 flex flex-wrap gap-3">
-          <PrimaryBtn href="/environment-rural-regeneration/nettzero-partnership">
-            Learn About the Partnership
-          </PrimaryBtn>
+         
           <a
             href="https://nettzero.world"
             target="_blank"
@@ -813,11 +811,9 @@ function Partnership() {
           >
             Visit NettZero
           </a>
-          <GhostBtn href="#partner">Discuss an Environmental Partnership</GhostBtn>
+          
         </div>
-        <p className="mt-4">
-          <Pending>Partnership subpage in preparation</Pending>
-        </p>
+        
       </Reveal>
     </Section>
   );
@@ -868,11 +864,11 @@ function B3Intro() {
               </li>
             ))}
           </ul>
-          <div className="mt-9 flex flex-wrap gap-3">
+          {/* <div className="mt-9 flex flex-wrap gap-3">
             <PrimaryBtn href="#what-is-b3">Understand B3</PrimaryBtn>
             <GhostBtn href="#journey">See How B3 Is Applied</GhostBtn>
             <GhostBtn href="#implementation">View Field Programmes</GhostBtn>
-          </div>
+          </div> */}
         </Reveal>
         <Reveal>
          <div className="grid gap-4">
@@ -3190,23 +3186,73 @@ function Partnerships() {
           </Reveal>
         ))}
       </div>
-      <Reveal className="mt-10 flex flex-wrap gap-3">
+      {/* <Reveal className="mt-10 flex flex-wrap gap-3">
         <PrimaryBtn href="#register">Start a Conversation</PrimaryBtn>
         <GhostBtn href="/environment-rural-regeneration/nettzero-partnership">
           Partnership Details
         </GhostBtn>
-      </Reveal>
+      </Reveal> */}
     </Section>
   );
 }
 
 /* 36. REGISTRATION */
-function Registration() {
-  const [sent, setSent] = useState(false);
+
+export function Registration() {
+  const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setLoading(true);
+    setResult("Sending...");
+
+    const formElement = event.currentTarget;
+    const formData = new FormData(formElement);
+    
+    // Convert FormData into a standard JSON payload
+    const dataObj: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      dataObj[key] = value.toString();
+    });
+    dataObj.access_key = "6afcbeea-ccb5-421c-a91c-57feb0e109a4";
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(dataObj)
+      });
+
+      const resText = await response.text();
+      let data;
+      try {
+        data = JSON.parse(resText);
+      } catch {
+        throw new Error("Invalid response from server");
+      }
+
+      if (response.ok && data.success) {
+        setResult("Thank you — your enquiry has been noted. The field team will be in touch.");
+        formElement.reset();
+      } else {
+        setResult(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setResult("Network error or request blocked by a browser extension. Please check your connection.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const field =
     "mt-2 w-full rounded-[4px] border border-[color:var(--border)] bg-[color:var(--ivory)] px-4 py-3 font-sans text-[14px] text-[color:var(--charcoal)] outline-none focus:border-[color:var(--accent-environment)]";
   const label =
     "font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground";
+
   return (
     <Section id="register" labelledBy="register-heading" tint="var(--ivory)">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
@@ -3236,10 +3282,7 @@ function Registration() {
         <Reveal>
           <form
             className="rounded-[6px] border border-[color:var(--border)] bg-[color:var(--muted)]/30 p-6 md:p-8"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
+            onSubmit={onSubmit}
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
@@ -3292,13 +3335,15 @@ function Registration() {
               </div>
             </div>
             <div className="mt-7 flex flex-wrap items-center gap-4">
-              <PrimaryBtn type="submit">Submit Enquiry</PrimaryBtn>
-              {sent ? (
+              <PrimaryBtn type="submit" disabled={loading}>
+                {loading ? "Sending..." : "Submit Enquiry"}
+              </PrimaryBtn>
+              {result ? (
                 <p
                   role="status"
                   className="font-sans text-[13.5px] text-[color:var(--charcoal)]"
                 >
-                  Thank you — your enquiry has been noted. The field team will be in touch.
+                  {result}
                 </p>
               ) : null}
             </div>
@@ -3308,7 +3353,6 @@ function Registration() {
     </Section>
   );
 }
-
 /* 37. FAQ */
 function Faq() {
   const [open, setOpen] = useState<number>(-1);
@@ -3459,9 +3503,9 @@ function Closing() {
       aria-labelledby="closing-heading"
       className="relative overflow-hidden border-t border-[color:var(--border)]"
     >
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <AssetPlaceholder name="rural-landscape" label="Rural landscape" />
-      </div>
+      </div> */}
       <div
         className="absolute inset-0"
         style={{
@@ -3484,7 +3528,7 @@ function Closing() {
           measure this work in seasons and generations — restoring the soil, water and air on
           which rural livelihoods depend, and doing so in a way that farmers can sustain.
         </p>
-        <div className="mt-10 flex flex-wrap gap-3">
+        {/* <div className="mt-10 flex flex-wrap gap-3">
           <a
             href="#register"
             className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--ivory)] px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-[color:var(--charcoal)] transition-colors hover:bg-[color:var(--ivory)]/85"
@@ -3497,7 +3541,7 @@ function Closing() {
           >
             Partner With Us
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

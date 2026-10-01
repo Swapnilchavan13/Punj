@@ -7,7 +7,6 @@ const MENU = [
   { label: "Healthcare & Social Welfare", href: "/healthcare-social-welfare" },
   { label: "Sita Samahit Sthal", href: "/sita-samahit-sthal" },
   { label: "Environment and Rural Regeneration", href: "/environment-rural-regeneration" },
-  // { label: "Contact Us", href: "/contact" },
 ];
 
 export function SiteFooter() {
@@ -17,7 +16,6 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-3">
             <div className="h-12 w-12 overflow-hidden">
-              {/* <AssetPlaceholder name="foundation-logo" label="Foundation logo" /> */}
               <img 
                 src="/foundation-logo.png" 
                 alt="Pt. Kanhaiya Lal Dayawanti Punj Foundation Logo" 
@@ -28,15 +26,12 @@ export function SiteFooter() {
               Pt. Kanhaiya Lal Dayawanti Punj Foundation
             </p>
           </div>
-          {/* <p className="mt-5 max-w-md font-sans text-[14px] leading-relaxed text-muted-foreground">
-            A legacy of service across education, healthcare and social welfare, cultural
-            stewardship, and environment and rural regeneration.
-          </p> */}
-          <div className="mt-6 space-y-1 font-sans text-[13px] text-muted-foreground">
+          
+          <div className="mt-6 space-y-1.5 font-sans text-[13px] text-muted-foreground">
             <p className="font-medium text-[color:var(--charcoal)]">Contact Information:</p>
-            <p>Phone: 011-49990952</p>
-            <p>Email: pkldpfoundation@gmail.com</p>
-            <p>Registered Office / Project Region: Sitamarhi, Bhadohi, Uttar Pradesh</p>
+            <p>Phones: +91 9450238251 / +91 6392239480 / 011-49990952</p>
+            <p>Emails: sitadham@gmail.com / info@sitasamahittemple.com / pkldpfoundation@gmail.com</p>
+            <p>Registered Office / Project Region: Sitamarhi, Jangiganj, Bhadohi, Uttar Pradesh - 221309</p>
           </div>
         </div>
 
@@ -58,10 +53,10 @@ export function SiteFooter() {
           </ul>
         </nav>
       </div>
+      
       <div className="border-t border-[color:var(--border)]">
         <p className="mx-auto w-full max-w-[1360px] px-5 py-6 font-sans text-[12px] text-muted-foreground md:px-10">
-          © {new Date().getFullYear()} Pt. Kanhaiya Lal Dayawanti Punj Foundation. All rights
-          reserved.
+          © {new Date().getFullYear()} Pt. Kanhaiya Lal Dayawanti Punj Foundation. All rights reserved.
         </p>
       </div>
     </footer>
