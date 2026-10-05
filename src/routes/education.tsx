@@ -340,7 +340,7 @@ function AdmissionsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
             <div>
               <label className="block font-sans text-xs font-semibold uppercase tracking-wider text-[color:var(--charcoal)] mb-1">What are you enquiring for</label>
               <select name="enquiring_for" className="w-full rounded-md border border-[color:var(--border)] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-education)]">
-                <option value="Dayawanti Punj Model School">Dayawanti Punj Model School</option>
+                {/* <option value="Dayawanti Punj Model School">Dayawanti Punj Model School</option> */}
                 <option value="Dayawanti Punj Degree College">Dayawanti Punj Degree College</option>
                 <option value="General Enquiry / Campus Visit">General Enquiry / Campus Visit</option>
               </select>
@@ -440,8 +440,14 @@ function Hero({ onOpenExplore, onOpenAdmissions }: { onOpenExplore: () => void; 
             aspiration and opportunity closer to young people in and around Sitamarhi.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
-            <PrimaryBtn onClick={onOpenExplore}>Explore Our Institutions</PrimaryBtn>
-            <GhostBtn onClick={onOpenAdmissions}>Admissions &amp; Enquiries</GhostBtn>
+           <PrimaryBtn
+    href="https://dpms.in/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Visit School Site
+  </PrimaryBtn>
+            <GhostBtn onClick={onOpenAdmissions}>College Admissions &amp; Enquiries</GhostBtn>
           </div>
         </Reveal>
 
@@ -715,67 +721,87 @@ function SchoolFeature() {
   return (
     <Section id="school">
       <div className="grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:gap-16">
+        
+        {/* Left: Images + Video */}
         <Reveal>
           <div className="grid grid-cols-6 gap-4">
+
+            {/* Main Image */}
             <div className="col-span-6">
-            <div className="overflow-hidden rounded-[6px]">
-  <img
-    src="https://skoodos.com/public/uploads/optimized/1682671917.png"
-    alt="Students at Dayawanti Punj Model School during school life"
-    className="h-full w-full object-cover"
-    style={{ aspectRatio: "16 / 9" }}
-  />
-</div>
+              <div className="overflow-hidden rounded-[6px]">
+                <img
+                  src="https://skoodos.com/public/uploads/optimized/1682671917.png"
+                  alt="Students at Dayawanti Punj Model School during school life"
+                  className="h-full w-full object-cover"
+                  style={{ aspectRatio: "16 / 9" }}
+                />
+              </div>
             </div>
+
+            {/* Classroom Image */}
             <div className="col-span-3">
-             <div className="overflow-hidden rounded-[6px]">
-  <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYw5yc-4BFS0FqZK7eKzPHddYm17mBwBCN4LXWgzAk5aGHpCzrOrxtqyA&s=10"
-    alt="Students and a teacher in a classroom at Dayawanti Punj Model School"
-    className="h-full w-full object-cover"
-    style={{ aspectRatio: "4 / 3" }}
-  />
-</div>
+              <div className="overflow-hidden rounded-[6px]">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYw5yc-4BFS0FqZK7eKzPHddYm17mBwBCN4LXWgzAk5aGHpCzrOrxtqyA&s=10"
+                  alt="Students and a teacher in a classroom at Dayawanti Punj Model School"
+                  className="h-full w-full object-cover"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+              </div>
             </div>
+
+            {/* Library Image */}
             <div className="col-span-3">
-             <div className="overflow-hidden rounded-[6px]">
-  <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNATaRa5W-3CRKLCCEk2-GTUhBO2yuJb3Mgd8XHzX0p8WijYulqbTj6xE&s=10"
-    alt="Students reading in the school library"
-    className="h-full w-full object-cover"
-    style={{ aspectRatio: "4 / 3" }}
-  />
-</div>
+              <div className="overflow-hidden rounded-[6px]">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNATaRa5W-3CRKLCCEk2-GTUhBO2yuJb3Mgd8XHzX0p8WijYulqbTj6xE&s=10"
+                  alt="Students reading in the school library"
+                  className="h-full w-full object-cover"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+              </div>
             </div>
+
+            {/* School Video */}
+            
           </div>
         </Reveal>
 
+        {/* Right: School Information */}
         <Reveal>
           <Eyebrow tone={OCHRE}>School Education</Eyebrow>
+
           <h2 className="mt-5 font-serif text-[32px] leading-[1.12] text-[color:var(--charcoal)] md:text-[42px]">
             Dayawanti Punj Model School
           </h2>
+
           <div className="mt-6 space-y-5 font-sans text-[15.5px] leading-[1.8] text-muted-foreground">
             <p>
-              Dayawanti Punj Model School reflects the Foundation’s commitment to creating access to
-              high-quality school education in Sitamarhi.
+              Dayawanti Punj Model School reflects the Foundation’s commitment
+              to creating access to high-quality school education in Sitamarhi.
             </p>
+
             <p>
-              The school aims to provide students with a strong academic foundation while supporting
-              discipline, confidence, creativity, physical development and social awareness.
+              The school aims to provide students with a strong academic
+              foundation while supporting discipline, confidence, creativity,
+              physical development and social awareness.
             </p>
           </div>
 
           <h3 className="mt-9 font-sans text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground">
             Key focus areas
           </h3>
+
           <ul className="mt-4 grid gap-x-6 gap-y-2 sm:grid-cols-2">
             {SCHOOL_FOCUS.map((f) => (
               <li
                 key={f}
                 className="flex items-baseline gap-2 font-sans text-[14.5px] text-[color:var(--charcoal)]/85"
               >
-                <span aria-hidden="true" className="text-[color:var(--accent-education)]">
+                <span
+                  aria-hidden="true"
+                  className="text-[color:var(--accent-education)]"
+                >
                   —
                 </span>
                 {f}
@@ -783,18 +809,31 @@ function SchoolFeature() {
             ))}
           </ul>
 
-          {/* <div className="mt-8 flex flex-wrap gap-2">
-            <Pending>Add verified school affiliation</Pending>
-            <Pending>Add verified classes offered</Pending>
-            <Pending>Add verified student enrolment</Pending>
-          </div> */}
+          <div className="col-span-6 mt-2">
+              <div
+                className="overflow-hidden rounded-[6px] p-3 md:p-4"
+                style={{
+                  background:
+                    "linear-gradient(160deg, oklch(0.965 0.024 62 / 0.7), oklch(0.978 0.012 88 / 0.55))",
+                }}
+              >
+                <div className="overflow-hidden rounded-[6px]">
+                  <div className="aspect-video w-full">
+                    <iframe
+                      className="h-full w-full"
+                      src="https://www.youtube.com/embed/OIIP0k-CWvY?si=krjW8rkcq2cJKZ86"
+                      title="Dayawanti Punj Model School Video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
 
-          {/* <div className="mt-8 flex flex-wrap gap-3">
-            <PrimaryBtn href="/education/dayawanti-punj-model-school">Explore the School</PrimaryBtn>
-            <GhostBtn href="/education/dayawanti-punj-model-school/admissions">
-              School Admissions
-            </GhostBtn>
-          </div> */}
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Dayawanti Punj Model School — Watch the video
+                </p>
+              </div>
+            </div>
         </Reveal>
       </div>
     </Section>
