@@ -440,14 +440,8 @@ function Hero({ onOpenExplore, onOpenAdmissions }: { onOpenExplore: () => void; 
             aspiration and opportunity closer to young people in and around Sitamarhi.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
-           <PrimaryBtn
-    href="https://dpms.in/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Visit School Site
-  </PrimaryBtn>
-            <GhostBtn onClick={onOpenAdmissions}>College Admissions &amp; Enquiries</GhostBtn>
+            <PrimaryBtn onClick={onOpenExplore}>Explore Our Institutions</PrimaryBtn>
+            <GhostBtn onClick={onOpenAdmissions}>Admissions &amp; Enquiries</GhostBtn>
           </div>
         </Reveal>
 
