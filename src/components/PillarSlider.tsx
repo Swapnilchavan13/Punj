@@ -192,7 +192,7 @@ export function PillarSlider() {
           type="button"
           aria-label="Previous programme"
           onClick={prev}
-          className="absolute left-3 top-1/2 z-20 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[color:var(--ivory)]/70 text-[color:var(--charcoal)] backdrop-blur transition hover:bg-[color:var(--ivory)]/95 md:left-5 md:h-12 md:w-12"
+          className="absolute left-3 top-1/3 z-20 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[color:var(--ivory)]/70 text-[color:var(--charcoal)] backdrop-blur transition hover:bg-[color:var(--ivory)]/95 md:left-5 md:h-12 md:w-12"
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
@@ -200,7 +200,7 @@ export function PillarSlider() {
           type="button"
           aria-label="Next programme"
           onClick={next}
-          className="absolute right-3 top-1/2 z-20 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[color:var(--ivory)]/70 text-[color:var(--charcoal)] backdrop-blur transition hover:bg-[color:var(--ivory)]/95 md:right-5 md:h-12 md:w-12"
+          className="absolute right-3 top-1/3 z-20 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[color:var(--ivory)]/70 text-[color:var(--charcoal)] backdrop-blur transition hover:bg-[color:var(--ivory)]/95 md:right-5 md:h-12 md:w-12"
         >
           <ChevronRight className="h-5 w-5" />
         </button>

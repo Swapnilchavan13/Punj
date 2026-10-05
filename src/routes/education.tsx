@@ -4,6 +4,17 @@ import { Header } from "@/components/Header";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AssetPlaceholder } from "@/components/AssetPlaceholder";
 import { Section } from "@/components/editorial";
+import colgImage from "../assets/generated/colg.jpg";
+import Schl from "../assets/generated/schl.jpg";
+import Msch from "../assets/generated/msch.jpg";
+import Gate from "../assets/generated/gate.jpg";
+import Colg1 from "../assets/generated/colg1.jpg";
+import Colg2 from "../assets/generated/colg2.jpg";
+import Colg3 from "../assets/generated/colg3.jpg";
+
+
+
+
 
 export const Route = createFileRoute("/education")({
   head: () => ({
@@ -444,7 +455,7 @@ function Hero({ onOpenExplore, onOpenAdmissions }: { onOpenExplore: () => void; 
               }}
             >
               <img
-                src="https://dpms.in/wp-content/uploads/2025/08/0F2A2035.jpg"
+                src={colgImage}
                 alt="Students participating in a classroom activity at Dayawanti Punj Model School"
                 style={{
                   width: "100%",
@@ -463,7 +474,7 @@ function Hero({ onOpenExplore, onOpenAdmissions }: { onOpenExplore: () => void; 
                   }}
                 >
                   <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjvbYBp7WXi8H5HL-IdnSon0U2MYvDYx5m545an4HlXqk_Ev71COB1nd4&s=10"
+                    src="https://dpms.in/wp-content/uploads/2025/08/0F2A2035.jpg"
                     alt="Students participating in a classroom activity at Dayawanti Punj Model School"
                     style={{
                       width: "100%",
@@ -529,7 +540,7 @@ function Philosophy() {
   }}
 >
   <img
-    src="https://dpms.in/wp-content/uploads/2025/08/0F2A6204.jpg" // Replace with your image path
+    src={Schl} // Replace with your image path
     alt="Early photograph from the Foundation's educational work in Sitamarhi"
     style={{
       width: "100%",
@@ -671,7 +682,7 @@ function Ecosystem() {
       <Reveal className="mt-14">
         <div className="grid items-stretch gap-8 lg:grid-cols-2">
           <InstitutionPanel
-            image="https://content.jdmagicbox.com/comp/bhadohi/g9/9999p5414.5414.110223220140.w9g9/catalogue/dayawanti-punj-model-school-khamaria-srn-bhadohi-schools-qy2ch7jclj.jpg"
+            image={Msch}
             alt="Exterior of Dayawanti Punj Model School"
             name="Dayawanti Punj Model School"
             blurb="School education rooted in Sitamarhi, combining a strong academic foundation with confidence, creativity, physical development and social awareness."
@@ -683,7 +694,7 @@ function Ecosystem() {
           />
 
           <InstitutionPanel
-            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQTfv44SVHwdP1FmHlHjWiIqxhhH81lowvee58dXdkhxfDfIxF0mgYiAy&s=10"
+            image={Gate}
             alt="Exterior of Dayawanti Punj Degree College"
             name="Dayawanti Punj Degree College"
             blurb="Higher learning closer to home — bringing college education, guidance and wider professional possibilities within reach of students from Sitamarhi and surrounding communities."
@@ -850,7 +861,7 @@ function CollegeFeature() {
             <div className="col-span-6">
              <div className="aspect-video overflow-hidden rounded-[6px]">
   <img
-    src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/17550/2026/5/7/Classroom.jpg"
+    src={Colg1}
     alt="Students studying at Dayawanti Punj Degree College"
     className="h-full w-full object-cover"
   />
@@ -859,7 +870,7 @@ function CollegeFeature() {
             <div className="col-span-3">
               <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
   <img
-    src="https://dpms.in/wp-content/uploads/2025/08/0F2A0858.jpg"
+    src={Colg2}
     alt="Students in a college classroom"
     className="h-full w-full object-cover"
   />
@@ -868,7 +879,7 @@ function CollegeFeature() {
             <div className="col-span-3">
              <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
   <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGy2sLw5l99B7RNAK0kov7_B_8lKX7jj2Dh5m4I95W52KIHPg8fdUw6Xw&s=10"
+    src={Colg3}
     alt="Students at a seminar or workshop at the college"
     className="h-full w-full object-cover"
   />

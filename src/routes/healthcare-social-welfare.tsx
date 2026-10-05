@@ -119,7 +119,7 @@ function HealthcareWelfarePage() {
         <Approach />
         <TwoPillars />
         <HealthcareIntro />
-        <HospitalFeature />
+        {/* <HospitalFeature /> */}
         <Outreach />
         {/* <MedicalCamps /> */}
         {/* <EyeCare /> */}

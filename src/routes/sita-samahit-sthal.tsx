@@ -13,6 +13,12 @@ import {
   Reveal,
   Section,
 } from "@/components/editorial";
+import Sita from "../assets/generated/sita.jpg";
+import Sitama from "../assets/generated/sitama.jpg";
+import Han from "../assets/generated/han.jpg";
+
+
+
 
 export const Route = createFileRoute("/sita-samahit-sthal")({
   head: () => ({
@@ -119,6 +125,7 @@ function SitaPage() {
       <main>
         <Hero />
         <Introduction />
+        <SitaSthalVideo />
         <Significance />
         <FoundationRole />
         <VisualJourney />
@@ -157,7 +164,7 @@ function Hero() {
         <Reveal>
           <div className="relative overflow-hidden rounded-[8px] ring-1 ring-[color:var(--border)]">
   <img
-    src="https://d3fphkxyf5o5bm.cloudfront.net/image-resize/format=webp,w=1200/QwRY54Li1HMwD7oNfppnX6fmVwarHfwu0r8chvFiKA"
+    src={Sita}
     alt="Wide architectural view of Sita Samahit Sthal"
     className="w-full h-auto object-cover"
   />
@@ -200,7 +207,7 @@ function Hero() {
   /> */}
 
   <img
-    src="https://www.omastrology.com/indian-temples/images/sita-samahit-sthal-uttar-pradesh.jpg"
+    src={Sitama}
     alt="Architectural detail at Sita Samahit Sthal"
     className="w-full aspect-[16/10] object-cover rounded-[8px]"
   />
@@ -268,7 +275,7 @@ function Introduction() {
           >
            <div className="relative overflow-hidden rounded-[8px]">
   <img
-    src="https://static2.tripoto.com/media/filter/tst/img/2173352/SpotDocument/1632644945_1632645139486.jpg.webp"
+    src={Han}
     alt="Wide establishing view of Sita Samahit Sthal and its setting"
     className="w-full aspect-[5/4] object-cover"
   />
@@ -286,6 +293,66 @@ function Introduction() {
     Site history
   </a>
 </p>
+          </div>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+
+
+/* 4. Sita Samahit Sthal Video */
+function SitaSthalVideo() {
+  return (
+    <Section id="sita-sthal-video">
+      <div className="grid gap-12 md:grid-cols-[1.02fr_0.98fr] md:gap-16">
+        <Reveal>
+          <Eyebrow tone={SITA}>Watch & Explore</Eyebrow>
+
+          <H2>Experience Sita Samahit Sthal</H2>
+
+          <Body className="mt-7 max-w-xl">
+            <p>
+              Discover the spiritual and cultural significance of Sita Samahit
+              Sthal through this video.
+            </p>
+
+            <p>
+              Take a closer look at the Sthal, its surroundings and the
+              enduring connection it holds with Mata Sita and the local
+              community.
+            </p>
+          </Body>
+        </Reveal>
+
+        <Reveal>
+          <div
+            className="rounded-[6px] p-6 md:p-8"
+            style={{
+              background:
+                "linear-gradient(160deg, oklch(0.965 0.024 62 / 0.7), oklch(0.978 0.012 88 / 0.55))",
+            }}
+          >
+            <div className="relative overflow-hidden rounded-[8px]">
+              <div className="aspect-[5/4] w-full">
+                <iframe
+                  className="h-full w-full"
+                  src="https://www.youtube.com/embed/RdLImuwlFdA"
+                  title="Sita Samahit Sthal"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+
+              <p className="mt-2 text-sm text-muted-foreground">
+                Discover Sita Samahit Sthal through this video.
+              </p>
+            </div>
+
+            <p className="mt-6 font-sans text-[12px] uppercase tracking-[0.18em] text-muted-foreground">
+              Watch the Sthal →
+            </p>
           </div>
         </Reveal>
       </div>
