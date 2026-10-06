@@ -207,7 +207,7 @@ const CHAPTERS: Chapter[] = [
     alt: "",
     accent: "var(--accent-education)",
     panel: "oklch(0.97 0.024 85 / 0.7)",
-    himg: "/src/assets/generated/slider-education.png",
+    himg: "https://dpms.in/wp-content/uploads/2025/08/0F2A0627.jpg",
     himg2: "/src/assets/generated/colg2.jpg",
 
     smallLabel: "",
