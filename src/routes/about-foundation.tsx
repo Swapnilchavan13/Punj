@@ -147,6 +147,8 @@ type Chapter = {
   accent: string;
   panel: string;
   himg: string;
+  himg2: string;
+
   portraits?: { asset: string; name: string; description: string; href: string }[];
   pull?: string;
   pullNote?: string;
@@ -168,7 +170,9 @@ const CHAPTERS: Chapter[] = [
     asset: "archive-foundation-early-years",
     alt: "",
     accent: "var(--accent-education)",
-    himg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQTfv44SVHwdP1FmHlHjWiIqxhhH81lowvee58dXdkhxfDfIxF0mgYiAy&s=10",
+    himg: "https://scontent.fnag10-2.fna.fbcdn.net/v/t39.30808-6/684266323_1514950097306583_7203674434692479396_n.jpg?stp=dst-jpg_tt6&cstp=mx1698x656&ctp=s960x960&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=8_OBG8HVSEEQ7kNvwFyjtpx&_nc_oc=AdqXiDJAIZsRiogjonnfd4QDXjLK0EijsyysGeWC4x-Q7p5TMqfMY8Wiby1lzoQZSCOtwFner6UTazip-eBcRdt8&_nc_zt=23&_nc_ht=scontent.fnag10-2.fna&_nc_gid=iDiJQl3XCz6QD8TUpYmr0g&_nc_ss=7b289&oh=00_AQPpHOpPWE_yd5WEvS7FGD17KTmPJHiVIjB22TSrFoWG5Q&oe=6ACA9F94",
+    himg2: "/src/assets/generated/colg.jpg",
+    
     panel: "oklch(0.965 0.026 85 / 0.7)",
     portraits: [
       {
@@ -204,6 +208,8 @@ const CHAPTERS: Chapter[] = [
     accent: "var(--accent-education)",
     panel: "oklch(0.97 0.024 85 / 0.7)",
     himg: "/src/assets/generated/slider-education.png",
+    himg2: "/src/assets/generated/colg2.jpg",
+
     smallLabel: "",
     portraits: [
       {
@@ -230,6 +236,8 @@ const CHAPTERS: Chapter[] = [
     accent: "oklch(0.52 0.11 45)",
     panel: "oklch(0.965 0.028 55 / 0.7)",
     himg: "/src/assets/generated/work-social-welfare.jpg",
+    himg2: "https://i.ibb.co/DfD4Sd7R/DSC-0174.jpg",
+
     portraits: [
       {
         asset: "founder-indu-punj",
@@ -255,6 +263,8 @@ const CHAPTERS: Chapter[] = [
     accent: "var(--accent-healthcare)",
     panel: "oklch(0.96 0.022 230 / 0.7)",
     himg: "/src/assets/generated/slider-healthcare.png",
+    himg2: "https://i.ibb.co/MDC83b62/Screenshot-2026-08-22-123751.png",
+
     link: { label: "Explore Healthcare & Social Welfare", href: "/healthcare-social-welfare" },
   },
   {
@@ -270,7 +280,9 @@ const CHAPTERS: Chapter[] = [
     alt: "",
     accent: "var(--accent-sita)",
     panel: "oklch(0.955 0.026 30 / 0.7)",
-    himg: "https://dpms.in/wp-content/uploads/2025/08/transport-area.jpg",
+    himg: "https://sitasamahittemple.com/wp-content/uploads/2025/09/temple-2-768x512.jpg",
+    himg2: "https://sitasamahittemple.com/wp-content/uploads/2025/09/hanuman-temple_0001_Layer-1.jpg",
+
     link: { label: "Explore Sita Samahit Sthal", href: "/sita-samahit-sthal" },
   },
   {
@@ -288,6 +300,8 @@ const CHAPTERS: Chapter[] = [
     accent: "var(--accent-environment)",
     panel: "oklch(0.96 0.022 150 / 0.7)",
     himg: "https://assets.ramen.101reporters.com/imgs/2025/6/826*532/101RPT2542363/7.webp",
+    himg2: "https://images.yourstory.com/cs/wordpress/2017/07/farming2.jpg?fm=png&auto=format&blur=500",
+
     link: {
       label: "Explore Environment and Rural Regeneration",
       href: "/environment-rural-regeneration",
@@ -306,7 +320,9 @@ const CHAPTERS: Chapter[] = [
     alt: "",
     accent: "var(--charcoal)",
     panel: "oklch(0.96 0.01 80 / 0.7)",
-    himg: "https://dpms.in/wp-content/uploads/2025/08/IMG_0733.jpg",
+    himg: "https://i.ibb.co/4RZcGrz1/Whats-App-Image-2026-08-12-at-3-42-44-PM-2.jpg",
+    himg2: "https://dpms.in/wp-content/uploads/2025/08/IMG_0733.jpg",
+
   },
 ];
 
@@ -384,6 +400,10 @@ function ChapterBlock({ chapter, index }: { chapter: Chapter; index: number }) {
             <figure>
               <div className="overflow-hidden rounded-lg shadow-[0_18px_50px_-30px_rgba(60,40,20,0.6)]">
                 <img src={chapter.himg} alt="" className="w-full h-auto object-cover" />
+              </div>
+              <br />
+               <div className="overflow-hidden rounded-lg shadow-[0_18px_50px_-30px_rgba(60,40,20,0.6)]">
+                <img src={chapter.himg2} alt="" className="w-full h-auto object-cover" />
               </div>
               {chapter.smallLabel ? (
                 <figcaption className="mt-3 font-sans text-[10.5px] uppercase tracking-[0.24em] text-muted-foreground">
@@ -507,7 +527,7 @@ function AboutFoundation() {
               <div className="overflow-hidden rounded-xl shadow-[0_30px_70px_-40px_rgba(60,40,20,0.75)]">
                 <div className="aspect-[16/10] overflow-hidden rounded-[6px]">
                   <img
-                    src="https://dpms.in/wp-content/uploads/2025/08/school-building.jpg"
+                    src="https://media.licdn.com/dms/image/v2/D4D22AQHvLf_7deEsuQ/feedshare-shrink_1280/B4DaA4_kLfJ0AM-/0/1787662583486?e=1792627200&v=beta&t=6YLILOPslDBItk5voRSbnjCahlCfmVkaxapUM_rhfTE"
                     alt="Institutional image of the Foundation"
                     className="h-full w-full object-cover"
                   />
@@ -547,22 +567,22 @@ function AboutFoundation() {
             <Reveal className="space-y-8">
               <figure>
                 <div className="overflow-hidden rounded-lg shadow-[0_18px_50px_-32px_rgba(60,40,20,0.6)]">
-                  <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
-                    <img
-                      src="https://content3.jdmagicbox.com/comp/bhadohi/g9/9999p5414.5414.110223220140.w9g9/catalogue/dayawanti-punj-model-school-khamaria-srn-bhadohi-cbse-schools-ph7jus1k13.jpg"
-                      alt="Archival material from the Foundation's early years"
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                </div>
-                {/* <Caption>An early chapter in the Foundation's institutional journey.</Caption> */}
-              </figure>
-              <figure>
-                <div className="overflow-hidden rounded-lg">
-                  <div className="aspect-[4/3] overflow-hidden rounded-[6px]">
+                     <div className="aspect-[3/1.5] overflow-hidden rounded-[6px]">
                     <img
                       src="https://i.ytimg.com/vi/B_SA6LpddW8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDBuW7vKu0ceZi7j8E9MrIybZZc7A"
                       alt="Historical Foundation document"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                
+                </div>
+              </figure>
+              <figure>
+                <div className="overflow-hidden rounded-lg">
+                 <div className="aspect-[3/2] overflow-hidden rounded-[6px]">
+                    <img
+                      src="https://content3.jdmagicbox.com/comp/bhadohi/g9/9999p5414.5414.110223220140.w9g9/catalogue/dayawanti-punj-model-school-khamaria-srn-bhadohi-cbse-schools-ph7jus1k13.jpg"
+                      alt="Archival material from the Foundation's early years"
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -688,7 +708,7 @@ function AboutFoundation() {
               <div className="relative overflow-hidden rounded-xl">
                 <div className="aspect-[16/9] overflow-hidden rounded-[6px]">
                   <img
-                    src="https://d3fphkxyf5o5bm.cloudfront.net/image-resize/format=webp,w=960/QwRY54Li1HMwD7oNfppnX6fmVwarHfwu0r8chvFiKA"
+                    src="/src/assets/generated/stm.jpg"
                     alt="Sita Samahit Sthal in Sitamarhi, Bhadohi, Uttar Pradesh"
                     className="h-full w-full object-cover"
                   />
