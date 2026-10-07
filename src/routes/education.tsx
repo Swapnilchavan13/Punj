@@ -11,6 +11,8 @@ import Gate from "../assets/generated/gate.jpg";
 import Colg1 from "../assets/generated/colg1.jpg";
 import Colg2 from "../assets/generated/colg2.jpg";
 import Colg3 from "../assets/generated/colg3.jpg";
+import Sch2 from "../assets/generated/sch2.jpg";
+
 
 
 
@@ -724,7 +726,7 @@ function SchoolFeature() {
             <div className="col-span-6">
               <div className="overflow-hidden rounded-[6px]">
                 <img
-                  src="https://skoodos.com/public/uploads/optimized/1682671917.png"
+                  src={Sch2}
                   alt="Students at Dayawanti Punj Model School during school life"
                   className="h-full w-full object-cover"
                   style={{ aspectRatio: "16 / 9" }}
