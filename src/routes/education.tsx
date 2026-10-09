@@ -12,6 +12,17 @@ import Colg1 from "../assets/generated/colg1.jpg";
 import Colg2 from "../assets/generated/colg2.jpg";
 import Colg3 from "../assets/generated/colg3.jpg";
 import Sch2 from "../assets/generated/sch2.jpg";
+import Lab from "../assets/generated/lab.jpg";
+import Dans from "../assets/generated/dans.jpg";
+import Cl from "../assets/generated/cl.jpg";
+import Dans2 from "../assets/generated/dans2.jpg";
+import Scls from "../assets/generated/scls.jpg";
+import Slab from "../assets/generated/slab.jpg";
+import Sport from "../assets/generated/sport.jpg";
+import Lab2 from "../assets/generated/lab2.jpg";
+import Girl from "../assets/generated/girl.jpg";
+
+
 
 
 
@@ -396,7 +407,7 @@ function EducationPage() {
         <Scholarships />
         <StudentJourney />
         <Facilities />
-        <Educators />
+        {/* <Educators /> */}
         <Achievements />
         {/* <Stories /> */}
         {/* <ImpactNumbers /> */}
@@ -441,10 +452,10 @@ function Hero({ onOpenExplore, onOpenAdmissions }: { onOpenExplore: () => void; 
             student-support initiatives, the Foundation works to bring learning, confidence,
             aspiration and opportunity closer to young people in and around Sitamarhi.
           </p>
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          {/* <div className="mt-9 flex flex-wrap items-center gap-3">
             <PrimaryBtn onClick={onOpenExplore}>Explore Our Institutions</PrimaryBtn>
             <GhostBtn onClick={onOpenAdmissions}>Admissions &amp; Enquiries</GhostBtn>
-          </div>
+          </div> */}
         </Reveal>
 
         <Reveal>
@@ -637,7 +648,18 @@ function InstitutionPanel({
 
       <div className="flex flex-1 flex-col p-7 md:p-9">
         <h3 className="font-serif text-[27px] leading-tight text-[color:var(--charcoal)] md:text-[31px]">
-          {name}
+                <a
+        href={
+          name.toLowerCase().includes("school")
+            ? "https://dpms.in/"
+            : "https://dpdc.org.in/"
+        }
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-serif text-[27px] leading-tight text-[color:var(--charcoal)] hover:underline md:text-[31px]"
+      >
+        {name}
+      </a>
         </h3>
 
         <p className="mt-4 font-sans text-[14.5px] leading-[1.75] text-muted-foreground">
@@ -1107,7 +1129,7 @@ function Inclusion() {
         <Reveal>
          <div className="overflow-hidden rounded-[6px]">
   <img
-    src="https://content.jdmagicbox.com/v2/comp/bhadohi/a9/9999p5414.5414.110123122915.q2a9/catalogue/dayawanti-punj-model-school-bhadohi-ho-bhadohi-cbse-schools-8ksnow3id6-250.jpg"
+    src= {Girl}
     alt="Girls participating in a classroom lesson"
     className="h-full w-full object-cover"
     style={{ aspectRatio: "4 / 5" }}
@@ -1305,12 +1327,12 @@ function StudentJourney() {
 const FACILITIES = [
   {
     title: "Classrooms",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT189FV8dnd7TQzkx2X5crvcOw96Tr7ppFNgblGlcdGf1rIMjl-aDlLz2a&s=10",
+    image: Scls,
     alt: "Students and a teacher in a classroom at Dayawanti Punj Model School",
   },
   {
     title: "Science Laboratories",
-    image: "https://i.ibb.co/j7xp6xL/Screenshot-2026-09-23-125452.png",
+    image: Slab,
     alt: "Students participating in a school science activity",
   },
   {
@@ -1320,12 +1342,12 @@ const FACILITIES = [
   },
   {
     title: "Libraries",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQlnqVzLjcHop7ylNo6lGO579zQrrLWBJgHXNy_XZiujNSJiiFNaieZoo&s=10",
+    image: Lab2,
     alt: "Students reading in the school library",
   },
   {
     title: "Sports Spaces",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8Pc26fbfwhkwjqgGihz7meWWKUIrIKLlYM2vqEJH62omC7JPjRHS3g8c&s=10",
+    image: Sport,
     alt: "Students taking part in a sports activity",
   },
   {
@@ -1334,13 +1356,13 @@ const FACILITIES = [
     alt: "Students in a cultural or music activity",
   },
   {
-    title: "College Classrooms",
+    title: "Smart Classrooms",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgsH4Pf8xMNyUrXB4lOvwsQ5mdh2DXFsuiM4HqiIYUTGo0qaavzPKxuKs&s=10",
-    alt: "Students in a college classroom",
+    alt: "Students in a school classroom",
   },
   {
     title: "College Library",
-    image: "https://content3.jdmagicbox.com/comp/bhadohi/g9/9999p5414.5414.110223220140.w9g9/catalogue/dayawanti-punj-model-school-khamaria-srn-bhadohi-cbse-schools-6qgvg0y50e.jpg",
+    image: Colg3,
     alt: "Students in the college library",
   },
 ];
@@ -1480,8 +1502,7 @@ const ACHIEVEMENTS = [
       "Students competed in district-level athletics and indoor sports, earning medals and representing the school across multiple events.",
   },
   {
-    image:
-      "https://images.jdmagicbox.com/v2/comp/bhadohi/a9/9999p5414.5414.110123122915.q2a9/catalogue/dayawanti-punj-model-school-bhadohi-ho-bhadohi-cbse-schools-irpypaxou2.jpg",
+    image: Dans2,
     area: "Culture",
     title: "Annual Cultural & Literary Festival",
     student: "Music & Debate Teams",
@@ -1566,12 +1587,12 @@ function Achievements() {
               <dd className="text-right">{a.institution}</dd>
             </div>
 
-            <div className="flex justify-between gap-3 text-[13px]">
+            {/* <div className="flex justify-between gap-3 text-[13px]">
               <dt className="font-medium text-[color:var(--charcoal)]/70">
                 Academic Year
               </dt>
               <dd>{a.date}</dd>
-            </div>
+            </div> */}
           </dl>
         </div>
       </li>
@@ -1997,7 +2018,7 @@ const GALLERY: GalleryItem[] = [
     filters: ["School", "Academics"],
   },
   {
-    image: "https://content.jdmagicbox.com/comp/bhadohi/a9/9999p5414.5414.110123122915.q2a9/catalogue/dayawanti-punj-model-school-bhadohi-ho-bhadohi-schools-1g4wqg9-250.jpg",
+    image: Lab,
     alt: "Science Laboratory",
     institution: "Dayawanti Punj Model School",
     activity: "Laboratory",
@@ -2018,7 +2039,7 @@ const GALLERY: GalleryItem[] = [
     filters: ["School", "Sports"],
   },
   {
-    image: "https://images.jdmagicbox.com/v2/comp/bhadohi/a9/9999p5414.5414.110123122915.q2a9/catalogue/dayawanti-punj-model-school-bhadohi-ho-bhadohi-cbse-schools-irpypaxou2.jpg",
+    image: Dans,
     alt: "Cultural Activity",
     institution: "Dayawanti Punj Model School",
     activity: "Cultural Activity",
@@ -2039,14 +2060,14 @@ const GALLERY: GalleryItem[] = [
     filters: ["College", "Student Life"],
   },
   {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlrsHdBaI1RIvzhWSVRzuBvd1HyCrj0tUeEi7n7SlC6pc45lfqfi7LV4E&s=10",
+    image: Colg2,
     alt: "College Classroom",
     institution: "Dayawanti Punj Degree College",
     activity: "Classroom",
     filters: ["College", "Academics"],
   },
   {
-    image: "https://dpms.in/wp-content/uploads/2025/08/0F2A1055.jpg",
+    image: Cl,
     alt: "College Library",
     institution: "Dayawanti Punj Degree College",
     activity: "Library",
@@ -2058,14 +2079,7 @@ const GALLERY: GalleryItem[] = [
     institution: "Dayawanti Punj Degree College",
     activity: "Seminar",
     filters: ["College", "Student Life"],
-  },
-  {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1QnztuBuHxHGIrdhI-tEfcAkDBjfUSgVkxcwfrJOV9rbz2H98zWDg-idt&s=10",
-    alt: "College Students",
-    institution: "Dayawanti Punj Degree College",
-    activity: "Student Life",
-    filters: ["College", "Student Life"],
-  },
+  }
 ];
 
 
@@ -2137,7 +2151,7 @@ function Gallery() {
                   {g.activity}
                 </span>
                 <span className="mt-1 block font-sans text-[12px] text-muted-foreground">
-                  {g.institution} · Date to be verified
+                  {g.institution}
                 </span>
               </span>
             </button>
@@ -2230,8 +2244,7 @@ const EDUCATION_UPDATES = [
     category: "Sports",
     title: "Learning Through Sports and Teamwork",
     date: "10 May 2026",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjvbYBp7WXi8H5HL-IdnSon0U2MYvDYx5m545an4HlXqk_Ev71COB1nd4&s=10",
+    image: Sport,
     description:
       "Sports activities provide students with opportunities to develop fitness, discipline, teamwork and leadership.",
   },
@@ -2296,11 +2309,11 @@ function Updates() {
                   {update.description}
                 </p>
 
-                <div className="mt-auto border-t border-[color:var(--border)] pt-4">
+                {/* <div className="mt-auto border-t border-[color:var(--border)] pt-4">
                   <p className="font-sans text-[11.5px] text-muted-foreground">
                     {update.date}
                   </p>
-                </div>
+                </div> */}
               </div>
             </li>
           ))}

@@ -3,14 +3,14 @@ import dayawantiAsset from "@/assets/founders/dayawanti.jpg.asset.json";
 import snpAsset from "@/assets/founders/snp.jpg.asset.json";
 import induAsset from "@/assets/founders/indu.jpg.asset.json";
 import logoAsset from "@/assets/foundation-logo.png.asset.json";
-import sliderEducation from "@/assets/generated/slider-education.png";
-import sliderHealthcare from "@/assets/generated/slider-healthcare.png";
-import sliderSita from "@/assets/generated/slider-sita.png";
+import sliderEducation from "@/assets/generated/slider-education.jpg";
+import sliderHealthcare from "@/assets/generated/slider-healthcare.jpg";
+import sliderSita from "@/assets/generated/slider-sita.jpg";
 import sliderEnvironment from "@/assets/generated/slider-environment.jpg";
 import workEducation from "@/assets/generated/work-education.jpg";
 import workHealthcare from "@/assets/generated/work-healthcare.jpg";
 import workSocialWelfare from "@/assets/generated/work-social-welfare.jpg";
-import workSita from "@/assets/generated/work-sita.jpg";
+import workSita from "@/assets/generated/slider-sita.jpg";
 import workEnvironment from "@/assets/generated/work-environment.jpg";
 
 const ASSETS: Record<string, string> = {
@@ -32,7 +32,7 @@ const ASSETS: Record<string, string> = {
   "archive-healthcare-growth": workHealthcare,
   "archive-social-welfare": workSocialWelfare,
   "archive-sita-samahit-sthal": sliderSita,
-  "archive-environment-expansion": workEnvironment,
+  // "archive-environment-expansion": workEnvironment,
 };
 
 type Props = {
