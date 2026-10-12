@@ -15,15 +15,15 @@ export function SiteFooter() {
       <div className="mx-auto grid w-full max-w-[1360px] gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr] md:px-10">
         <div>
           <div className="flex items-center gap-3">
-            <div className="h-12 w-12 overflow-hidden">
+            <div className="h-24 w-24 overflow-hidden">
               <img 
                 src="/foundation-logo.png" 
                 alt="Pt. Kanhaiya Lal Dayawanti Punj Foundation Logo" 
                 className="h-full w-full object-contain"
               />
             </div>
-            <p className="font-serif text-[18px] leading-tight text-[color:var(--charcoal)]">
-              Pt. Kanhaiya Lal Dayawanti Punj Foundation
+            <p className="font-serif text-[22px] leading-tight text-[color:var(--charcoal)]">
+              Pt. Kanahya Lal Dayawanti Punj Foundation
             </p>
           </div>
           
@@ -56,7 +56,7 @@ export function SiteFooter() {
       
       <div className="border-t border-[color:var(--border)]">
         <p className="mx-auto w-full max-w-[1360px] px-5 py-6 font-sans text-[12px] text-muted-foreground md:px-10">
-          © {new Date().getFullYear()} Pt. Kanhaiya Lal Dayawanti Punj Foundation. All rights reserved.
+          © {new Date().getFullYear()} Pt. Kanahya Lal Dayawanti Punj Foundation. All rights reserved.
         </p>
       </div>
     </footer>

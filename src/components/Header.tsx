@@ -54,7 +54,7 @@ export function Header() {
           <Link to="/" className="group flex items-center gap-3" aria-label="Home">
             <div
               className={`overflow-hidden transition-all duration-500 ${
-                scrolled ? "h-9 w-9" : "h-11 w-11"
+                scrolled ? "h-14 w-14" : "h-24 w-24"
               }`}
             >
               {/* Replace with your exact filename inside public/ folder */}
@@ -64,8 +64,8 @@ export function Header() {
                 className="h-full w-full object-contain"
               />
             </div>
-            <span className="hidden font-serif text-[13px] leading-[1.15] tracking-wide text-[color:var(--charcoal)] sm:block md:text-[14px]">
-              <span className="block italic text-[color:var(--charcoal)]/60 text-[10px] uppercase tracking-[0.2em] mb-0.5">
+            <span className="hidden font-serif text-[20px] leading-[1.15] tracking-wide text-[color:var(--charcoal)] sm:block md:text-[18px]">
+              <span className="block italic text-[color:var(--charcoal)]/60 text-[18px] uppercase tracking-[0.2em] mb-0.5">
                 Est. 1990
               </span>
               Punj Foundation
