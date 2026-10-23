@@ -335,15 +335,18 @@ function SitaSthalVideo() {
             }}
           >
             <div className="relative overflow-hidden rounded-[8px]">
-              <div className="aspect-[5/4] w-full">
-                <iframe
-                  className="h-full w-full"
-                  src="https://www.youtube.com/embed/RdLImuwlFdA"
-                  title="Sita Samahit Sthal"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
+             
+<div className="relative aspect-[5/4] w-full overflow-hidden rounded-lg">
+  <iframe
+    className="absolute inset-0 h-full w-full"
+    src="https://www.youtube.com/embed/RdLImuwlFdA"
+    title="Sita Samahit Sthal Video"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerPolicy="strict-origin-when-cross-origin"
+    allowFullScreen
+  />
+</div>
 
               <p className="mt-2 text-sm text-muted-foreground">
                 Discover Sita Samahit Sthal through this video.
