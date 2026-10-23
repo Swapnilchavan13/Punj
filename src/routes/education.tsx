@@ -837,13 +837,18 @@ function SchoolFeature() {
               >
                 <div className="overflow-hidden rounded-[6px]">
                   <div className="aspect-video w-full">
-                    <iframe
-                      className="h-full w-full"
-                      src="https://www.youtube.com/embed/OIIP0k-CWvY?si=krjW8rkcq2cJKZ86"
-                      title="Dayawanti Punj Model School Video"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
+                   
+<div className="relative aspect-video w-full overflow-hidden rounded-lg">
+  <iframe
+    className="absolute inset-0 h-full w-full"
+    src="https://www.youtube.com/embed/OIIP0k-CWvY"
+    title="Dayawanti Punj Model School Video"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerPolicy="strict-origin-when-cross-origin"
+    allowFullScreen
+  />
+</div>
                   </div>
                 </div>
 
