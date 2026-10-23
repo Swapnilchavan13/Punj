@@ -4,6 +4,13 @@ import { Header } from "@/components/Header";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AssetPlaceholder } from "@/components/AssetPlaceholder";
 
+
+import collegeImage from "@/assets/generated/colg.jpg";
+import collegeImage2 from "@/assets/generated/colg2.jpg";
+import socialWelfareImage from "@/assets/generated/work-social-welfare.jpg";
+import healthcareImage from "@/assets/generated/slider-healthcare.jpg";
+import sitamarhiImage from "@/assets/generated/stm.jpg";
+
 export const Route = createFileRoute("/about-foundation")({
   head: () => ({
     meta: [
@@ -170,9 +177,9 @@ const CHAPTERS: Chapter[] = [
     asset: "archive-foundation-early-years",
     alt: "",
     accent: "var(--accent-education)",
-    himg: "https://scontent.fnag10-2.fna.fbcdn.net/v/t39.30808-6/684266323_1514950097306583_7203674434692479396_n.jpg?stp=dst-jpg_tt6&cstp=mx1698x656&ctp=s960x960&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=8_OBG8HVSEEQ7kNvwFyjtpx&_nc_oc=AdqXiDJAIZsRiogjonnfd4QDXjLK0EijsyysGeWC4x-Q7p5TMqfMY8Wiby1lzoQZSCOtwFner6UTazip-eBcRdt8&_nc_zt=23&_nc_ht=scontent.fnag10-2.fna&_nc_gid=iDiJQl3XCz6QD8TUpYmr0g&_nc_ss=7b289&oh=00_AQPpHOpPWE_yd5WEvS7FGD17KTmPJHiVIjB22TSrFoWG5Q&oe=6ACA9F94",
-    himg2: "/src/assets/generated/colg.jpg",
-    
+    himg:
+      "https://scontent.fnag10-2.fna.fbcdn.net/v/t39.30808-6/684266323_1514950097306583_7203674434692479396_n.jpg?stp=dst-jpg_tt6&cstp=mx1698x656&ctp=s960x960&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=8_OBG8HVSEEQ7kNvwFyjtpx&_nc_oc=AdqXiDJAIZsRiogjonnfd4QDXjLK0EijsyysGeWC4x-Q7p5TMqfMY8Wiby1lzoQZSCOtwFner6UTazip-eBcRdt8&_nc_zt=23&_nc_ht=scontent.fnag10-2.fna&_nc_gid=iDiJQl3XCz6QD8TUpYmr0g&_nc_ss=7b289&oh=00_AQPpHOpPWE_yd5WEvS7FGD17KTmPJHiVIjB22TSrFoWG5Q&oe=6ACA9F94",
+    himg2: collegeImage,
     panel: "oklch(0.965 0.026 85 / 0.7)",
     portraits: [
       {
@@ -208,8 +215,7 @@ const CHAPTERS: Chapter[] = [
     accent: "var(--accent-education)",
     panel: "oklch(0.97 0.024 85 / 0.7)",
     himg: "https://dpms.in/wp-content/uploads/2025/08/0F2A0627.jpg",
-    himg2: "/src/assets/generated/colg2.jpg",
-
+    himg2: collegeImage2,
     smallLabel: "",
     portraits: [
       {
@@ -235,9 +241,8 @@ const CHAPTERS: Chapter[] = [
     alt: "Community assistance activity supported by the Foundation",
     accent: "oklch(0.52 0.11 45)",
     panel: "oklch(0.965 0.028 55 / 0.7)",
-    himg: "/src/assets/generated/work-social-welfare.jpg",
+    himg: socialWelfareImage,
     himg2: "https://i.ibb.co/DfD4Sd7R/DSC-0174.jpg",
-
     portraits: [
       {
         asset: "founder-indu-punj",
@@ -247,7 +252,10 @@ const CHAPTERS: Chapter[] = [
           "A compassionate and inspiring soul, she worked tirelessly for the upliftment of the poor and underprivileged. Her kindness is woven into every initiative of the Foundation.",
       },
     ],
-    link: { label: "Explore Healthcare & Social Welfare", href: "/healthcare-social-welfare" },
+    link: {
+      label: "Explore Healthcare & Social Welfare",
+      href: "/healthcare-social-welfare",
+    },
   },
   {
     id: "healthcare",
@@ -262,10 +270,13 @@ const CHAPTERS: Chapter[] = [
     alt: "Community healthcare activity supported by the Foundation",
     accent: "var(--accent-healthcare)",
     panel: "oklch(0.96 0.022 230 / 0.7)",
-    himg: "/src/assets/generated/slider-healthcare.png",
-    himg2: "https://i.ibb.co/MDC83b62/Screenshot-2026-08-22-123751.png",
-
-    link: { label: "Explore Healthcare & Social Welfare", href: "/healthcare-social-welfare" },
+    himg: healthcareImage,
+    himg2:
+      "https://i.ibb.co/MDC83b62/Screenshot-2026-08-22-123751.png",
+    link: {
+      label: "Explore Healthcare & Social Welfare",
+      href: "/healthcare-social-welfare",
+    },
   },
   {
     id: "sita",
@@ -280,10 +291,14 @@ const CHAPTERS: Chapter[] = [
     alt: "",
     accent: "var(--accent-sita)",
     panel: "oklch(0.955 0.026 30 / 0.7)",
-    himg: "https://sitasamahittemple.com/wp-content/uploads/2025/09/temple-2-768x512.jpg",
-    himg2: "https://sitasamahittemple.com/wp-content/uploads/2025/09/hanuman-temple_0001_Layer-1.jpg",
-
-    link: { label: "Explore Sita Samahit Sthal", href: "/sita-samahit-sthal" },
+    himg:
+      "https://sitasamahittemple.com/wp-content/uploads/2025/09/temple-2-768x512.jpg",
+    himg2:
+      "https://sitasamahittemple.com/wp-content/uploads/2025/09/hanuman-temple_0001_Layer-1.jpg",
+    link: {
+      label: "Explore Sita Samahit Sthal",
+      href: "/sita-samahit-sthal",
+    },
   },
   {
     id: "environment",
@@ -299,9 +314,10 @@ const CHAPTERS: Chapter[] = [
     alt: "Farmer participating in a soil-restoration field programme",
     accent: "var(--accent-environment)",
     panel: "oklch(0.96 0.022 150 / 0.7)",
-    himg: "https://assets.ramen.101reporters.com/imgs/2025/6/826*532/101RPT2542363/7.webp",
-    himg2: "https://images.yourstory.com/cs/wordpress/2017/07/farming2.jpg?fm=png&auto=format&blur=500",
-
+    himg:
+      "https://assets.ramen.101reporters.com/imgs/2025/6/826*532/101RPT2542363/7.webp",
+    himg2:
+      "https://images.yourstory.com/cs/wordpress/2017/07/farming2.jpg?fm=png&auto=format&blur=500",
     link: {
       label: "Explore Environment and Rural Regeneration",
       href: "/environment-rural-regeneration",
@@ -320,9 +336,9 @@ const CHAPTERS: Chapter[] = [
     alt: "",
     accent: "var(--charcoal)",
     panel: "oklch(0.96 0.01 80 / 0.7)",
-    himg: "https://i.ibb.co/4RZcGrz1/Whats-App-Image-2026-08-12-at-3-42-44-PM-2.jpg",
+    himg:
+      "https://i.ibb.co/4RZcGrz1/Whats-App-Image-2026-08-12-at-3-42-44-PM-2.jpg",
     himg2: "https://dpms.in/wp-content/uploads/2025/08/IMG_0733.jpg",
-
   },
 ];
 
@@ -527,7 +543,7 @@ function AboutFoundation() {
               <div className="overflow-hidden rounded-xl shadow-[0_30px_70px_-40px_rgba(60,40,20,0.75)]">
                 <div className="aspect-[16/10] overflow-hidden rounded-[6px]">
                   <img
-                    src="https://media.licdn.com/dms/image/v2/D4D22AQHvLf_7deEsuQ/feedshare-shrink_1280/B4DaA4_kLfJ0AM-/0/1787662583486?e=1792627200&v=beta&t=6YLILOPslDBItk5voRSbnjCahlCfmVkaxapUM_rhfTE"
+                    src="https://dpms.in/wp-content/uploads/2025/08/school-top.jpg"
                     alt="Institutional image of the Foundation"
                     className="h-full w-full object-cover"
                   />
@@ -708,7 +724,7 @@ function AboutFoundation() {
               <div className="relative overflow-hidden rounded-xl">
                 <div className="aspect-[16/9] overflow-hidden rounded-[6px]">
                   <img
-                    src="/src/assets/generated/stm.jpg"
+                    src={sitamarhiImage}
                     alt="Sita Samahit Sthal in Sitamarhi, Bhadohi, Uttar Pradesh"
                     className="h-full w-full object-cover"
                   />
